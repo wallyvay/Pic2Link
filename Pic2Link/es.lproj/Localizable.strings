@@ -1,0 +1,174 @@
+"language.name.en" = "Inglés";
+"language.name.zh-Hans" = "Chino simplificado";
+"language.name.zh-Hant" = "Chino tradicional";
+"language.name.ko" = "Coreano";
+"language.name.ja" = "Japonés";
+"language.name.ru" = "Ruso";
+"language.name.es" = "Español";
+"language.name.pt" = "Portugués";
+"language.name.th" = "Tailandés";
+"language.name.hi" = "Hindi";
+"language.name.fr" = "Francés";
+"language.name.ar" = "Árabe";
+"language.name.de" = "Alemán";
+
+"common.cancel" = "Cancelar";
+"common.delete" = "Eliminar";
+"common.save" = "Guardar";
+"common.settings" = "Ajustes";
+
+"statusItem.tooltip" = "Pic2Link — Sube archivos y copia enlaces";
+"menu.uploadClipboard" = "Subir imagen del portapapeles (%@)";
+"menu.uploadFile" = "Subir archivo…";
+"menu.switchProfile" = "Cambiar alojamiento";
+"menu.settings" = "Ajustes…";
+"menu.quit" = "Salir de Pic2Link";
+"filePicker.title" = "Elige un archivo para subir";
+"filePicker.message" = "Se admiten imágenes y otros archivos. Los archivos de más de 200 MB requieren confirmación.";
+
+"clipboard.title" = "Listo para subir";
+"clipboard.progress" = "Progreso de subida";
+"clipboard.uploadPrompt" = "Haz clic para subir o pulsa %@";
+"clipboard.empty" = "No hay ninguna imagen en el portapapeles";
+
+"history.title" = "Archivos subidos";
+"history.clear" = "Vaciar";
+"history.empty" = "Aún no hay archivos subidos";
+"history.empty.help" = "Las imágenes y los archivos subidos aparecerán aquí";
+"history.more" = "Más archivos";
+"history.copyLink" = "Copiar enlace";
+
+"profile.configured" = "Configurado";
+"profile.notConfigured" = "Sin configurar";
+"profile.none" = "Sin alojamiento";
+"profile.addInSettings" = "Añade un alojamiento en Ajustes";
+
+"settings.language" = "Idioma";
+"settings.language.picker" = "Idioma de la app";
+"settings.language.help" = "El cambio se aplica al instante. Tu elección prevalecerá sobre el idioma del sistema al volver a abrir la app.";
+"settings.profileList" = "Alojamientos";
+"settings.addProfile" = "Añadir alojamiento";
+"settings.setCurrent" = "Usar como actual";
+"settings.noSelection.title" = "Ningún alojamiento seleccionado";
+"settings.noSelection.description" = "Selecciona una configuración en la barra lateral.";
+"settings.validating" = "Validando…";
+"settings.validate" = "Validar conexión";
+"settings.profileConfiguration" = "Configuración del alojamiento";
+"settings.shortcut" = "Atajo de subida";
+"settings.key" = "Tecla";
+"settings.currentShortcut" = "Atajo actual: %@";
+"settings.appBehavior" = "Comportamiento de la app";
+"settings.launchAtLogin" = "Abrir Pic2Link al iniciar sesión";
+"settings.launchAtLogin.help" = "Se aplica al guardar. Si se requiere permiso, autoriza Pic2Link en Ajustes del Sistema > General > Ítems de inicio.";
+
+"field.profileName" = "Nombre de la configuración";
+"field.profileName.placeholder" = "Por ejemplo: Personal / CDN de empresa";
+"field.provider" = "Proveedor";
+"field.remoteDirectory" = "Directorio remoto";
+"field.remoteDirectory.placeholder" = "Opcional: uploads / public / assets";
+"field.serviceName" = "Nombre del servicio";
+"field.serviceName.placeholder" = "Nombre del servicio UPYUN";
+"field.bucket" = "Bucket / contenedor";
+"field.bucket.placeholder" = "Nombre del bucket / contenedor";
+"field.operator" = "Operador";
+"field.operator.placeholder" = "Nombre del operador";
+"field.operatorPassword" = "Contraseña del operador";
+"field.operatorPassword.placeholder" = "Introduce la contraseña del operador";
+"field.apiEndpoint" = "Endpoint de API";
+"field.publicURL" = "Prefijo de URL pública";
+"field.username" = "Usuario";
+"field.username.placeholder" = "Usuario de WebDAV";
+"field.password" = "Contraseña";
+"field.password.placeholder" = "Introduce la contraseña de WebDAV";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "Clave de API";
+"field.sharedSecret" = "Secreto compartido";
+"field.authToken" = "Token de autenticación";
+"field.clientID" = "ID de cliente";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Introduce la Secret Key";
+"field.region" = "Región";
+"field.region.placeholder" = "Por ejemplo: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "Ruta base";
+"field.basePath.placeholder" = "Por ejemplo: uploads / blog";
+"field.pathStyle" = "Estilo de ruta";
+
+"pathStyle.dateFolder" = "Carpetas por fecha";
+"pathStyle.flat" = "Plano";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "Compatible con S3";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Introduce el Bucket, Access Key, Secret Key, prefijo público y Endpoint. Admite imágenes y archivos generales.";
+"provider.help.synologyC2" = "Usa la clave compatible con S3, el Bucket, Endpoint y dominio público de Synology C2. Admite imágenes y archivos generales.";
+"provider.help.jdCloud" = "Introduce Access Key, Secret Key, Bucket, Endpoint y prefijo público de JD Cloud. Admite imágenes y archivos generales.";
+"provider.help.baiduBOS" = "Introduce la clave compatible con S3, el Bucket, Endpoint y dominio público de Baidu BOS. Admite imágenes y archivos generales.";
+"provider.help.tencentCOS" = "Introduce Bucket, SecretId, SecretKey, Endpoint regional y dominio CDN o personalizado. Admite imágenes y archivos generales.";
+"provider.help.qiniu" = "Introduce Bucket, Access Key, Secret Key, Endpoint de subida y dominio público. Admite imágenes y archivos generales.";
+"provider.help.upyun" = "Introduce el nombre del servicio, operador, contraseña y dominio público. Admite imágenes y archivos generales.";
+"provider.help.amazonS3" = "Introduce Bucket, Access Key, Secret Key, región, Endpoint y prefijo público. Admite imágenes y archivos generales.";
+"provider.help.googleCloudStorage" = "Usa las claves de interoperabilidad S3, Bucket, Endpoint y prefijo público de Google Cloud Storage. Admite imágenes y archivos generales.";
+"provider.help.cloudflareR2" = "Introduce Bucket, Access Key, Secret Key, Endpoint del Account ID y dominio público. Admite imágenes y archivos generales.";
+"provider.help.backblazeB2" = "Introduce Bucket, Key ID, Application Key, Endpoint regional y prefijo público. Admite imágenes y archivos generales.";
+"provider.help.genericS3Compatible" = "Para MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 y similares. Introduce Bucket, claves, Endpoint, región y prefijo público.";
+"provider.help.webDAV" = "Introduce Endpoint, usuario, contraseña, directorio remoto opcional y prefijo público de WebDAV. Admite imágenes y archivos generales.";
+"provider.help.flickr" = "Introduce API Key, Shared Secret y Auth Token. Solo imágenes; devuelve el enlace de la página de Flickr.";
+"provider.help.imgur" = "Introduce el Client ID de Imgur. Solo imágenes; devuelve el enlace de la imagen.";
+
+"fileSupport.all" = "imágenes y archivos generales";
+"fileSupport.imagesOnly" = "solo imágenes";
+
+"validation.success" = "¡Conexión correcta!";
+"validation.failed" = "No se pudo conectar. Revisa la configuración.";
+"validation.error" = "Error de validación: %@";
+
+"status.uploadBusy" = "Ya hay una subida en curso";
+"status.configureFirst" = "Configura primero un alojamiento";
+"status.incompleteConfig" = "La configuración actual está incompleta";
+"status.uploadingTo" = "Subiendo a %@";
+"status.uploadSuccess" = "Subida completada: %@";
+"status.uploadFailed" = "Error de subida: %@";
+"status.clipboardEmpty" = "No hay una imagen válida en el portapapeles";
+"status.providerImagesOnly" = "%@ solo admite imágenes. Cambia a un proveedor que admita archivos generales.";
+"status.largeFileCancelled" = "Subida del archivo grande cancelada";
+"status.uploadingFile" = "Subiendo %@";
+"status.launchAtLoginFailed" = "No se pudo actualizar el inicio automático: %@";
+"status.linkCopied" = "Enlace copiado: %@";
+
+"largeFile.title" = "El archivo supera los 200 MB";
+"largeFile.message" = "“%@” ocupa %@. La subida puede tardar y consumir bastante ancho de banda. ¿Continuar?";
+"largeFile.continue" = "Continuar subida";
+
+"notification.uploadComplete" = "“%@” se ha subido. El enlace se ha copiado al portapapeles.";
+
+"launchAtLogin.requiresApproval" = "Autoriza primero Pic2Link en los ítems de inicio de Ajustes del Sistema.";
+"launchAtLogin.notFound" = "Este paquete no puede registrar un ítem de inicio del sistema. Se usará el modo compatible.";
+"launchAtLogin.updateFailed" = "No se pudo actualizar el inicio automático.";
+"launchAtLogin.missingIdentifier" = "No se pudo identificar la app actual.";
+"launchAtLogin.missingPath" = "No se pudo identificar la ruta de la app.";
+"launchAtLogin.launchctlFailed" = "Error de launchctl (%d)";
+
+"error.unknownServer" = "Error desconocido del servidor";
+"error.webDAVDirectory" = "No se pudo crear el directorio WebDAV %@";
+"error.uploadFailed" = "Error de subida: HTTP %d — %@";
+"error.invalidResponse" = "Respuesta del servidor no válida";
+"error.invalidConfig" = "Configuración no válida. Revisa los ajustes del alojamiento.";
+"error.unsupportedFileType" = "%@ admite actualmente %@. Cambia a un proveedor compatible con el archivo seleccionado.";
+"error.directoryUnsupported" = "No se pueden subir carpetas. Selecciona un único archivo.";
+"status.settingsSaveFailed" = "No se pudieron guardar los ajustes de forma segura: %@";
+"error.keychainUnexpectedData" = "El llavero devolvió credenciales no válidas.";
+"error.keychainStatus" = "Error del llavero (%d)";

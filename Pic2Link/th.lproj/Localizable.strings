@@ -1,0 +1,174 @@
+"language.name.en" = "อังกฤษ";
+"language.name.zh-Hans" = "จีนตัวย่อ";
+"language.name.zh-Hant" = "จีนตัวเต็ม";
+"language.name.ko" = "เกาหลี";
+"language.name.ja" = "ญี่ปุ่น";
+"language.name.ru" = "รัสเซีย";
+"language.name.es" = "สเปน";
+"language.name.pt" = "โปรตุเกส";
+"language.name.th" = "ไทย";
+"language.name.hi" = "ฮินดี";
+"language.name.fr" = "ฝรั่งเศส";
+"language.name.ar" = "อาหรับ";
+"language.name.de" = "เยอรมัน";
+
+"common.cancel" = "ยกเลิก";
+"common.delete" = "ลบ";
+"common.save" = "บันทึก";
+"common.settings" = "การตั้งค่า";
+
+"statusItem.tooltip" = "Pic2Link — อัปโหลดไฟล์และคัดลอกลิงก์";
+"menu.uploadClipboard" = "อัปโหลดภาพจากคลิปบอร์ด (%@)";
+"menu.uploadFile" = "อัปโหลดไฟล์…";
+"menu.switchProfile" = "เปลี่ยนโฮสต์รูปภาพ";
+"menu.settings" = "การตั้งค่า…";
+"menu.quit" = "ออกจาก Pic2Link";
+"filePicker.title" = "เลือกไฟล์ที่จะอัปโหลด";
+"filePicker.message" = "รองรับรูปภาพและไฟล์ประเภทอื่น ไฟล์ที่มีขนาดเกิน 200 MB ต้องยืนยันก่อนอัปโหลด";
+
+"clipboard.title" = "พร้อมอัปโหลด";
+"clipboard.progress" = "ความคืบหน้าการอัปโหลด";
+"clipboard.uploadPrompt" = "คลิกเพื่ออัปโหลด หรือกด %@";
+"clipboard.empty" = "ไม่มีภาพในคลิปบอร์ด";
+
+"history.title" = "ไฟล์ที่อัปโหลด";
+"history.clear" = "ล้าง";
+"history.empty" = "ยังไม่มีไฟล์ที่อัปโหลด";
+"history.empty.help" = "รูปภาพและไฟล์ที่อัปโหลดจะแสดงที่นี่";
+"history.more" = "ไฟล์เพิ่มเติม";
+"history.copyLink" = "คัดลอกลิงก์";
+
+"profile.configured" = "กำหนดค่าแล้ว";
+"profile.notConfigured" = "ยังไม่ได้กำหนดค่า";
+"profile.none" = "ไม่มีโฮสต์รูปภาพ";
+"profile.addInSettings" = "เพิ่มโฮสต์รูปภาพในการตั้งค่า";
+
+"settings.language" = "ภาษา";
+"settings.language.picker" = "ภาษาของแอป";
+"settings.language.help" = "การเปลี่ยนแปลงมีผลทันที และภาษาที่เลือกจะใช้แทนภาษาระบบในการเปิดครั้งถัดไป";
+"settings.profileList" = "โฮสต์รูปภาพ";
+"settings.addProfile" = "เพิ่มโฮสต์รูปภาพ";
+"settings.setCurrent" = "ตั้งเป็นปัจจุบัน";
+"settings.noSelection.title" = "ไม่ได้เลือกโฮสต์รูปภาพ";
+"settings.noSelection.description" = "เลือกการกำหนดค่าจากแถบด้านข้าง";
+"settings.validating" = "กำลังตรวจสอบ…";
+"settings.validate" = "ตรวจสอบการเชื่อมต่อ";
+"settings.profileConfiguration" = "การกำหนดค่าโฮสต์รูปภาพ";
+"settings.shortcut" = "ปุ่มลัดอัปโหลด";
+"settings.key" = "ปุ่ม";
+"settings.currentShortcut" = "ปุ่มลัดปัจจุบัน: %@";
+"settings.appBehavior" = "ลักษณะการทำงานของแอป";
+"settings.launchAtLogin" = "เปิด Pic2Link เมื่อล็อกอิน";
+"settings.launchAtLogin.help" = "มีผลหลังบันทึก หากต้องอนุญาต ให้เปิด Pic2Link ใน การตั้งค่าระบบ > ทั่วไป > รายการเข้าสู่ระบบ";
+
+"field.profileName" = "ชื่อการกำหนดค่า";
+"field.profileName.placeholder" = "ตัวอย่าง: ส่วนตัว / CDN บริษัท";
+"field.provider" = "ผู้ให้บริการ";
+"field.remoteDirectory" = "ไดเรกทอรีระยะไกล";
+"field.remoteDirectory.placeholder" = "ไม่บังคับ: uploads / public / assets";
+"field.serviceName" = "ชื่อบริการ";
+"field.serviceName.placeholder" = "ชื่อบริการ UPYUN";
+"field.bucket" = "Bucket / คอนเทนเนอร์";
+"field.bucket.placeholder" = "ชื่อ Bucket / คอนเทนเนอร์";
+"field.operator" = "ผู้ดำเนินการ";
+"field.operator.placeholder" = "ชื่อผู้ดำเนินการ";
+"field.operatorPassword" = "รหัสผ่านผู้ดำเนินการ";
+"field.operatorPassword.placeholder" = "ป้อนรหัสผ่านผู้ดำเนินการ";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "คำนำหน้า URL สาธารณะ";
+"field.username" = "ชื่อผู้ใช้";
+"field.username.placeholder" = "ชื่อผู้ใช้ WebDAV";
+"field.password" = "รหัสผ่าน";
+"field.password.placeholder" = "ป้อนรหัสผ่าน WebDAV";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "ป้อน Secret Key";
+"field.region" = "Region";
+"field.region.placeholder" = "ตัวอย่าง: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "พาธหลัก";
+"field.basePath.placeholder" = "ตัวอย่าง: uploads / blog";
+"field.pathStyle" = "รูปแบบพาธ";
+
+"pathStyle.dateFolder" = "โฟลเดอร์ตามวันที่";
+"pathStyle.flat" = "แบบแบน";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "พื้นที่จัดเก็บที่รองรับ S3";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "ป้อน Bucket, Access Key, Secret Key, คำนำหน้า URL สาธารณะ และ Endpoint รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.synologyC2" = "ใช้คีย์ที่รองรับ S3, Bucket, Endpoint และโดเมนสาธารณะของ Synology C2 รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.jdCloud" = "ป้อน Access Key, Secret Key, Bucket, Endpoint และคำนำหน้าสาธารณะของ JD Cloud รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.baiduBOS" = "ป้อนคีย์ที่รองรับ S3, Bucket, Endpoint และโดเมนสาธารณะของ Baidu BOS รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.tencentCOS" = "ป้อน Bucket, SecretId, SecretKey, Endpoint ภูมิภาค และโดเมน CDN หรือโดเมนกำหนดเอง รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.qiniu" = "ป้อน Bucket, Access Key, Secret Key, Endpoint อัปโหลด และโดเมนสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.upyun" = "ป้อนชื่อบริการ ผู้ดำเนินการ รหัสผ่าน และโดเมนสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.amazonS3" = "ป้อน Bucket, Access Key, Secret Key, Region, Endpoint และคำนำหน้าสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.googleCloudStorage" = "ใช้คีย์การทำงานร่วมกันแบบ S3, Bucket, Endpoint และคำนำหน้าสาธารณะของ Google Cloud Storage รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.cloudflareR2" = "ป้อน Bucket, Access Key, Secret Key, Endpoint ของ Account ID และโดเมนสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.backblazeB2" = "ป้อน Bucket, Key ID, Application Key, Endpoint ภูมิภาค และคำนำหน้าสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.genericS3Compatible" = "สำหรับ MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 และบริการที่คล้ายกัน ป้อน Bucket, คีย์, Endpoint, Region และคำนำหน้าสาธารณะ";
+"provider.help.webDAV" = "ป้อน WebDAV Endpoint, ชื่อผู้ใช้, รหัสผ่าน, ไดเรกทอรีระยะไกลที่เลือกได้ และคำนำหน้าสาธารณะ รองรับรูปภาพและไฟล์ทั่วไป";
+"provider.help.flickr" = "ป้อน API Key, Shared Secret และ Auth Token รองรับเฉพาะรูปภาพ และส่งคืนลิงก์หน้ารูปภาพ Flickr";
+"provider.help.imgur" = "ป้อน Imgur Client ID รองรับเฉพาะรูปภาพ และส่งคืนลิงก์รูปภาพ Imgur";
+
+"fileSupport.all" = "รูปภาพและไฟล์ทั่วไป";
+"fileSupport.imagesOnly" = "เฉพาะรูปภาพ";
+
+"validation.success" = "เชื่อมต่อสำเร็จ!";
+"validation.failed" = "เชื่อมต่อล้มเหลว โปรดตรวจสอบการกำหนดค่า";
+"validation.error" = "ตรวจสอบล้มเหลว: %@";
+
+"status.uploadBusy" = "กำลังอัปโหลดอยู่แล้ว";
+"status.configureFirst" = "กำหนดค่าโฮสต์รูปภาพก่อน";
+"status.incompleteConfig" = "การกำหนดค่าปัจจุบันไม่สมบูรณ์";
+"status.uploadingTo" = "กำลังอัปโหลดไปยัง %@";
+"status.uploadSuccess" = "อัปโหลดเสร็จแล้ว: %@";
+"status.uploadFailed" = "อัปโหลดล้มเหลว: %@";
+"status.clipboardEmpty" = "ไม่มีภาพที่อัปโหลดได้ในคลิปบอร์ด";
+"status.providerImagesOnly" = "%@ รองรับเฉพาะรูปภาพในขณะนี้ โปรดเปลี่ยนเป็นผู้ให้บริการที่รองรับไฟล์ทั่วไป";
+"status.largeFileCancelled" = "ยกเลิกการอัปโหลดไฟล์ขนาดใหญ่แล้ว";
+"status.uploadingFile" = "กำลังอัปโหลด %@";
+"status.launchAtLoginFailed" = "อัปเดตการเปิดเมื่อล็อกอินไม่สำเร็จ: %@";
+"status.linkCopied" = "คัดลอกลิงก์แล้ว: %@";
+
+"largeFile.title" = "ไฟล์มีขนาดเกิน 200 MB";
+"largeFile.message" = "“%@” มีขนาด %@ การอัปโหลดอาจใช้เวลานานและใช้แบนด์วิดท์มาก ดำเนินการต่อหรือไม่";
+"largeFile.continue" = "อัปโหลดต่อ";
+
+"notification.uploadComplete" = "อัปโหลด “%@” เสร็จแล้ว คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว";
+
+"launchAtLogin.requiresApproval" = "โปรดอนุญาต Pic2Link ในรายการเข้าสู่ระบบของการตั้งค่าระบบก่อน";
+"launchAtLogin.notFound" = "แพ็กเกจแอปนี้ลงทะเบียนรายการเข้าสู่ระบบไม่ได้ จะใช้โหมดความเข้ากันได้";
+"launchAtLogin.updateFailed" = "ไม่สามารถอัปเดตการเปิดเมื่อล็อกอินได้";
+"launchAtLogin.missingIdentifier" = "ไม่สามารถระบุแอปปัจจุบันได้";
+"launchAtLogin.missingPath" = "ไม่สามารถระบุพาธของแอปปัจจุบันได้";
+"launchAtLogin.launchctlFailed" = "launchctl ล้มเหลว (%d)";
+
+"error.unknownServer" = "ข้อผิดพลาดของเซิร์ฟเวอร์ที่ไม่ทราบสาเหตุ";
+"error.webDAVDirectory" = "ไม่สามารถสร้างไดเรกทอรี WebDAV %@ ได้";
+"error.uploadFailed" = "อัปโหลดล้มเหลว: HTTP %d — %@";
+"error.invalidResponse" = "การตอบกลับจากเซิร์ฟเวอร์ไม่ถูกต้อง";
+"error.invalidConfig" = "การกำหนดค่าไม่ถูกต้อง โปรดตรวจสอบการตั้งค่าโฮสต์รูปภาพ";
+"error.unsupportedFileType" = "%@ รองรับ %@ ในขณะนี้ โปรดเปลี่ยนเป็นผู้ให้บริการที่รองรับไฟล์ที่เลือก";
+"error.directoryUnsupported" = "ไม่รองรับการอัปโหลดโฟลเดอร์ โปรดเลือกไฟล์เดียว";
+"status.settingsSaveFailed" = "ไม่สามารถบันทึกการตั้งค่าอย่างปลอดภัยได้: %@";
+"error.keychainUnexpectedData" = "พวงกุญแจส่งคืนข้อมูลข้อมูลประจำตัวที่ไม่ถูกต้อง";
+"error.keychainStatus" = "ข้อผิดพลาดของพวงกุญแจ (%d)";

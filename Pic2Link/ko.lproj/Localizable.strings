@@ -1,0 +1,174 @@
+"language.name.en" = "영어";
+"language.name.zh-Hans" = "중국어 간체";
+"language.name.zh-Hant" = "중국어 번체";
+"language.name.ko" = "한국어";
+"language.name.ja" = "일본어";
+"language.name.ru" = "러시아어";
+"language.name.es" = "스페인어";
+"language.name.pt" = "포르투갈어";
+"language.name.th" = "태국어";
+"language.name.hi" = "힌디어";
+"language.name.fr" = "프랑스어";
+"language.name.ar" = "아랍어";
+"language.name.de" = "독일어";
+
+"common.cancel" = "취소";
+"common.delete" = "삭제";
+"common.save" = "저장";
+"common.settings" = "설정";
+
+"statusItem.tooltip" = "Pic2Link — 파일을 업로드하고 링크 복사";
+"menu.uploadClipboard" = "클립보드 이미지 업로드(%@)";
+"menu.uploadFile" = "파일 업로드…";
+"menu.switchProfile" = "이미지 호스트 전환";
+"menu.settings" = "설정…";
+"menu.quit" = "Pic2Link 종료";
+"filePicker.title" = "업로드할 파일 선택";
+"filePicker.message" = "이미지와 기타 파일 형식을 지원합니다. 200 MB가 넘는 파일은 업로드 전에 다시 확인합니다.";
+
+"clipboard.title" = "업로드 대기";
+"clipboard.progress" = "업로드 진행률";
+"clipboard.uploadPrompt" = "클릭하여 업로드하거나 %@ 누르기";
+"clipboard.empty" = "클립보드에 이미지가 없습니다";
+
+"history.title" = "업로드한 파일";
+"history.clear" = "비우기";
+"history.empty" = "업로드한 파일이 없습니다";
+"history.empty.help" = "업로드한 이미지와 파일이 여기에 표시됩니다";
+"history.more" = "더 많은 파일";
+"history.copyLink" = "링크 복사";
+
+"profile.configured" = "설정됨";
+"profile.notConfigured" = "설정되지 않음";
+"profile.none" = "이미지 호스트 없음";
+"profile.addInSettings" = "설정에서 이미지 호스트를 추가하세요";
+
+"settings.language" = "언어";
+"settings.language.picker" = "앱 언어";
+"settings.language.help" = "변경 사항이 즉시 적용됩니다. 이후 실행부터는 시스템 언어보다 이 설정을 우선합니다.";
+"settings.profileList" = "이미지 호스트";
+"settings.addProfile" = "이미지 호스트 추가";
+"settings.setCurrent" = "현재 호스트로 설정";
+"settings.noSelection.title" = "선택한 이미지 호스트 없음";
+"settings.noSelection.description" = "사이드바에서 이미지 호스트 구성을 선택하세요.";
+"settings.validating" = "확인 중…";
+"settings.validate" = "연결 확인";
+"settings.profileConfiguration" = "이미지 호스트 구성";
+"settings.shortcut" = "업로드 단축키";
+"settings.key" = "키";
+"settings.currentShortcut" = "현재 단축키: %@";
+"settings.appBehavior" = "앱 동작";
+"settings.launchAtLogin" = "로그인할 때 Pic2Link 실행";
+"settings.launchAtLogin.help" = "저장 후 적용됩니다. 권한이 필요하면 시스템 설정 > 일반 > 로그인 항목에서 Pic2Link를 허용하세요.";
+
+"field.profileName" = "구성 이름";
+"field.profileName.placeholder" = "예: 개인용 / 회사 CDN";
+"field.provider" = "제공업체";
+"field.remoteDirectory" = "원격 디렉터리";
+"field.remoteDirectory.placeholder" = "선택 사항: uploads / public / assets";
+"field.serviceName" = "서비스 이름";
+"field.serviceName.placeholder" = "UPYUN 서비스 이름";
+"field.bucket" = "Bucket / 컨테이너";
+"field.bucket.placeholder" = "Bucket / 컨테이너 이름";
+"field.operator" = "운영자";
+"field.operator.placeholder" = "운영자 이름";
+"field.operatorPassword" = "운영자 암호";
+"field.operatorPassword.placeholder" = "운영자 암호 입력";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "공개 URL 접두사";
+"field.username" = "사용자 이름";
+"field.username.placeholder" = "WebDAV 사용자 이름";
+"field.password" = "암호";
+"field.password.placeholder" = "WebDAV 암호 입력";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Secret Key 입력";
+"field.region" = "Region";
+"field.region.placeholder" = "예: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "기본 경로";
+"field.basePath.placeholder" = "예: uploads / blog";
+"field.pathStyle" = "경로 형식";
+
+"pathStyle.dateFolder" = "날짜별 폴더";
+"pathStyle.flat" = "단일 폴더";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 호환 스토리지";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Bucket, Access Key, Secret Key, 공개 URL 접두사 및 Endpoint를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.synologyC2" = "Synology C2의 S3 호환 키, Bucket, Endpoint 및 공개 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.jdCloud" = "JD Cloud의 Access Key, Secret Key, Bucket, Endpoint 및 공개 URL 접두사를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.baiduBOS" = "Baidu BOS의 S3 호환 키, Bucket, Endpoint 및 공개 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.tencentCOS" = "Bucket, SecretId, SecretKey, 리전 Endpoint 및 CDN 또는 사용자 지정 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.qiniu" = "Bucket, Access Key, Secret Key, 업로드 Endpoint 및 공개 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.upyun" = "서비스 이름, 운영자, 운영자 암호 및 공개 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.amazonS3" = "Bucket, Access Key, Secret Key, Region, Endpoint 및 공개 URL 접두사를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.googleCloudStorage" = "Google Cloud Storage S3 상호 운용 키, Bucket, Endpoint 및 공개 URL 접두사를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.cloudflareR2" = "Bucket, Access Key, Secret Key, Account ID Endpoint 및 공개 도메인을 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.backblazeB2" = "Bucket, Key ID, Application Key, 리전 Endpoint 및 공개 URL 접두사를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.genericS3Compatible" = "MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 등에 사용합니다. Bucket, 키, Endpoint, Region 및 공개 URL 접두사를 입력하세요.";
+"provider.help.webDAV" = "WebDAV Endpoint, 사용자 이름, 암호, 선택적 원격 디렉터리 및 공개 URL 접두사를 입력하세요. 이미지와 일반 파일을 지원합니다.";
+"provider.help.flickr" = "API Key, Shared Secret 및 Auth Token을 입력하세요. 이미지만 지원하며 Flickr 사진 페이지 링크를 반환합니다.";
+"provider.help.imgur" = "Imgur Client ID를 입력하세요. 이미지만 지원하며 Imgur 이미지 링크를 반환합니다.";
+
+"fileSupport.all" = "이미지와 일반 파일";
+"fileSupport.imagesOnly" = "이미지만";
+
+"validation.success" = "연결되었습니다!";
+"validation.failed" = "연결에 실패했습니다. 구성을 확인하세요.";
+"validation.error" = "확인 실패: %@";
+
+"status.uploadBusy" = "이미 업로드 중입니다";
+"status.configureFirst" = "먼저 이미지 호스트를 구성하세요";
+"status.incompleteConfig" = "현재 이미지 호스트 구성이 완전하지 않습니다";
+"status.uploadingTo" = "%@에 업로드 중";
+"status.uploadSuccess" = "업로드 완료: %@";
+"status.uploadFailed" = "업로드 실패: %@";
+"status.clipboardEmpty" = "클립보드에 업로드할 이미지가 없습니다";
+"status.providerImagesOnly" = "%@은(는) 현재 이미지만 지원합니다. 일반 파일을 지원하는 제공업체로 전환하세요.";
+"status.largeFileCancelled" = "대용량 파일 업로드를 취소했습니다";
+"status.uploadingFile" = "%@ 업로드 중";
+"status.launchAtLoginFailed" = "로그인 시 실행 업데이트 실패: %@";
+"status.linkCopied" = "링크 복사됨: %@";
+
+"largeFile.title" = "파일이 200 MB를 초과합니다";
+"largeFile.message" = "‘%@’의 크기는 %@입니다. 업로드에 시간이 걸리고 많은 대역폭을 사용할 수 있습니다. 계속할까요?";
+"largeFile.continue" = "업로드 계속";
+
+"notification.uploadComplete" = "‘%@’ 업로드가 완료되었습니다. 링크를 클립보드에 복사했습니다.";
+
+"launchAtLogin.requiresApproval" = "먼저 시스템 설정의 로그인 항목에서 Pic2Link를 허용하세요.";
+"launchAtLogin.notFound" = "이 앱 패키지는 시스템 로그인 항목을 등록할 수 없어 호환 모드를 사용합니다.";
+"launchAtLogin.updateFailed" = "로그인 시 실행을 업데이트할 수 없습니다.";
+"launchAtLogin.missingIdentifier" = "현재 앱을 식별할 수 없습니다.";
+"launchAtLogin.missingPath" = "현재 앱 경로를 식별할 수 없습니다.";
+"launchAtLogin.launchctlFailed" = "launchctl 실패(%d)";
+
+"error.unknownServer" = "알 수 없는 서버 오류";
+"error.webDAVDirectory" = "WebDAV 디렉터리 %@을(를) 만들 수 없습니다";
+"error.uploadFailed" = "업로드 실패: HTTP %d — %@";
+"error.invalidResponse" = "잘못된 서버 응답";
+"error.invalidConfig" = "구성이 잘못되었습니다. 이미지 호스트 설정을 확인하세요.";
+"error.unsupportedFileType" = "%@은(는) 현재 %@을(를) 지원합니다. 선택한 파일 형식을 지원하는 제공업체로 전환하세요.";
+"error.directoryUnsupported" = "폴더 업로드는 지원하지 않습니다. 파일 하나를 선택하세요.";
+"status.settingsSaveFailed" = "설정을 안전하게 저장할 수 없습니다: %@";
+"error.keychainUnexpectedData" = "키체인에서 잘못된 자격 증명 데이터를 반환했습니다.";
+"error.keychainStatus" = "키체인 오류(%d)";

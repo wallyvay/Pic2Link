@@ -1,0 +1,174 @@
+"language.name.en" = "Английский";
+"language.name.zh-Hans" = "Китайский, упрощённый";
+"language.name.zh-Hant" = "Китайский, традиционный";
+"language.name.ko" = "Корейский";
+"language.name.ja" = "Японский";
+"language.name.ru" = "Русский";
+"language.name.es" = "Испанский";
+"language.name.pt" = "Португальский";
+"language.name.th" = "Тайский";
+"language.name.hi" = "Хинди";
+"language.name.fr" = "Французский";
+"language.name.ar" = "Арабский";
+"language.name.de" = "Немецкий";
+
+"common.cancel" = "Отмена";
+"common.delete" = "Удалить";
+"common.save" = "Сохранить";
+"common.settings" = "Настройки";
+
+"statusItem.tooltip" = "Pic2Link — загрузка файлов и копирование ссылок";
+"menu.uploadClipboard" = "Загрузить изображение из буфера (%@)";
+"menu.uploadFile" = "Загрузить файл…";
+"menu.switchProfile" = "Сменить хостинг";
+"menu.settings" = "Настройки…";
+"menu.quit" = "Выйти из Pic2Link";
+"filePicker.title" = "Выберите файл для загрузки";
+"filePicker.message" = "Поддерживаются изображения и другие файлы. Для файлов больше 200 МБ потребуется подтверждение.";
+
+"clipboard.title" = "Готово к загрузке";
+"clipboard.progress" = "Ход загрузки";
+"clipboard.uploadPrompt" = "Нажмите для загрузки или используйте %@";
+"clipboard.empty" = "В буфере обмена нет изображения";
+
+"history.title" = "Загруженные файлы";
+"history.clear" = "Очистить";
+"history.empty" = "Загруженных файлов пока нет";
+"history.empty.help" = "Загруженные изображения и файлы появятся здесь";
+"history.more" = "Другие файлы";
+"history.copyLink" = "Копировать ссылку";
+
+"profile.configured" = "Настроено";
+"profile.notConfigured" = "Не настроено";
+"profile.none" = "Нет хостинга";
+"profile.addInSettings" = "Добавьте хостинг в настройках";
+
+"settings.language" = "Язык";
+"settings.language.picker" = "Язык приложения";
+"settings.language.help" = "Изменения применяются сразу. При следующих запусках выбранный язык будет важнее системного.";
+"settings.profileList" = "Хостинги";
+"settings.addProfile" = "Добавить хостинг";
+"settings.setCurrent" = "Сделать текущим";
+"settings.noSelection.title" = "Хостинг не выбран";
+"settings.noSelection.description" = "Выберите конфигурацию на боковой панели.";
+"settings.validating" = "Проверка…";
+"settings.validate" = "Проверить подключение";
+"settings.profileConfiguration" = "Настройка хостинга";
+"settings.shortcut" = "Сочетание для загрузки";
+"settings.key" = "Клавиша";
+"settings.currentShortcut" = "Текущее сочетание: %@";
+"settings.appBehavior" = "Поведение приложения";
+"settings.launchAtLogin" = "Запускать Pic2Link при входе";
+"settings.launchAtLogin.help" = "Применяется после сохранения. При необходимости разрешите Pic2Link в Системных настройках > Основные > Объекты входа.";
+
+"field.profileName" = "Название конфигурации";
+"field.profileName.placeholder" = "Например: Личный / CDN компании";
+"field.provider" = "Провайдер";
+"field.remoteDirectory" = "Удалённая папка";
+"field.remoteDirectory.placeholder" = "Необязательно: uploads / public / assets";
+"field.serviceName" = "Название сервиса";
+"field.serviceName.placeholder" = "Название сервиса UPYUN";
+"field.bucket" = "Bucket / контейнер";
+"field.bucket.placeholder" = "Название bucket / контейнера";
+"field.operator" = "Оператор";
+"field.operator.placeholder" = "Имя оператора";
+"field.operatorPassword" = "Пароль оператора";
+"field.operatorPassword.placeholder" = "Введите пароль оператора";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "Префикс публичного URL";
+"field.username" = "Имя пользователя";
+"field.username.placeholder" = "Пользователь WebDAV";
+"field.password" = "Пароль";
+"field.password.placeholder" = "Введите пароль WebDAV";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Введите Secret Key";
+"field.region" = "Регион";
+"field.region.placeholder" = "Например: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "Базовый путь";
+"field.basePath.placeholder" = "Например: uploads / blog";
+"field.pathStyle" = "Структура пути";
+
+"pathStyle.dateFolder" = "Папки по датам";
+"pathStyle.flat" = "Без папок";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3-совместимое хранилище";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Введите Bucket, Access Key, Secret Key, префикс публичного URL и Endpoint. Поддерживаются изображения и обычные файлы.";
+"provider.help.synologyC2" = "Используйте S3-совместимый ключ, Bucket, Endpoint и публичный домен Synology C2. Поддерживаются изображения и обычные файлы.";
+"provider.help.jdCloud" = "Введите Access Key, Secret Key, Bucket, Endpoint и публичный префикс JD Cloud. Поддерживаются изображения и обычные файлы.";
+"provider.help.baiduBOS" = "Введите S3-совместимый ключ, Bucket, Endpoint и публичный домен Baidu BOS. Поддерживаются изображения и обычные файлы.";
+"provider.help.tencentCOS" = "Введите Bucket, SecretId, SecretKey, региональный Endpoint и CDN или собственный домен. Поддерживаются изображения и обычные файлы.";
+"provider.help.qiniu" = "Введите Bucket, Access Key, Secret Key, Endpoint загрузки и публичный домен. Поддерживаются изображения и обычные файлы.";
+"provider.help.upyun" = "Введите название сервиса, оператора, пароль и публичный домен. Поддерживаются изображения и обычные файлы.";
+"provider.help.amazonS3" = "Введите Bucket, Access Key, Secret Key, регион, Endpoint и публичный префикс. Поддерживаются изображения и обычные файлы.";
+"provider.help.googleCloudStorage" = "Используйте ключи совместимости S3, Bucket, Endpoint и публичный префикс Google Cloud Storage. Поддерживаются изображения и обычные файлы.";
+"provider.help.cloudflareR2" = "Введите Bucket, Access Key, Secret Key, Endpoint Account ID и публичный домен. Поддерживаются изображения и обычные файлы.";
+"provider.help.backblazeB2" = "Введите Bucket, Key ID, Application Key, региональный Endpoint и публичный префикс. Поддерживаются изображения и обычные файлы.";
+"provider.help.genericS3Compatible" = "Для MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 и подобных сервисов. Введите Bucket, ключи, Endpoint, регион и публичный префикс.";
+"provider.help.webDAV" = "Введите Endpoint WebDAV, имя пользователя, пароль, необязательную удалённую папку и публичный префикс. Поддерживаются изображения и обычные файлы.";
+"provider.help.flickr" = "Введите API Key, Shared Secret и Auth Token. Только изображения; возвращается ссылка на страницу Flickr.";
+"provider.help.imgur" = "Введите Client ID Imgur. Только изображения; возвращается ссылка на изображение.";
+
+"fileSupport.all" = "изображения и обычные файлы";
+"fileSupport.imagesOnly" = "только изображения";
+
+"validation.success" = "Подключение успешно!";
+"validation.failed" = "Не удалось подключиться. Проверьте конфигурацию.";
+"validation.error" = "Ошибка проверки: %@";
+
+"status.uploadBusy" = "Загрузка уже выполняется";
+"status.configureFirst" = "Сначала настройте хостинг";
+"status.incompleteConfig" = "Текущая конфигурация хостинга неполна";
+"status.uploadingTo" = "Загрузка в %@";
+"status.uploadSuccess" = "Загрузка завершена: %@";
+"status.uploadFailed" = "Ошибка загрузки: %@";
+"status.clipboardEmpty" = "В буфере обмена нет подходящего изображения";
+"status.providerImagesOnly" = "%@ сейчас поддерживает только изображения. Выберите провайдера для обычных файлов.";
+"status.largeFileCancelled" = "Загрузка большого файла отменена";
+"status.uploadingFile" = "Загрузка %@";
+"status.launchAtLoginFailed" = "Не удалось обновить автозапуск: %@";
+"status.linkCopied" = "Ссылка скопирована: %@";
+
+"largeFile.title" = "Файл больше 200 МБ";
+"largeFile.message" = "Размер «%@» — %@. Загрузка может занять время и использовать много трафика. Продолжить?";
+"largeFile.continue" = "Продолжить загрузку";
+
+"notification.uploadComplete" = "Файл «%@» загружен. Ссылка скопирована в буфер обмена.";
+
+"launchAtLogin.requiresApproval" = "Сначала разрешите Pic2Link в объектах входа Системных настроек.";
+"launchAtLogin.notFound" = "Этот пакет не может зарегистрировать системный объект входа. Будет использован режим совместимости.";
+"launchAtLogin.updateFailed" = "Не удалось обновить автозапуск.";
+"launchAtLogin.missingIdentifier" = "Не удалось определить текущее приложение.";
+"launchAtLogin.missingPath" = "Не удалось определить путь приложения.";
+"launchAtLogin.launchctlFailed" = "Ошибка launchctl (%d)";
+
+"error.unknownServer" = "Неизвестная ошибка сервера";
+"error.webDAVDirectory" = "Не удалось создать папку WebDAV %@";
+"error.uploadFailed" = "Ошибка загрузки: HTTP %d — %@";
+"error.invalidResponse" = "Недопустимый ответ сервера";
+"error.invalidConfig" = "Недопустимая конфигурация. Проверьте настройки хостинга.";
+"error.unsupportedFileType" = "%@ сейчас поддерживает %@. Выберите провайдера для выбранного типа файла.";
+"error.directoryUnsupported" = "Загрузка папок не поддерживается. Выберите один файл.";
+"status.settingsSaveFailed" = "Не удалось безопасно сохранить настройки: %@";
+"error.keychainUnexpectedData" = "Связка ключей вернула неверные данные учётных записей.";
+"error.keychainStatus" = "Ошибка связки ключей (%d)";

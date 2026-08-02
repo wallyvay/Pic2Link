@@ -1,0 +1,174 @@
+"language.name.en" = "英語";
+"language.name.zh-Hans" = "簡体字中国語";
+"language.name.zh-Hant" = "繁体字中国語";
+"language.name.ko" = "韓国語";
+"language.name.ja" = "日本語";
+"language.name.ru" = "ロシア語";
+"language.name.es" = "スペイン語";
+"language.name.pt" = "ポルトガル語";
+"language.name.th" = "タイ語";
+"language.name.hi" = "ヒンディー語";
+"language.name.fr" = "フランス語";
+"language.name.ar" = "アラビア語";
+"language.name.de" = "ドイツ語";
+
+"common.cancel" = "キャンセル";
+"common.delete" = "削除";
+"common.save" = "保存";
+"common.settings" = "設定";
+
+"statusItem.tooltip" = "Pic2Link — ファイルをアップロードしてリンクをコピー";
+"menu.uploadClipboard" = "クリップボード画像をアップロード（%@）";
+"menu.uploadFile" = "ファイルをアップロード…";
+"menu.switchProfile" = "画像ホストを切り替え";
+"menu.settings" = "設定…";
+"menu.quit" = "Pic2Link を終了";
+"filePicker.title" = "アップロードするファイルを選択";
+"filePicker.message" = "画像やその他のファイル形式に対応しています。200 MB を超えるファイルはアップロード前に確認します。";
+
+"clipboard.title" = "アップロード待ち";
+"clipboard.progress" = "アップロードの進行状況";
+"clipboard.uploadPrompt" = "クリックしてアップロード、または %@ を押す";
+"clipboard.empty" = "クリップボードに画像がありません";
+
+"history.title" = "アップロード済みファイル";
+"history.clear" = "消去";
+"history.empty" = "アップロード済みファイルはありません";
+"history.empty.help" = "アップロードした画像やファイルがここに表示されます";
+"history.more" = "その他のファイル";
+"history.copyLink" = "リンクをコピー";
+
+"profile.configured" = "設定済み";
+"profile.notConfigured" = "未設定";
+"profile.none" = "画像ホストなし";
+"profile.addInSettings" = "設定で画像ホストを追加してください";
+
+"settings.language" = "言語";
+"settings.language.picker" = "アプリの言語";
+"settings.language.help" = "変更はすぐに反映されます。次回以降はシステム言語よりこの設定が優先されます。";
+"settings.profileList" = "画像ホスト";
+"settings.addProfile" = "画像ホストを追加";
+"settings.setCurrent" = "現在のホストに設定";
+"settings.noSelection.title" = "画像ホストが選択されていません";
+"settings.noSelection.description" = "サイドバーから画像ホスト設定を選択してください。";
+"settings.validating" = "確認中…";
+"settings.validate" = "接続を確認";
+"settings.profileConfiguration" = "画像ホスト設定";
+"settings.shortcut" = "アップロードショートカット";
+"settings.key" = "キー";
+"settings.currentShortcut" = "現在のショートカット：%@";
+"settings.appBehavior" = "アプリの動作";
+"settings.launchAtLogin" = "ログイン時に Pic2Link を起動";
+"settings.launchAtLogin.help" = "保存後に反映されます。許可が必要な場合は「システム設定 > 一般 > ログイン項目」で Pic2Link を許可してください。";
+
+"field.profileName" = "設定名";
+"field.profileName.placeholder" = "例：個人用 / 会社 CDN";
+"field.provider" = "プロバイダ";
+"field.remoteDirectory" = "リモートディレクトリ";
+"field.remoteDirectory.placeholder" = "任意：uploads / public / assets";
+"field.serviceName" = "サービス名";
+"field.serviceName.placeholder" = "UPYUN サービス名";
+"field.bucket" = "Bucket / コンテナ";
+"field.bucket.placeholder" = "Bucket / コンテナ名";
+"field.operator" = "オペレーター";
+"field.operator.placeholder" = "オペレーター名";
+"field.operatorPassword" = "オペレーターパスワード";
+"field.operatorPassword.placeholder" = "オペレーターパスワードを入力";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "公開 URL プレフィックス";
+"field.username" = "ユーザー名";
+"field.username.placeholder" = "WebDAV ユーザー名";
+"field.password" = "パスワード";
+"field.password.placeholder" = "WebDAV パスワードを入力";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Secret Key を入力";
+"field.region" = "Region";
+"field.region.placeholder" = "例：us-east-1 / ap-shanghai / auto";
+"field.basePath" = "ベースパス";
+"field.basePath.placeholder" = "例：uploads / blog";
+"field.pathStyle" = "パス形式";
+
+"pathStyle.dateFolder" = "日付別フォルダ";
+"pathStyle.flat" = "フラット";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 互換ストレージ";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Bucket、Access Key、Secret Key、公開 URL プレフィックス、Endpoint を入力します。画像と一般ファイルに対応します。";
+"provider.help.synologyC2" = "Synology C2 の S3 互換キー、Bucket、Endpoint、公開ドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.jdCloud" = "JD Cloud の Access Key、Secret Key、Bucket、Endpoint、公開 URL プレフィックスを入力します。画像と一般ファイルに対応します。";
+"provider.help.baiduBOS" = "Baidu BOS の S3 互換キー、Bucket、Endpoint、公開ドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.tencentCOS" = "Bucket、SecretId、SecretKey、地域 Endpoint、CDN またはカスタムドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.qiniu" = "Bucket、Access Key、Secret Key、アップロード先、公開ドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.upyun" = "サービス名、オペレーター、パスワード、公開ドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.amazonS3" = "Bucket、Access Key、Secret Key、Region、Endpoint、公開 URL プレフィックスを入力します。画像と一般ファイルに対応します。";
+"provider.help.googleCloudStorage" = "Google Cloud Storage の S3 相互運用キー、Bucket、Endpoint、公開 URL プレフィックスを入力します。画像と一般ファイルに対応します。";
+"provider.help.cloudflareR2" = "Bucket、Access Key、Secret Key、Account ID の Endpoint、公開ドメインを入力します。画像と一般ファイルに対応します。";
+"provider.help.backblazeB2" = "Bucket、Key ID、Application Key、地域 Endpoint、公開 URL プレフィックスを入力します。画像と一般ファイルに対応します。";
+"provider.help.genericS3Compatible" = "MinIO、Wasabi、DigitalOcean Spaces、IDrive E2 などに対応。Bucket、キー、Endpoint、Region、公開 URL プレフィックスを入力します。";
+"provider.help.webDAV" = "WebDAV Endpoint、ユーザー名、パスワード、任意のリモートディレクトリ、公開 URL プレフィックスを入力します。画像と一般ファイルに対応します。";
+"provider.help.flickr" = "API Key、Shared Secret、Auth Token を入力します。画像のみ対応し、Flickr の写真ページリンクを返します。";
+"provider.help.imgur" = "Imgur Client ID を入力します。画像のみ対応し、Imgur の画像リンクを返します。";
+
+"fileSupport.all" = "画像と一般ファイル";
+"fileSupport.imagesOnly" = "画像のみ";
+
+"validation.success" = "接続に成功しました！";
+"validation.failed" = "接続できませんでした。設定を確認してください。";
+"validation.error" = "確認に失敗しました：%@";
+
+"status.uploadBusy" = "アップロード中です。しばらくお待ちください";
+"status.configureFirst" = "先に画像ホストを設定してください";
+"status.incompleteConfig" = "現在の画像ホスト設定が不完全です";
+"status.uploadingTo" = "%@ にアップロード中";
+"status.uploadSuccess" = "アップロード完了：%@";
+"status.uploadFailed" = "アップロード失敗：%@";
+"status.clipboardEmpty" = "クリップボードにアップロードできる画像がありません";
+"status.providerImagesOnly" = "%@ は現在画像のみ対応しています。一般ファイル対応のプロバイダに切り替えてください。";
+"status.largeFileCancelled" = "大きなファイルのアップロードをキャンセルしました";
+"status.uploadingFile" = "%@ をアップロード中";
+"status.launchAtLoginFailed" = "ログイン時起動の更新に失敗しました：%@";
+"status.linkCopied" = "リンクをコピーしました：%@";
+
+"largeFile.title" = "ファイルが 200 MB を超えています";
+"largeFile.message" = "「%@」のサイズは %@ です。時間と通信量が多くかかる可能性があります。続けますか？";
+"largeFile.continue" = "アップロードを続ける";
+
+"notification.uploadComplete" = "「%@」のアップロードが完了しました。リンクをクリップボードにコピーしました。";
+
+"launchAtLogin.requiresApproval" = "先にシステム設定のログイン項目で Pic2Link を許可してください。";
+"launchAtLogin.notFound" = "このアプリパッケージはシステムのログイン項目に登録できないため、互換モードを使用します。";
+"launchAtLogin.updateFailed" = "ログイン時起動を更新できません。";
+"launchAtLogin.missingIdentifier" = "現在のアプリを識別できません。";
+"launchAtLogin.missingPath" = "現在のアプリのパスを識別できません。";
+"launchAtLogin.launchctlFailed" = "launchctl に失敗しました（%d）";
+
+"error.unknownServer" = "不明なサーバーエラー";
+"error.webDAVDirectory" = "WebDAV ディレクトリ %@ を作成できません";
+"error.uploadFailed" = "アップロード失敗：HTTP %d — %@";
+"error.invalidResponse" = "サーバーからの応答が無効です";
+"error.invalidConfig" = "設定が無効です。画像ホスト設定を確認してください。";
+"error.unsupportedFileType" = "%@ は現在 %@ に対応しています。選択したファイル形式に対応するプロバイダへ切り替えてください。";
+"error.directoryUnsupported" = "フォルダのアップロードには対応していません。単一のファイルを選択してください。";
+"status.settingsSaveFailed" = "設定を安全に保存できません：%@";
+"error.keychainUnexpectedData" = "キーチェーンから無効な認証情報が返されました。";
+"error.keychainStatus" = "キーチェーンエラー（%d）";

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 允许网络客户端连接（包含 DNS 解析） -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<!-- 允许出站网络连接 -->
+	<key>com.apple.security.network.outgoing</key>
+	<true/>
+	<!-- 允许访问任意服务器 -->
+	<key>com.apple.security.network.server</key>
+	<true/>
+</dict>
+</plist>

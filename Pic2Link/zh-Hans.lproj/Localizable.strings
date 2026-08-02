@@ -1,0 +1,174 @@
+"language.name.en" = "英语";
+"language.name.zh-Hans" = "简体中文";
+"language.name.zh-Hant" = "繁体中文";
+"language.name.ko" = "韩语";
+"language.name.ja" = "日语";
+"language.name.ru" = "俄语";
+"language.name.es" = "西班牙语";
+"language.name.pt" = "葡萄牙语";
+"language.name.th" = "泰语";
+"language.name.hi" = "印地语";
+"language.name.fr" = "法语";
+"language.name.ar" = "阿拉伯语";
+"language.name.de" = "德语";
+
+"common.cancel" = "取消";
+"common.delete" = "删除";
+"common.save" = "保存";
+"common.settings" = "设置";
+
+"statusItem.tooltip" = "Pic2Link — 上传文件并复制链接";
+"menu.uploadClipboard" = "上传剪贴板图片（%@）";
+"menu.uploadFile" = "上传文件…";
+"menu.switchProfile" = "切换图床";
+"menu.settings" = "设置…";
+"menu.quit" = "退出 Pic2Link";
+"filePicker.title" = "选择要上传的文件";
+"filePicker.message" = "支持图片和其他文件类型。超过 200 MB 的文件会在上传前再次确认。";
+
+"clipboard.title" = "待上传图片";
+"clipboard.progress" = "上传进度";
+"clipboard.uploadPrompt" = "点击上传，或按 %@";
+"clipboard.empty" = "剪贴板中暂无图片";
+
+"history.title" = "已上传文件";
+"history.clear" = "清空";
+"history.empty" = "暂无已上传文件";
+"history.empty.help" = "上传后的图片和文件都会显示在这里";
+"history.more" = "更多文件";
+"history.copyLink" = "复制链接";
+
+"profile.configured" = "已配置";
+"profile.notConfigured" = "未配置";
+"profile.none" = "暂无图床";
+"profile.addInSettings" = "请先在设置中添加图床";
+
+"settings.language" = "语言";
+"settings.language.picker" = "App 语言";
+"settings.language.help" = "切换后立即生效。以后启动时将优先使用你的选择，而不是系统语言。";
+"settings.profileList" = "图床列表";
+"settings.addProfile" = "新增图床";
+"settings.setCurrent" = "设为当前图床";
+"settings.noSelection.title" = "未选择图床";
+"settings.noSelection.description" = "请先在左侧选择一个图床配置。";
+"settings.validating" = "验证中…";
+"settings.validate" = "验证连接";
+"settings.profileConfiguration" = "图床配置";
+"settings.shortcut" = "上传快捷键";
+"settings.key" = "按键";
+"settings.currentShortcut" = "当前快捷键：%@";
+"settings.appBehavior" = "应用行为";
+"settings.launchAtLogin" = "登录时自动启动 Pic2Link";
+"settings.launchAtLogin.help" = "保存后生效。若系统要求授权，请到“系统设置 > 通用 > 登录项”中允许 Pic2Link。";
+
+"field.profileName" = "配置名称";
+"field.profileName.placeholder" = "例如：个人图床 / 公司 CDN";
+"field.provider" = "平台";
+"field.remoteDirectory" = "远程目录";
+"field.remoteDirectory.placeholder" = "可选：uploads / public / assets";
+"field.serviceName" = "服务名";
+"field.serviceName.placeholder" = "又拍云服务名";
+"field.bucket" = "Bucket / 容器";
+"field.bucket.placeholder" = "Bucket / 容器名称";
+"field.operator" = "操作员";
+"field.operator.placeholder" = "操作员名称";
+"field.operatorPassword" = "操作员密码";
+"field.operatorPassword.placeholder" = "请输入操作员密码";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "外链前缀";
+"field.username" = "用户名";
+"field.username.placeholder" = "WebDAV 用户名";
+"field.password" = "密码";
+"field.password.placeholder" = "请输入 WebDAV 密码";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "请输入 Secret Key";
+"field.region" = "Region";
+"field.region.placeholder" = "例如：us-east-1 / ap-shanghai / auto";
+"field.basePath" = "基础路径";
+"field.basePath.placeholder" = "例如：uploads / blog";
+"field.pathStyle" = "路径样式";
+
+"pathStyle.dateFolder" = "按日期文件夹";
+"pathStyle.flat" = "平铺模式";
+
+"provider.alibabaOSS" = "阿里云 OSS";
+"provider.synologyC2" = "Synology C2 对象存储";
+"provider.jdCloud" = "京东云对象存储";
+"provider.baiduBOS" = "百度云 BOS";
+"provider.tencentCOS" = "腾讯云 COS";
+"provider.qiniu" = "七牛云";
+"provider.upyun" = "又拍云";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 兼容存储";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "填写 Bucket、Access Key、Secret Key、外链前缀和 Endpoint。支持图片和通用文件上传。";
+"provider.help.synologyC2" = "使用 Synology C2 对象存储的 S3 兼容密钥、Bucket、Endpoint 和公开域名。支持图片和通用文件上传。";
+"provider.help.jdCloud" = "填写京东云对象存储的 Access Key、Secret Key、Bucket、Endpoint 和公开访问前缀。支持图片和通用文件上传。";
+"provider.help.baiduBOS" = "填写百度云 BOS 的 S3 兼容密钥、Bucket、Endpoint 和公开域名。支持图片和通用文件上传。";
+"provider.help.tencentCOS" = "填写 Bucket、SecretId、SecretKey、地域 Endpoint 和 CDN 或自定义域名。支持图片和通用文件上传。";
+"provider.help.qiniu" = "填写 Bucket、Access Key、Secret Key、上传域名和外链域名。支持图片和通用文件上传。";
+"provider.help.upyun" = "填写服务名、操作员、操作员密码和外链域名。支持图片和通用文件上传。";
+"provider.help.amazonS3" = "填写 Bucket、Access Key、Secret Key、Region、Endpoint 和公开访问前缀。支持图片和通用文件上传。";
+"provider.help.googleCloudStorage" = "使用 Google Cloud Storage 的 S3 互操作密钥、Bucket、Endpoint 和公开访问前缀。支持图片和通用文件上传。";
+"provider.help.cloudflareR2" = "填写 Bucket、Access Key、Secret Key、Account ID 对应的 Endpoint 和公开域名。支持图片和通用文件上传。";
+"provider.help.backblazeB2" = "填写 Bucket、Key ID、Application Key、地域 Endpoint 和公开访问前缀。支持图片和通用文件上传。";
+"provider.help.genericS3Compatible" = "适用于 MinIO、Wasabi、DigitalOcean Spaces、IDrive E2 等 S3 兼容对象存储。填写 Bucket、密钥、Endpoint、Region 和公开访问前缀。";
+"provider.help.webDAV" = "填写 WebDAV Endpoint、用户名、密码、可选远程目录和公开访问前缀。支持图片和通用文件上传。";
+"provider.help.flickr" = "填写 API Key、Shared Secret 和 Auth Token。仅支持图片上传，返回 Flickr 照片页面链接。";
+"provider.help.imgur" = "填写 Imgur Client ID。仅支持图片上传，返回 Imgur 图片链接。";
+
+"fileSupport.all" = "图片和通用文件";
+"fileSupport.imagesOnly" = "仅图片";
+
+"validation.success" = "连接成功！";
+"validation.failed" = "连接失败，请检查配置。";
+"validation.error" = "验证失败：%@";
+
+"status.uploadBusy" = "正在上传中，请稍候";
+"status.configureFirst" = "请先配置图床";
+"status.incompleteConfig" = "当前图床未配置完整";
+"status.uploadingTo" = "正在上传到 %@";
+"status.uploadSuccess" = "上传成功：%@";
+"status.uploadFailed" = "上传失败：%@";
+"status.clipboardEmpty" = "剪贴板中暂无可上传图片";
+"status.providerImagesOnly" = "%@ 当前仅支持图片上传，请切换到支持文件上传的平台后重试。";
+"status.largeFileCancelled" = "已取消上传大文件";
+"status.uploadingFile" = "正在上传 %@";
+"status.launchAtLoginFailed" = "开机启动设置失败：%@";
+"status.linkCopied" = "已复制链接：%@";
+
+"largeFile.title" = "文件超过 200 MB";
+"largeFile.message" = "“%@”大小为 %@，上传可能耗时较长并消耗较多流量，是否继续？";
+"largeFile.continue" = "继续上传";
+
+"notification.uploadComplete" = "“%@”上传完成！链接已复制到剪贴板。";
+
+"launchAtLogin.requiresApproval" = "请先在系统设置中允许 Pic2Link 作为登录项启动。";
+"launchAtLogin.notFound" = "当前 App 包不支持系统登录项注册，将改用兼容模式。";
+"launchAtLogin.updateFailed" = "无法更新开机启动状态。";
+"launchAtLogin.missingIdentifier" = "无法识别当前 App。";
+"launchAtLogin.missingPath" = "无法识别当前 App 路径。";
+"launchAtLogin.launchctlFailed" = "launchctl 执行失败（%d）";
+
+"error.unknownServer" = "未知服务器错误";
+"error.webDAVDirectory" = "无法创建 WebDAV 目录 %@";
+"error.uploadFailed" = "上传失败：HTTP %d — %@";
+"error.invalidResponse" = "无效的服务器响应";
+"error.invalidConfig" = "配置无效，请检查图床设置。";
+"error.unsupportedFileType" = "%@ 当前仅支持%@，请切换到支持所选文件类型的平台后重试。";
+"error.directoryUnsupported" = "暂不支持上传文件夹，请选择单个文件。";
+"status.settingsSaveFailed" = "无法安全保存设置：%@";
+"error.keychainUnexpectedData" = "钥匙串返回了无效的凭据数据。";
+"error.keychainStatus" = "钥匙串错误（%d）";

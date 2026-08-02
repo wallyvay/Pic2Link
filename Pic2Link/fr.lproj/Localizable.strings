@@ -1,0 +1,174 @@
+"language.name.en" = "Anglais";
+"language.name.zh-Hans" = "Chinois simplifié";
+"language.name.zh-Hant" = "Chinois traditionnel";
+"language.name.ko" = "Coréen";
+"language.name.ja" = "Japonais";
+"language.name.ru" = "Russe";
+"language.name.es" = "Espagnol";
+"language.name.pt" = "Portugais";
+"language.name.th" = "Thaï";
+"language.name.hi" = "Hindi";
+"language.name.fr" = "Français";
+"language.name.ar" = "Arabe";
+"language.name.de" = "Allemand";
+
+"common.cancel" = "Annuler";
+"common.delete" = "Supprimer";
+"common.save" = "Enregistrer";
+"common.settings" = "Réglages";
+
+"statusItem.tooltip" = "Pic2Link — Importez des fichiers et copiez leurs liens";
+"menu.uploadClipboard" = "Importer l’image du presse-papiers (%@)";
+"menu.uploadFile" = "Importer un fichier…";
+"menu.switchProfile" = "Changer d’hébergeur";
+"menu.settings" = "Réglages…";
+"menu.quit" = "Quitter Pic2Link";
+"filePicker.title" = "Choisir un fichier à importer";
+"filePicker.message" = "Les images et autres fichiers sont acceptés. Une confirmation est demandée au-delà de 200 Mo.";
+
+"clipboard.title" = "Prêt à importer";
+"clipboard.progress" = "Progression de l’importation";
+"clipboard.uploadPrompt" = "Cliquez pour importer ou appuyez sur %@";
+"clipboard.empty" = "Aucune image dans le presse-papiers";
+
+"history.title" = "Fichiers importés";
+"history.clear" = "Effacer";
+"history.empty" = "Aucun fichier importé";
+"history.empty.help" = "Les images et fichiers importés apparaîtront ici";
+"history.more" = "Plus de fichiers";
+"history.copyLink" = "Copier le lien";
+
+"profile.configured" = "Configuré";
+"profile.notConfigured" = "Non configuré";
+"profile.none" = "Aucun hébergeur";
+"profile.addInSettings" = "Ajoutez un hébergeur dans Réglages";
+
+"settings.language" = "Langue";
+"settings.language.picker" = "Langue de l’app";
+"settings.language.help" = "Le changement est immédiat. Votre choix remplacera la langue du système lors des prochains lancements.";
+"settings.profileList" = "Hébergeurs";
+"settings.addProfile" = "Ajouter un hébergeur";
+"settings.setCurrent" = "Définir comme actuel";
+"settings.noSelection.title" = "Aucun hébergeur sélectionné";
+"settings.noSelection.description" = "Sélectionnez une configuration dans la barre latérale.";
+"settings.validating" = "Validation…";
+"settings.validate" = "Valider la connexion";
+"settings.profileConfiguration" = "Configuration de l’hébergeur";
+"settings.shortcut" = "Raccourci d’importation";
+"settings.key" = "Touche";
+"settings.currentShortcut" = "Raccourci actuel : %@";
+"settings.appBehavior" = "Comportement de l’app";
+"settings.launchAtLogin" = "Ouvrir Pic2Link à la connexion";
+"settings.launchAtLogin.help" = "Actif après l’enregistrement. Si nécessaire, autorisez Pic2Link dans Réglages Système > Général > Ouverture.";
+
+"field.profileName" = "Nom de la configuration";
+"field.profileName.placeholder" = "Par exemple : Personnel / CDN d’entreprise";
+"field.provider" = "Fournisseur";
+"field.remoteDirectory" = "Dossier distant";
+"field.remoteDirectory.placeholder" = "Facultatif : uploads / public / assets";
+"field.serviceName" = "Nom du service";
+"field.serviceName.placeholder" = "Nom du service UPYUN";
+"field.bucket" = "Bucket / conteneur";
+"field.bucket.placeholder" = "Nom du bucket / conteneur";
+"field.operator" = "Opérateur";
+"field.operator.placeholder" = "Nom de l’opérateur";
+"field.operatorPassword" = "Mot de passe de l’opérateur";
+"field.operatorPassword.placeholder" = "Saisissez le mot de passe de l’opérateur";
+"field.apiEndpoint" = "Endpoint d’API";
+"field.publicURL" = "Préfixe d’URL publique";
+"field.username" = "Nom d’utilisateur";
+"field.username.placeholder" = "Nom d’utilisateur WebDAV";
+"field.password" = "Mot de passe";
+"field.password.placeholder" = "Saisissez le mot de passe WebDAV";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "Clé d’API";
+"field.sharedSecret" = "Secret partagé";
+"field.authToken" = "Jeton d’authentification";
+"field.clientID" = "ID client";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Saisissez la Secret Key";
+"field.region" = "Région";
+"field.region.placeholder" = "Par exemple : us-east-1 / ap-shanghai / auto";
+"field.basePath" = "Chemin de base";
+"field.basePath.placeholder" = "Par exemple : uploads / blog";
+"field.pathStyle" = "Style du chemin";
+
+"pathStyle.dateFolder" = "Dossiers par date";
+"pathStyle.flat" = "À plat";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "Compatible S3";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Saisissez le Bucket, l’Access Key, la Secret Key, le préfixe public et l’Endpoint. Images et fichiers généraux acceptés.";
+"provider.help.synologyC2" = "Utilisez la clé compatible S3, le Bucket, l’Endpoint et le domaine public de Synology C2. Images et fichiers généraux acceptés.";
+"provider.help.jdCloud" = "Saisissez l’Access Key, la Secret Key, le Bucket, l’Endpoint et le préfixe public de JD Cloud. Images et fichiers généraux acceptés.";
+"provider.help.baiduBOS" = "Saisissez la clé compatible S3, le Bucket, l’Endpoint et le domaine public de Baidu BOS. Images et fichiers généraux acceptés.";
+"provider.help.tencentCOS" = "Saisissez le Bucket, SecretId, SecretKey, l’Endpoint régional et le domaine CDN ou personnalisé. Images et fichiers généraux acceptés.";
+"provider.help.qiniu" = "Saisissez le Bucket, l’Access Key, la Secret Key, l’Endpoint d’importation et le domaine public. Images et fichiers généraux acceptés.";
+"provider.help.upyun" = "Saisissez le nom du service, l’opérateur, son mot de passe et le domaine public. Images et fichiers généraux acceptés.";
+"provider.help.amazonS3" = "Saisissez le Bucket, l’Access Key, la Secret Key, la région, l’Endpoint et le préfixe public. Images et fichiers généraux acceptés.";
+"provider.help.googleCloudStorage" = "Utilisez les clés d’interopérabilité S3, le Bucket, l’Endpoint et le préfixe public de Google Cloud Storage. Images et fichiers généraux acceptés.";
+"provider.help.cloudflareR2" = "Saisissez le Bucket, l’Access Key, la Secret Key, l’Endpoint de l’Account ID et le domaine public. Images et fichiers généraux acceptés.";
+"provider.help.backblazeB2" = "Saisissez le Bucket, le Key ID, l’Application Key, l’Endpoint régional et le préfixe public. Images et fichiers généraux acceptés.";
+"provider.help.genericS3Compatible" = "Pour MinIO, Wasabi, DigitalOcean Spaces, IDrive E2, etc. Saisissez le Bucket, les clés, l’Endpoint, la région et le préfixe public.";
+"provider.help.webDAV" = "Saisissez l’Endpoint WebDAV, le nom d’utilisateur, le mot de passe, le dossier distant facultatif et le préfixe public. Images et fichiers généraux acceptés.";
+"provider.help.flickr" = "Saisissez l’API Key, le Shared Secret et l’Auth Token. Images uniquement ; renvoie le lien de la page Flickr.";
+"provider.help.imgur" = "Saisissez le Client ID Imgur. Images uniquement ; renvoie le lien de l’image.";
+
+"fileSupport.all" = "les images et les fichiers généraux";
+"fileSupport.imagesOnly" = "les images uniquement";
+
+"validation.success" = "Connexion réussie !";
+"validation.failed" = "Échec de la connexion. Vérifiez la configuration.";
+"validation.error" = "Échec de la validation : %@";
+
+"status.uploadBusy" = "Une importation est déjà en cours";
+"status.configureFirst" = "Configurez d’abord un hébergeur";
+"status.incompleteConfig" = "La configuration actuelle est incomplète";
+"status.uploadingTo" = "Importation vers %@";
+"status.uploadSuccess" = "Importation terminée : %@";
+"status.uploadFailed" = "Échec de l’importation : %@";
+"status.clipboardEmpty" = "Aucune image importable dans le presse-papiers";
+"status.providerImagesOnly" = "%@ n’accepte actuellement que les images. Choisissez un fournisseur acceptant les fichiers généraux.";
+"status.largeFileCancelled" = "Importation du fichier volumineux annulée";
+"status.uploadingFile" = "Importation de %@";
+"status.launchAtLoginFailed" = "Échec de la mise à jour de l’ouverture automatique : %@";
+"status.linkCopied" = "Lien copié : %@";
+
+"largeFile.title" = "Le fichier dépasse 200 Mo";
+"largeFile.message" = "« %@ » fait %@. L’importation peut prendre du temps et consommer beaucoup de bande passante. Continuer ?";
+"largeFile.continue" = "Continuer l’importation";
+
+"notification.uploadComplete" = "« %@ » a été importé. Le lien a été copié dans le presse-papiers.";
+
+"launchAtLogin.requiresApproval" = "Autorisez d’abord Pic2Link dans les éléments d’ouverture des Réglages Système.";
+"launchAtLogin.notFound" = "Ce paquet ne peut pas enregistrer d’élément d’ouverture système. Le mode de compatibilité sera utilisé.";
+"launchAtLogin.updateFailed" = "Impossible de modifier l’ouverture automatique.";
+"launchAtLogin.missingIdentifier" = "Impossible d’identifier l’app actuelle.";
+"launchAtLogin.missingPath" = "Impossible d’identifier le chemin de l’app.";
+"launchAtLogin.launchctlFailed" = "Échec de launchctl (%d)";
+
+"error.unknownServer" = "Erreur inconnue du serveur";
+"error.webDAVDirectory" = "Impossible de créer le dossier WebDAV %@";
+"error.uploadFailed" = "Échec de l’importation : HTTP %d — %@";
+"error.invalidResponse" = "Réponse du serveur non valide";
+"error.invalidConfig" = "Configuration non valide. Vérifiez les réglages de l’hébergeur.";
+"error.unsupportedFileType" = "%@ accepte actuellement %@. Choisissez un fournisseur compatible avec le fichier sélectionné.";
+"error.directoryUnsupported" = "L’importation de dossiers n’est pas prise en charge. Sélectionnez un seul fichier.";
+"status.settingsSaveFailed" = "Impossible d’enregistrer les réglages de façon sécurisée : %@";
+"error.keychainUnexpectedData" = "Le trousseau a renvoyé des identifiants non valides.";
+"error.keychainStatus" = "Erreur du trousseau (%d)";

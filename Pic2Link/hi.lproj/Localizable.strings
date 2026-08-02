@@ -1,0 +1,174 @@
+"language.name.en" = "अंग्रेज़ी";
+"language.name.zh-Hans" = "सरलीकृत चीनी";
+"language.name.zh-Hant" = "पारंपरिक चीनी";
+"language.name.ko" = "कोरियाई";
+"language.name.ja" = "जापानी";
+"language.name.ru" = "रूसी";
+"language.name.es" = "स्पेनी";
+"language.name.pt" = "पुर्तगाली";
+"language.name.th" = "थाई";
+"language.name.hi" = "हिन्दी";
+"language.name.fr" = "फ़्रेंच";
+"language.name.ar" = "अरबी";
+"language.name.de" = "जर्मन";
+
+"common.cancel" = "रद्द करें";
+"common.delete" = "हटाएँ";
+"common.save" = "सहेजें";
+"common.settings" = "सेटिंग्स";
+
+"statusItem.tooltip" = "Pic2Link — फ़ाइलें अपलोड करें और लिंक कॉपी करें";
+"menu.uploadClipboard" = "क्लिपबोर्ड चित्र अपलोड करें (%@)";
+"menu.uploadFile" = "फ़ाइल अपलोड करें…";
+"menu.switchProfile" = "इमेज होस्ट बदलें";
+"menu.settings" = "सेटिंग्स…";
+"menu.quit" = "Pic2Link बंद करें";
+"filePicker.title" = "अपलोड करने के लिए फ़ाइल चुनें";
+"filePicker.message" = "चित्र और अन्य फ़ाइल प्रकार समर्थित हैं। 200 MB से बड़ी फ़ाइल के लिए पुष्टि आवश्यक है।";
+
+"clipboard.title" = "अपलोड के लिए तैयार";
+"clipboard.progress" = "अपलोड प्रगति";
+"clipboard.uploadPrompt" = "अपलोड करने के लिए क्लिक करें या %@ दबाएँ";
+"clipboard.empty" = "क्लिपबोर्ड में कोई चित्र नहीं है";
+
+"history.title" = "अपलोड की गई फ़ाइलें";
+"history.clear" = "साफ़ करें";
+"history.empty" = "अभी कोई फ़ाइल अपलोड नहीं हुई";
+"history.empty.help" = "अपलोड किए गए चित्र और फ़ाइलें यहाँ दिखाई देंगी";
+"history.more" = "और फ़ाइलें";
+"history.copyLink" = "लिंक कॉपी करें";
+
+"profile.configured" = "कॉन्फ़िगर किया गया";
+"profile.notConfigured" = "कॉन्फ़िगर नहीं किया गया";
+"profile.none" = "कोई इमेज होस्ट नहीं";
+"profile.addInSettings" = "सेटिंग्स में इमेज होस्ट जोड़ें";
+
+"settings.language" = "भाषा";
+"settings.language.picker" = "ऐप की भाषा";
+"settings.language.help" = "बदलाव तुरंत लागू होता है। आगे ऐप खोलने पर आपकी चुनी भाषा सिस्टम भाषा पर प्राथमिकता पाएगी।";
+"settings.profileList" = "इमेज होस्ट";
+"settings.addProfile" = "इमेज होस्ट जोड़ें";
+"settings.setCurrent" = "वर्तमान बनाएँ";
+"settings.noSelection.title" = "कोई इमेज होस्ट नहीं चुना";
+"settings.noSelection.description" = "साइडबार से इमेज होस्ट कॉन्फ़िगरेशन चुनें।";
+"settings.validating" = "जाँच जारी…";
+"settings.validate" = "कनेक्शन जाँचें";
+"settings.profileConfiguration" = "इमेज होस्ट कॉन्फ़िगरेशन";
+"settings.shortcut" = "अपलोड शॉर्टकट";
+"settings.key" = "कुंजी";
+"settings.currentShortcut" = "वर्तमान शॉर्टकट: %@";
+"settings.appBehavior" = "ऐप व्यवहार";
+"settings.launchAtLogin" = "लॉगिन पर Pic2Link खोलें";
+"settings.launchAtLogin.help" = "सहेजने के बाद लागू होगा। आवश्यकता होने पर सिस्टम सेटिंग्स > सामान्य > लॉगिन आइटम में Pic2Link को अनुमति दें।";
+
+"field.profileName" = "कॉन्फ़िगरेशन का नाम";
+"field.profileName.placeholder" = "उदाहरण: निजी / कंपनी CDN";
+"field.provider" = "प्रदाता";
+"field.remoteDirectory" = "रिमोट डायरेक्टरी";
+"field.remoteDirectory.placeholder" = "वैकल्पिक: uploads / public / assets";
+"field.serviceName" = "सेवा का नाम";
+"field.serviceName.placeholder" = "UPYUN सेवा का नाम";
+"field.bucket" = "Bucket / कंटेनर";
+"field.bucket.placeholder" = "Bucket / कंटेनर का नाम";
+"field.operator" = "ऑपरेटर";
+"field.operator.placeholder" = "ऑपरेटर का नाम";
+"field.operatorPassword" = "ऑपरेटर पासवर्ड";
+"field.operatorPassword.placeholder" = "ऑपरेटर पासवर्ड दर्ज करें";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "सार्वजनिक URL प्रीफ़िक्स";
+"field.username" = "उपयोगकर्ता नाम";
+"field.username.placeholder" = "WebDAV उपयोगकर्ता नाम";
+"field.password" = "पासवर्ड";
+"field.password.placeholder" = "WebDAV पासवर्ड दर्ज करें";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Secret Key दर्ज करें";
+"field.region" = "Region";
+"field.region.placeholder" = "उदाहरण: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "मूल पथ";
+"field.basePath.placeholder" = "उदाहरण: uploads / blog";
+"field.pathStyle" = "पथ शैली";
+
+"pathStyle.dateFolder" = "तारीख़ के अनुसार फ़ोल्डर";
+"pathStyle.flat" = "समतल";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 संगत स्टोरेज";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Bucket, Access Key, Secret Key, सार्वजनिक URL प्रीफ़िक्स और Endpoint दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.synologyC2" = "Synology C2 की S3-संगत कुंजी, Bucket, Endpoint और सार्वजनिक डोमेन इस्तेमाल करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.jdCloud" = "JD Cloud का Access Key, Secret Key, Bucket, Endpoint और सार्वजनिक प्रीफ़िक्स दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.baiduBOS" = "Baidu BOS की S3-संगत कुंजी, Bucket, Endpoint और सार्वजनिक डोमेन दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.tencentCOS" = "Bucket, SecretId, SecretKey, क्षेत्रीय Endpoint और CDN या कस्टम डोमेन दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.qiniu" = "Bucket, Access Key, Secret Key, अपलोड Endpoint और सार्वजनिक डोमेन दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.upyun" = "सेवा का नाम, ऑपरेटर, पासवर्ड और सार्वजनिक डोमेन दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.amazonS3" = "Bucket, Access Key, Secret Key, Region, Endpoint और सार्वजनिक प्रीफ़िक्स दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.googleCloudStorage" = "Google Cloud Storage की S3 इंटरऑपरेबिलिटी कुंजियाँ, Bucket, Endpoint और सार्वजनिक प्रीफ़िक्स इस्तेमाल करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.cloudflareR2" = "Bucket, Access Key, Secret Key, Account ID Endpoint और सार्वजनिक डोमेन दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.backblazeB2" = "Bucket, Key ID, Application Key, क्षेत्रीय Endpoint और सार्वजनिक प्रीफ़िक्स दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.genericS3Compatible" = "MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 जैसी सेवाओं के लिए। Bucket, कुंजियाँ, Endpoint, Region और सार्वजनिक प्रीफ़िक्स दर्ज करें।";
+"provider.help.webDAV" = "WebDAV Endpoint, उपयोगकर्ता नाम, पासवर्ड, वैकल्पिक रिमोट डायरेक्टरी और सार्वजनिक प्रीफ़िक्स दर्ज करें। चित्र और सामान्य फ़ाइलें समर्थित हैं।";
+"provider.help.flickr" = "API Key, Shared Secret और Auth Token दर्ज करें। केवल चित्र; Flickr फ़ोटो पृष्ठ का लिंक मिलता है।";
+"provider.help.imgur" = "Imgur Client ID दर्ज करें। केवल चित्र; Imgur चित्र लिंक मिलता है।";
+
+"fileSupport.all" = "चित्र और सामान्य फ़ाइलें";
+"fileSupport.imagesOnly" = "केवल चित्र";
+
+"validation.success" = "कनेक्शन सफल!";
+"validation.failed" = "कनेक्शन विफल। कॉन्फ़िगरेशन जाँचें।";
+"validation.error" = "जाँच विफल: %@";
+
+"status.uploadBusy" = "एक अपलोड पहले से चल रहा है";
+"status.configureFirst" = "पहले इमेज होस्ट कॉन्फ़िगर करें";
+"status.incompleteConfig" = "वर्तमान कॉन्फ़िगरेशन अधूरा है";
+"status.uploadingTo" = "%@ पर अपलोड हो रहा है";
+"status.uploadSuccess" = "अपलोड पूरा: %@";
+"status.uploadFailed" = "अपलोड विफल: %@";
+"status.clipboardEmpty" = "क्लिपबोर्ड में अपलोड करने योग्य चित्र नहीं है";
+"status.providerImagesOnly" = "%@ अभी केवल चित्र समर्थित करता है। सामान्य फ़ाइलों वाला प्रदाता चुनें।";
+"status.largeFileCancelled" = "बड़ी फ़ाइल का अपलोड रद्द हुआ";
+"status.uploadingFile" = "%@ अपलोड हो रहा है";
+"status.launchAtLoginFailed" = "लॉगिन पर खोलने की सेटिंग अपडेट नहीं हुई: %@";
+"status.linkCopied" = "लिंक कॉपी हुआ: %@";
+
+"largeFile.title" = "फ़ाइल 200 MB से बड़ी है";
+"largeFile.message" = "“%@” का आकार %@ है। अपलोड में समय और अधिक बैंडविड्थ लग सकती है। जारी रखें?";
+"largeFile.continue" = "अपलोड जारी रखें";
+
+"notification.uploadComplete" = "“%@” अपलोड हो गई। लिंक क्लिपबोर्ड पर कॉपी कर दिया गया है।";
+
+"launchAtLogin.requiresApproval" = "पहले सिस्टम सेटिंग्स के लॉगिन आइटम में Pic2Link को अनुमति दें।";
+"launchAtLogin.notFound" = "यह ऐप पैकेज सिस्टम लॉगिन आइटम पंजीकृत नहीं कर सकता। संगतता मोड इस्तेमाल होगा।";
+"launchAtLogin.updateFailed" = "लॉगिन पर खोलने की सेटिंग अपडेट नहीं हो सकी।";
+"launchAtLogin.missingIdentifier" = "वर्तमान ऐप की पहचान नहीं हो सकी।";
+"launchAtLogin.missingPath" = "वर्तमान ऐप का पथ नहीं मिल सका।";
+"launchAtLogin.launchctlFailed" = "launchctl विफल (%d)";
+
+"error.unknownServer" = "अज्ञात सर्वर त्रुटि";
+"error.webDAVDirectory" = "WebDAV डायरेक्टरी %@ नहीं बन सकी";
+"error.uploadFailed" = "अपलोड विफल: HTTP %d — %@";
+"error.invalidResponse" = "सर्वर की अमान्य प्रतिक्रिया";
+"error.invalidConfig" = "अमान्य कॉन्फ़िगरेशन। इमेज होस्ट सेटिंग्स जाँचें।";
+"error.unsupportedFileType" = "%@ अभी %@ समर्थित करता है। चुनी फ़ाइल के अनुकूल प्रदाता चुनें।";
+"error.directoryUnsupported" = "फ़ोल्डर अपलोड समर्थित नहीं है। एक फ़ाइल चुनें।";
+"status.settingsSaveFailed" = "सेटिंग्स सुरक्षित रूप से सेव नहीं हो सकीं: %@";
+"error.keychainUnexpectedData" = "कीचेन ने अमान्य क्रेडेंशियल डेटा लौटाया।";
+"error.keychainStatus" = "कीचेन त्रुटि (%d)";

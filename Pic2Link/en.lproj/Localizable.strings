@@ -1,0 +1,174 @@
+"language.name.en" = "English";
+"language.name.zh-Hans" = "Simplified Chinese";
+"language.name.zh-Hant" = "Traditional Chinese";
+"language.name.ko" = "Korean";
+"language.name.ja" = "Japanese";
+"language.name.ru" = "Russian";
+"language.name.es" = "Spanish";
+"language.name.pt" = "Portuguese";
+"language.name.th" = "Thai";
+"language.name.hi" = "Hindi";
+"language.name.fr" = "French";
+"language.name.ar" = "Arabic";
+"language.name.de" = "German";
+
+"common.cancel" = "Cancel";
+"common.delete" = "Delete";
+"common.save" = "Save";
+"common.settings" = "Settings";
+
+"statusItem.tooltip" = "Pic2Link — Upload files and copy links";
+"menu.uploadClipboard" = "Upload Clipboard Image (%@)";
+"menu.uploadFile" = "Upload File…";
+"menu.switchProfile" = "Switch Image Host";
+"menu.settings" = "Settings…";
+"menu.quit" = "Quit Pic2Link";
+"filePicker.title" = "Choose a File to Upload";
+"filePicker.message" = "Images and other file types are supported. Files over 200 MB require confirmation before upload.";
+
+"clipboard.title" = "Ready to Upload";
+"clipboard.progress" = "Upload progress";
+"clipboard.uploadPrompt" = "Click to upload, or press %@";
+"clipboard.empty" = "No image on the clipboard";
+
+"history.title" = "Uploaded Files";
+"history.clear" = "Clear";
+"history.empty" = "No uploaded files yet";
+"history.empty.help" = "Uploaded images and files will appear here";
+"history.more" = "More Files";
+"history.copyLink" = "Copy Link";
+
+"profile.configured" = "Configured";
+"profile.notConfigured" = "Not Configured";
+"profile.none" = "No Image Host";
+"profile.addInSettings" = "Add an image host in Settings";
+
+"settings.language" = "Language";
+"settings.language.picker" = "App Language";
+"settings.language.help" = "Changes take effect immediately. Your choice overrides the system language on future launches.";
+"settings.profileList" = "Image Hosts";
+"settings.addProfile" = "Add Image Host";
+"settings.setCurrent" = "Set as Current";
+"settings.noSelection.title" = "No Image Host Selected";
+"settings.noSelection.description" = "Select an image host configuration from the sidebar.";
+"settings.validating" = "Validating…";
+"settings.validate" = "Validate Connection";
+"settings.profileConfiguration" = "Image Host Configuration";
+"settings.shortcut" = "Upload Shortcut";
+"settings.key" = "Key";
+"settings.currentShortcut" = "Current shortcut: %@";
+"settings.appBehavior" = "App Behavior";
+"settings.launchAtLogin" = "Launch Pic2Link at login";
+"settings.launchAtLogin.help" = "Takes effect after saving. If authorization is required, allow Pic2Link in System Settings > General > Login Items.";
+
+"field.profileName" = "Configuration Name";
+"field.profileName.placeholder" = "For example: Personal / Company CDN";
+"field.provider" = "Provider";
+"field.remoteDirectory" = "Remote Directory";
+"field.remoteDirectory.placeholder" = "Optional: uploads / public / assets";
+"field.serviceName" = "Service Name";
+"field.serviceName.placeholder" = "UPYUN service name";
+"field.bucket" = "Bucket / Container";
+"field.bucket.placeholder" = "Bucket / container name";
+"field.operator" = "Operator";
+"field.operator.placeholder" = "Operator name";
+"field.operatorPassword" = "Operator Password";
+"field.operatorPassword.placeholder" = "Enter the operator password";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "Public URL Prefix";
+"field.username" = "Username";
+"field.username.placeholder" = "WebDAV username";
+"field.password" = "Password";
+"field.password.placeholder" = "Enter the WebDAV password";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Enter the Secret Key";
+"field.region" = "Region";
+"field.region.placeholder" = "For example: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "Base Path";
+"field.basePath.placeholder" = "For example: uploads / blog";
+"field.pathStyle" = "Path Style";
+
+"pathStyle.dateFolder" = "Date Folders";
+"pathStyle.flat" = "Flat";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 Compatible";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Enter the Bucket, Access Key, Secret Key, public URL prefix, and Endpoint. Supports images and general files.";
+"provider.help.synologyC2" = "Use your Synology C2 S3-compatible key, Bucket, Endpoint, and public domain. Supports images and general files.";
+"provider.help.jdCloud" = "Enter the JD Cloud Access Key, Secret Key, Bucket, Endpoint, and public URL prefix. Supports images and general files.";
+"provider.help.baiduBOS" = "Enter the Baidu BOS S3-compatible key, Bucket, Endpoint, and public domain. Supports images and general files.";
+"provider.help.tencentCOS" = "Enter the Bucket, SecretId, SecretKey, regional Endpoint, and CDN or custom domain. Supports images and general files.";
+"provider.help.qiniu" = "Enter the Bucket, Access Key, Secret Key, upload endpoint, and public domain. Supports images and general files.";
+"provider.help.upyun" = "Enter the service name, operator, operator password, and public domain. Supports images and general files.";
+"provider.help.amazonS3" = "Enter the Bucket, Access Key, Secret Key, Region, Endpoint, and public URL prefix. Supports images and general files.";
+"provider.help.googleCloudStorage" = "Use Google Cloud Storage S3 interoperability keys, Bucket, Endpoint, and public URL prefix. Supports images and general files.";
+"provider.help.cloudflareR2" = "Enter the Bucket, Access Key, Secret Key, Account ID Endpoint, and public domain. Supports images and general files.";
+"provider.help.backblazeB2" = "Enter the Bucket, Key ID, Application Key, regional Endpoint, and public URL prefix. Supports images and general files.";
+"provider.help.genericS3Compatible" = "For MinIO, Wasabi, DigitalOcean Spaces, IDrive E2, and similar services. Enter the Bucket, keys, Endpoint, Region, and public URL prefix.";
+"provider.help.webDAV" = "Enter the WebDAV Endpoint, username, password, optional remote directory, and public URL prefix. Supports images and general files.";
+"provider.help.flickr" = "Enter the API Key, Shared Secret, and Auth Token. Images only; returns the Flickr photo page link.";
+"provider.help.imgur" = "Enter the Imgur Client ID. Images only; returns the Imgur image link.";
+
+"fileSupport.all" = "images and general files";
+"fileSupport.imagesOnly" = "images only";
+
+"validation.success" = "Connection successful!";
+"validation.failed" = "Connection failed. Check the configuration.";
+"validation.error" = "Validation failed: %@";
+
+"status.uploadBusy" = "An upload is already in progress";
+"status.configureFirst" = "Configure an image host first";
+"status.incompleteConfig" = "The current image host configuration is incomplete";
+"status.uploadingTo" = "Uploading to %@";
+"status.uploadSuccess" = "Upload complete: %@";
+"status.uploadFailed" = "Upload failed: %@";
+"status.clipboardEmpty" = "No uploadable image on the clipboard";
+"status.providerImagesOnly" = "%@ currently supports images only. Switch to a provider that supports general files and try again.";
+"status.largeFileCancelled" = "Large file upload cancelled";
+"status.uploadingFile" = "Uploading %@";
+"status.launchAtLoginFailed" = "Failed to update launch at login: %@";
+"status.linkCopied" = "Link copied: %@";
+
+"largeFile.title" = "File Exceeds 200 MB";
+"largeFile.message" = "“%@” is %@. Uploading may take a while and use significant bandwidth. Continue?";
+"largeFile.continue" = "Continue Upload";
+
+"notification.uploadComplete" = "“%@” finished uploading. The link has been copied to the clipboard.";
+
+"launchAtLogin.requiresApproval" = "Allow Pic2Link under Login Items in System Settings first.";
+"launchAtLogin.notFound" = "This app package cannot register a system login item. Compatibility mode will be used.";
+"launchAtLogin.updateFailed" = "Unable to update launch at login.";
+"launchAtLogin.missingIdentifier" = "Unable to identify the current app.";
+"launchAtLogin.missingPath" = "Unable to identify the current app path.";
+"launchAtLogin.launchctlFailed" = "launchctl failed (%d)";
+
+"error.unknownServer" = "Unknown server error";
+"error.webDAVDirectory" = "Unable to create WebDAV directory %@";
+"error.uploadFailed" = "Upload failed: HTTP %d — %@";
+"error.invalidResponse" = "Invalid server response";
+"error.invalidConfig" = "Invalid configuration. Check the image host settings.";
+"error.unsupportedFileType" = "%@ currently supports %@. Switch to a provider that supports the selected file type and try again.";
+"error.directoryUnsupported" = "Folder uploads are not supported. Select a single file.";
+"status.settingsSaveFailed" = "Couldn’t save settings securely: %@";
+"error.keychainUnexpectedData" = "Keychain returned invalid credential data.";
+"error.keychainStatus" = "Keychain error (%d)";

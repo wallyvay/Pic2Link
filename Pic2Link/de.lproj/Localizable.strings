@@ -1,0 +1,174 @@
+"language.name.en" = "Englisch";
+"language.name.zh-Hans" = "Chinesisch (vereinfacht)";
+"language.name.zh-Hant" = "Chinesisch (traditionell)";
+"language.name.ko" = "Koreanisch";
+"language.name.ja" = "Japanisch";
+"language.name.ru" = "Russisch";
+"language.name.es" = "Spanisch";
+"language.name.pt" = "Portugiesisch";
+"language.name.th" = "Thailändisch";
+"language.name.hi" = "Hindi";
+"language.name.fr" = "Französisch";
+"language.name.ar" = "Arabisch";
+"language.name.de" = "Deutsch";
+
+"common.cancel" = "Abbrechen";
+"common.delete" = "Löschen";
+"common.save" = "Sichern";
+"common.settings" = "Einstellungen";
+
+"statusItem.tooltip" = "Pic2Link — Dateien hochladen und Links kopieren";
+"menu.uploadClipboard" = "Zwischenablagebild hochladen (%@)";
+"menu.uploadFile" = "Datei hochladen…";
+"menu.switchProfile" = "Bildhoster wechseln";
+"menu.settings" = "Einstellungen…";
+"menu.quit" = "Pic2Link beenden";
+"filePicker.title" = "Datei zum Hochladen auswählen";
+"filePicker.message" = "Bilder und andere Dateitypen werden unterstützt. Dateien über 200 MB müssen bestätigt werden.";
+
+"clipboard.title" = "Bereit zum Hochladen";
+"clipboard.progress" = "Upload-Fortschritt";
+"clipboard.uploadPrompt" = "Zum Hochladen klicken oder %@ drücken";
+"clipboard.empty" = "Kein Bild in der Zwischenablage";
+
+"history.title" = "Hochgeladene Dateien";
+"history.clear" = "Leeren";
+"history.empty" = "Noch keine Dateien hochgeladen";
+"history.empty.help" = "Hochgeladene Bilder und Dateien erscheinen hier";
+"history.more" = "Weitere Dateien";
+"history.copyLink" = "Link kopieren";
+
+"profile.configured" = "Konfiguriert";
+"profile.notConfigured" = "Nicht konfiguriert";
+"profile.none" = "Kein Bildhoster";
+"profile.addInSettings" = "Bildhoster in den Einstellungen hinzufügen";
+
+"settings.language" = "Sprache";
+"settings.language.picker" = "App-Sprache";
+"settings.language.help" = "Änderungen werden sofort wirksam. Künftig hat deine Auswahl Vorrang vor der Systemsprache.";
+"settings.profileList" = "Bildhoster";
+"settings.addProfile" = "Bildhoster hinzufügen";
+"settings.setCurrent" = "Als aktuell festlegen";
+"settings.noSelection.title" = "Kein Bildhoster ausgewählt";
+"settings.noSelection.description" = "Wähle eine Konfiguration in der Seitenleiste aus.";
+"settings.validating" = "Wird geprüft…";
+"settings.validate" = "Verbindung prüfen";
+"settings.profileConfiguration" = "Bildhoster-Konfiguration";
+"settings.shortcut" = "Upload-Kurzbefehl";
+"settings.key" = "Taste";
+"settings.currentShortcut" = "Aktueller Kurzbefehl: %@";
+"settings.appBehavior" = "App-Verhalten";
+"settings.launchAtLogin" = "Pic2Link bei der Anmeldung öffnen";
+"settings.launchAtLogin.help" = "Wird nach dem Sichern wirksam. Erlaube Pic2Link bei Bedarf unter Systemeinstellungen > Allgemein > Anmeldeobjekte.";
+
+"field.profileName" = "Konfigurationsname";
+"field.profileName.placeholder" = "Zum Beispiel: Privat / Firmen-CDN";
+"field.provider" = "Anbieter";
+"field.remoteDirectory" = "Entferntes Verzeichnis";
+"field.remoteDirectory.placeholder" = "Optional: uploads / public / assets";
+"field.serviceName" = "Dienstname";
+"field.serviceName.placeholder" = "UPYUN-Dienstname";
+"field.bucket" = "Bucket / Container";
+"field.bucket.placeholder" = "Name des Buckets / Containers";
+"field.operator" = "Operator";
+"field.operator.placeholder" = "Operatorname";
+"field.operatorPassword" = "Operatorpasswort";
+"field.operatorPassword.placeholder" = "Operatorpasswort eingeben";
+"field.apiEndpoint" = "API-Endpoint";
+"field.publicURL" = "Öffentliches URL-Präfix";
+"field.username" = "Benutzername";
+"field.username.placeholder" = "WebDAV-Benutzername";
+"field.password" = "Passwort";
+"field.password.placeholder" = "WebDAV-Passwort eingeben";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "Secret Key eingeben";
+"field.region" = "Region";
+"field.region.placeholder" = "Zum Beispiel: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "Basispfad";
+"field.basePath.placeholder" = "Zum Beispiel: uploads / blog";
+"field.pathStyle" = "Pfadstil";
+
+"pathStyle.dateFolder" = "Datumsordner";
+"pathStyle.flat" = "Flach";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3-kompatibel";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "Bucket, Access Key, Secret Key, öffentliches URL-Präfix und Endpoint eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.synologyC2" = "S3-kompatiblen Schlüssel, Bucket, Endpoint und öffentliche Domain von Synology C2 verwenden. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.jdCloud" = "Access Key, Secret Key, Bucket, Endpoint und öffentliches URL-Präfix von JD Cloud eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.baiduBOS" = "S3-kompatiblen Schlüssel, Bucket, Endpoint und öffentliche Domain von Baidu BOS eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.tencentCOS" = "Bucket, SecretId, SecretKey, regionalen Endpoint und CDN- oder eigene Domain eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.qiniu" = "Bucket, Access Key, Secret Key, Upload-Endpoint und öffentliche Domain eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.upyun" = "Dienstname, Operator, Passwort und öffentliche Domain eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.amazonS3" = "Bucket, Access Key, Secret Key, Region, Endpoint und öffentliches URL-Präfix eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.googleCloudStorage" = "S3-Interoperabilitätsschlüssel, Bucket, Endpoint und öffentliches URL-Präfix von Google Cloud Storage verwenden. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.cloudflareR2" = "Bucket, Access Key, Secret Key, Account-ID-Endpoint und öffentliche Domain eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.backblazeB2" = "Bucket, Key ID, Application Key, regionalen Endpoint und öffentliches URL-Präfix eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.genericS3Compatible" = "Für MinIO, Wasabi, DigitalOcean Spaces, IDrive E2 und ähnliche Dienste. Bucket, Schlüssel, Endpoint, Region und öffentliches URL-Präfix eingeben.";
+"provider.help.webDAV" = "WebDAV-Endpoint, Benutzername, Passwort, optionales entferntes Verzeichnis und öffentliches URL-Präfix eingeben. Unterstützt Bilder und allgemeine Dateien.";
+"provider.help.flickr" = "API Key, Shared Secret und Auth Token eingeben. Nur Bilder; gibt den Link zur Flickr-Fotoseite zurück.";
+"provider.help.imgur" = "Imgur Client ID eingeben. Nur Bilder; gibt den Imgur-Bildlink zurück.";
+
+"fileSupport.all" = "Bilder und allgemeine Dateien";
+"fileSupport.imagesOnly" = "nur Bilder";
+
+"validation.success" = "Verbindung erfolgreich!";
+"validation.failed" = "Verbindung fehlgeschlagen. Konfiguration prüfen.";
+"validation.error" = "Prüfung fehlgeschlagen: %@";
+
+"status.uploadBusy" = "Ein Upload läuft bereits";
+"status.configureFirst" = "Zuerst einen Bildhoster konfigurieren";
+"status.incompleteConfig" = "Die aktuelle Konfiguration ist unvollständig";
+"status.uploadingTo" = "Upload zu %@";
+"status.uploadSuccess" = "Upload abgeschlossen: %@";
+"status.uploadFailed" = "Upload fehlgeschlagen: %@";
+"status.clipboardEmpty" = "Kein hochladbares Bild in der Zwischenablage";
+"status.providerImagesOnly" = "%@ unterstützt derzeit nur Bilder. Wechsle zu einem Anbieter für allgemeine Dateien.";
+"status.largeFileCancelled" = "Upload der großen Datei abgebrochen";
+"status.uploadingFile" = "%@ wird hochgeladen";
+"status.launchAtLoginFailed" = "Autostart konnte nicht aktualisiert werden: %@";
+"status.linkCopied" = "Link kopiert: %@";
+
+"largeFile.title" = "Datei ist größer als 200 MB";
+"largeFile.message" = "„%@“ ist %@ groß. Der Upload kann dauern und viel Bandbreite verbrauchen. Fortfahren?";
+"largeFile.continue" = "Upload fortsetzen";
+
+"notification.uploadComplete" = "„%@“ wurde hochgeladen. Der Link wurde in die Zwischenablage kopiert.";
+
+"launchAtLogin.requiresApproval" = "Erlaube Pic2Link zuerst in den Anmeldeobjekten der Systemeinstellungen.";
+"launchAtLogin.notFound" = "Dieses App-Paket kann kein System-Anmeldeobjekt registrieren. Der Kompatibilitätsmodus wird verwendet.";
+"launchAtLogin.updateFailed" = "Autostart konnte nicht aktualisiert werden.";
+"launchAtLogin.missingIdentifier" = "Die aktuelle App konnte nicht identifiziert werden.";
+"launchAtLogin.missingPath" = "Der aktuelle App-Pfad konnte nicht identifiziert werden.";
+"launchAtLogin.launchctlFailed" = "launchctl fehlgeschlagen (%d)";
+
+"error.unknownServer" = "Unbekannter Serverfehler";
+"error.webDAVDirectory" = "WebDAV-Verzeichnis %@ konnte nicht erstellt werden";
+"error.uploadFailed" = "Upload fehlgeschlagen: HTTP %d — %@";
+"error.invalidResponse" = "Ungültige Serverantwort";
+"error.invalidConfig" = "Ungültige Konfiguration. Einstellungen des Bildhosters prüfen.";
+"error.unsupportedFileType" = "%@ unterstützt derzeit %@. Wechsle zu einem Anbieter für den ausgewählten Dateityp.";
+"error.directoryUnsupported" = "Ordner-Uploads werden nicht unterstützt. Wähle eine einzelne Datei aus.";
+"status.settingsSaveFailed" = "Einstellungen konnten nicht sicher gespeichert werden: %@";
+"error.keychainUnexpectedData" = "Der Schlüsselbund hat ungültige Zugangsdaten zurückgegeben.";
+"error.keychainStatus" = "Schlüsselbundfehler (%d)";

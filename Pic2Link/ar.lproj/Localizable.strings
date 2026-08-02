@@ -1,0 +1,174 @@
+"language.name.en" = "الإنجليزية";
+"language.name.zh-Hans" = "الصينية المبسطة";
+"language.name.zh-Hant" = "الصينية التقليدية";
+"language.name.ko" = "الكورية";
+"language.name.ja" = "اليابانية";
+"language.name.ru" = "الروسية";
+"language.name.es" = "الإسبانية";
+"language.name.pt" = "البرتغالية";
+"language.name.th" = "التايلاندية";
+"language.name.hi" = "الهندية";
+"language.name.fr" = "الفرنسية";
+"language.name.ar" = "العربية";
+"language.name.de" = "الألمانية";
+
+"common.cancel" = "إلغاء";
+"common.delete" = "حذف";
+"common.save" = "حفظ";
+"common.settings" = "الإعدادات";
+
+"statusItem.tooltip" = "Pic2Link — ارفع الملفات وانسخ الروابط";
+"menu.uploadClipboard" = "رفع صورة الحافظة (%@)";
+"menu.uploadFile" = "رفع ملف…";
+"menu.switchProfile" = "تبديل مضيف الصور";
+"menu.settings" = "الإعدادات…";
+"menu.quit" = "إنهاء Pic2Link";
+"filePicker.title" = "اختر ملفًا لرفعه";
+"filePicker.message" = "تُدعم الصور وأنواع الملفات الأخرى. تتطلب الملفات الأكبر من 200 م.ب. تأكيدًا قبل الرفع.";
+
+"clipboard.title" = "جاهز للرفع";
+"clipboard.progress" = "تقدم الرفع";
+"clipboard.uploadPrompt" = "انقر للرفع أو اضغط %@";
+"clipboard.empty" = "لا توجد صورة في الحافظة";
+
+"history.title" = "الملفات المرفوعة";
+"history.clear" = "مسح";
+"history.empty" = "لا توجد ملفات مرفوعة بعد";
+"history.empty.help" = "ستظهر الصور والملفات المرفوعة هنا";
+"history.more" = "المزيد من الملفات";
+"history.copyLink" = "نسخ الرابط";
+
+"profile.configured" = "تم الإعداد";
+"profile.notConfigured" = "غير معدّ";
+"profile.none" = "لا يوجد مضيف صور";
+"profile.addInSettings" = "أضف مضيف صور من الإعدادات";
+
+"settings.language" = "اللغة";
+"settings.language.picker" = "لغة التطبيق";
+"settings.language.help" = "يُطبق التغيير فورًا. سيتقدم اختيارك على لغة النظام عند تشغيل التطبيق لاحقًا.";
+"settings.profileList" = "مضيفو الصور";
+"settings.addProfile" = "إضافة مضيف صور";
+"settings.setCurrent" = "تعيين كحالي";
+"settings.noSelection.title" = "لم يتم اختيار مضيف صور";
+"settings.noSelection.description" = "اختر إعداد مضيف صور من الشريط الجانبي.";
+"settings.validating" = "جارٍ التحقق…";
+"settings.validate" = "التحقق من الاتصال";
+"settings.profileConfiguration" = "إعداد مضيف الصور";
+"settings.shortcut" = "اختصار الرفع";
+"settings.key" = "المفتاح";
+"settings.currentShortcut" = "الاختصار الحالي: %@";
+"settings.appBehavior" = "سلوك التطبيق";
+"settings.launchAtLogin" = "فتح Pic2Link عند تسجيل الدخول";
+"settings.launchAtLogin.help" = "يُطبق بعد الحفظ. إذا لزم الإذن، اسمح لـ Pic2Link في إعدادات النظام > عام > عناصر تسجيل الدخول.";
+
+"field.profileName" = "اسم الإعداد";
+"field.profileName.placeholder" = "مثال: شخصي / CDN الشركة";
+"field.provider" = "المزوّد";
+"field.remoteDirectory" = "المجلد البعيد";
+"field.remoteDirectory.placeholder" = "اختياري: uploads / public / assets";
+"field.serviceName" = "اسم الخدمة";
+"field.serviceName.placeholder" = "اسم خدمة UPYUN";
+"field.bucket" = "Bucket / الحاوية";
+"field.bucket.placeholder" = "اسم Bucket / الحاوية";
+"field.operator" = "المشغّل";
+"field.operator.placeholder" = "اسم المشغّل";
+"field.operatorPassword" = "كلمة سر المشغّل";
+"field.operatorPassword.placeholder" = "أدخل كلمة سر المشغّل";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "بادئة URL العامة";
+"field.username" = "اسم المستخدم";
+"field.username.placeholder" = "اسم مستخدم WebDAV";
+"field.password" = "كلمة السر";
+"field.password.placeholder" = "أدخل كلمة سر WebDAV";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "أدخل Secret Key";
+"field.region" = "المنطقة";
+"field.region.placeholder" = "مثال: us-east-1 / ap-shanghai / auto";
+"field.basePath" = "المسار الأساسي";
+"field.basePath.placeholder" = "مثال: uploads / blog";
+"field.pathStyle" = "نمط المسار";
+
+"pathStyle.dateFolder" = "مجلدات حسب التاريخ";
+"pathStyle.flat" = "مسار مسطح";
+
+"provider.alibabaOSS" = "Alibaba Cloud OSS";
+"provider.synologyC2" = "Synology C2 Object Storage";
+"provider.jdCloud" = "JD Cloud Object Storage";
+"provider.baiduBOS" = "Baidu Cloud BOS";
+"provider.tencentCOS" = "Tencent Cloud COS";
+"provider.qiniu" = "Qiniu Cloud";
+"provider.upyun" = "UPYUN";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "تخزين متوافق مع S3";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "أدخل Bucket وAccess Key وSecret Key وبادئة URL العامة وEndpoint. يدعم الصور والملفات العامة.";
+"provider.help.synologyC2" = "استخدم مفتاح Synology C2 المتوافق مع S3 وBucket وEndpoint والنطاق العام. يدعم الصور والملفات العامة.";
+"provider.help.jdCloud" = "أدخل Access Key وSecret Key وBucket وEndpoint والبادئة العامة لـ JD Cloud. يدعم الصور والملفات العامة.";
+"provider.help.baiduBOS" = "أدخل مفتاح Baidu BOS المتوافق مع S3 وBucket وEndpoint والنطاق العام. يدعم الصور والملفات العامة.";
+"provider.help.tencentCOS" = "أدخل Bucket وSecretId وSecretKey وEndpoint الإقليمي ونطاق CDN أو النطاق المخصص. يدعم الصور والملفات العامة.";
+"provider.help.qiniu" = "أدخل Bucket وAccess Key وSecret Key وEndpoint الرفع والنطاق العام. يدعم الصور والملفات العامة.";
+"provider.help.upyun" = "أدخل اسم الخدمة والمشغّل وكلمة السر والنطاق العام. يدعم الصور والملفات العامة.";
+"provider.help.amazonS3" = "أدخل Bucket وAccess Key وSecret Key والمنطقة وEndpoint والبادئة العامة. يدعم الصور والملفات العامة.";
+"provider.help.googleCloudStorage" = "استخدم مفاتيح توافق S3 وBucket وEndpoint والبادئة العامة لـ Google Cloud Storage. يدعم الصور والملفات العامة.";
+"provider.help.cloudflareR2" = "أدخل Bucket وAccess Key وSecret Key وEndpoint الخاص بمعرّف الحساب والنطاق العام. يدعم الصور والملفات العامة.";
+"provider.help.backblazeB2" = "أدخل Bucket وKey ID وApplication Key وEndpoint الإقليمي والبادئة العامة. يدعم الصور والملفات العامة.";
+"provider.help.genericS3Compatible" = "لخدمات MinIO وWasabi وDigitalOcean Spaces وIDrive E2 وما شابهها. أدخل Bucket والمفاتيح وEndpoint والمنطقة والبادئة العامة.";
+"provider.help.webDAV" = "أدخل WebDAV Endpoint واسم المستخدم وكلمة السر والمجلد البعيد الاختياري والبادئة العامة. يدعم الصور والملفات العامة.";
+"provider.help.flickr" = "أدخل API Key وShared Secret وAuth Token. للصور فقط؛ يعيد رابط صفحة الصورة على Flickr.";
+"provider.help.imgur" = "أدخل Imgur Client ID. للصور فقط؛ يعيد رابط صورة Imgur.";
+
+"fileSupport.all" = "الصور والملفات العامة";
+"fileSupport.imagesOnly" = "الصور فقط";
+
+"validation.success" = "تم الاتصال بنجاح!";
+"validation.failed" = "فشل الاتصال. تحقق من الإعداد.";
+"validation.error" = "فشل التحقق: %@";
+
+"status.uploadBusy" = "هناك رفع جارٍ بالفعل";
+"status.configureFirst" = "أعدّ مضيف صور أولًا";
+"status.incompleteConfig" = "إعداد مضيف الصور الحالي غير مكتمل";
+"status.uploadingTo" = "جارٍ الرفع إلى %@";
+"status.uploadSuccess" = "اكتمل الرفع: %@";
+"status.uploadFailed" = "فشل الرفع: %@";
+"status.clipboardEmpty" = "لا توجد صورة قابلة للرفع في الحافظة";
+"status.providerImagesOnly" = "يدعم %@ الصور فقط حاليًا. انتقل إلى مزوّد يدعم الملفات العامة.";
+"status.largeFileCancelled" = "تم إلغاء رفع الملف الكبير";
+"status.uploadingFile" = "جارٍ رفع %@";
+"status.launchAtLoginFailed" = "فشل تحديث الفتح عند تسجيل الدخول: %@";
+"status.linkCopied" = "تم نسخ الرابط: %@";
+
+"largeFile.title" = "حجم الملف أكبر من 200 م.ب.";
+"largeFile.message" = "حجم «%@» هو %@. قد يستغرق الرفع وقتًا ويستهلك نطاقًا تردديًا كبيرًا. هل تريد المتابعة؟";
+"largeFile.continue" = "متابعة الرفع";
+
+"notification.uploadComplete" = "اكتمل رفع «%@». تم نسخ الرابط إلى الحافظة.";
+
+"launchAtLogin.requiresApproval" = "اسمح لـ Pic2Link أولًا في عناصر تسجيل الدخول ضمن إعدادات النظام.";
+"launchAtLogin.notFound" = "لا يمكن لحزمة التطبيق هذه تسجيل عنصر دخول للنظام. سيُستخدم وضع التوافق.";
+"launchAtLogin.updateFailed" = "تعذر تحديث الفتح عند تسجيل الدخول.";
+"launchAtLogin.missingIdentifier" = "تعذر التعرّف على التطبيق الحالي.";
+"launchAtLogin.missingPath" = "تعذر التعرّف على مسار التطبيق الحالي.";
+"launchAtLogin.launchctlFailed" = "فشل launchctl ‏(%d)";
+
+"error.unknownServer" = "خطأ خادم غير معروف";
+"error.webDAVDirectory" = "تعذر إنشاء مجلد WebDAV ‏%@";
+"error.uploadFailed" = "فشل الرفع: HTTP %d — %@";
+"error.invalidResponse" = "استجابة الخادم غير صالحة";
+"error.invalidConfig" = "الإعداد غير صالح. تحقق من إعدادات مضيف الصور.";
+"error.unsupportedFileType" = "يدعم %@ حاليًا %@. انتقل إلى مزوّد يدعم الملف المحدد.";
+"error.directoryUnsupported" = "رفع المجلدات غير مدعوم. اختر ملفًا واحدًا.";
+"status.settingsSaveFailed" = "تعذر حفظ الإعدادات بأمان: %@";
+"error.keychainUnexpectedData" = "أعادت سلسلة المفاتيح بيانات اعتماد غير صالحة.";
+"error.keychainStatus" = "خطأ في سلسلة المفاتيح (%d)";

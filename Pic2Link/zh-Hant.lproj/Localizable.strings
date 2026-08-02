@@ -1,0 +1,174 @@
+"language.name.en" = "英語";
+"language.name.zh-Hans" = "簡體中文";
+"language.name.zh-Hant" = "繁體中文";
+"language.name.ko" = "韓語";
+"language.name.ja" = "日語";
+"language.name.ru" = "俄語";
+"language.name.es" = "西班牙語";
+"language.name.pt" = "葡萄牙語";
+"language.name.th" = "泰語";
+"language.name.hi" = "印地語";
+"language.name.fr" = "法語";
+"language.name.ar" = "阿拉伯語";
+"language.name.de" = "德語";
+
+"common.cancel" = "取消";
+"common.delete" = "刪除";
+"common.save" = "儲存";
+"common.settings" = "設定";
+
+"statusItem.tooltip" = "Pic2Link — 上傳檔案並複製連結";
+"menu.uploadClipboard" = "上傳剪貼簿圖片（%@）";
+"menu.uploadFile" = "上傳檔案…";
+"menu.switchProfile" = "切換圖床";
+"menu.settings" = "設定…";
+"menu.quit" = "結束 Pic2Link";
+"filePicker.title" = "選擇要上傳的檔案";
+"filePicker.message" = "支援圖片與其他檔案類型。超過 200 MB 的檔案會在上傳前再次確認。";
+
+"clipboard.title" = "待上傳圖片";
+"clipboard.progress" = "上傳進度";
+"clipboard.uploadPrompt" = "按一下上傳，或按 %@";
+"clipboard.empty" = "剪貼簿中暫無圖片";
+
+"history.title" = "已上傳檔案";
+"history.clear" = "清除";
+"history.empty" = "暫無已上傳檔案";
+"history.empty.help" = "上傳後的圖片與檔案會顯示在這裡";
+"history.more" = "更多檔案";
+"history.copyLink" = "複製連結";
+
+"profile.configured" = "已設定";
+"profile.notConfigured" = "未設定";
+"profile.none" = "暫無圖床";
+"profile.addInSettings" = "請先在設定中加入圖床";
+
+"settings.language" = "語言";
+"settings.language.picker" = "App 語言";
+"settings.language.help" = "切換後立即生效。日後啟動時會優先使用你的選擇，而不是系統語言。";
+"settings.profileList" = "圖床列表";
+"settings.addProfile" = "新增圖床";
+"settings.setCurrent" = "設為目前圖床";
+"settings.noSelection.title" = "未選擇圖床";
+"settings.noSelection.description" = "請先在左側選擇一個圖床設定。";
+"settings.validating" = "驗證中…";
+"settings.validate" = "驗證連線";
+"settings.profileConfiguration" = "圖床設定";
+"settings.shortcut" = "上傳快速鍵";
+"settings.key" = "按鍵";
+"settings.currentShortcut" = "目前快速鍵：%@";
+"settings.appBehavior" = "App 行為";
+"settings.launchAtLogin" = "登入時自動啟動 Pic2Link";
+"settings.launchAtLogin.help" = "儲存後生效。若系統要求授權，請到「系統設定 > 一般 > 登入項目」允許 Pic2Link。";
+
+"field.profileName" = "設定名稱";
+"field.profileName.placeholder" = "例如：個人圖床 / 公司 CDN";
+"field.provider" = "平台";
+"field.remoteDirectory" = "遠端目錄";
+"field.remoteDirectory.placeholder" = "選填：uploads / public / assets";
+"field.serviceName" = "服務名稱";
+"field.serviceName.placeholder" = "又拍雲服務名稱";
+"field.bucket" = "Bucket / 容器";
+"field.bucket.placeholder" = "Bucket / 容器名稱";
+"field.operator" = "操作員";
+"field.operator.placeholder" = "操作員名稱";
+"field.operatorPassword" = "操作員密碼";
+"field.operatorPassword.placeholder" = "請輸入操作員密碼";
+"field.apiEndpoint" = "API Endpoint";
+"field.publicURL" = "公開連結前綴";
+"field.username" = "使用者名稱";
+"field.username.placeholder" = "WebDAV 使用者名稱";
+"field.password" = "密碼";
+"field.password.placeholder" = "請輸入 WebDAV 密碼";
+"field.endpoint" = "Endpoint";
+"field.apiKey" = "API Key";
+"field.sharedSecret" = "Shared Secret";
+"field.authToken" = "Auth Token";
+"field.clientID" = "Client ID";
+"field.accessKey" = "Access Key / SecretId";
+"field.secretKey" = "Secret Key / SecretKey";
+"field.secretKey.placeholder" = "請輸入 Secret Key";
+"field.region" = "Region";
+"field.region.placeholder" = "例如：us-east-1 / ap-shanghai / auto";
+"field.basePath" = "基礎路徑";
+"field.basePath.placeholder" = "例如：uploads / blog";
+"field.pathStyle" = "路徑樣式";
+
+"pathStyle.dateFolder" = "依日期分資料夾";
+"pathStyle.flat" = "平鋪模式";
+
+"provider.alibabaOSS" = "阿里雲 OSS";
+"provider.synologyC2" = "Synology C2 物件儲存";
+"provider.jdCloud" = "京東雲物件儲存";
+"provider.baiduBOS" = "百度雲 BOS";
+"provider.tencentCOS" = "騰訊雲 COS";
+"provider.qiniu" = "七牛雲";
+"provider.upyun" = "又拍雲";
+"provider.amazonS3" = "Amazon S3";
+"provider.googleCloudStorage" = "Google Cloud Storage";
+"provider.cloudflareR2" = "Cloudflare R2";
+"provider.backblazeB2" = "Backblaze B2";
+"provider.genericS3Compatible" = "S3 相容儲存";
+"provider.webDAV" = "WebDAV";
+"provider.flickr" = "Flickr";
+"provider.imgur" = "Imgur";
+
+"provider.help.alibabaOSS" = "填寫 Bucket、Access Key、Secret Key、公開連結前綴與 Endpoint。支援圖片及一般檔案。";
+"provider.help.synologyC2" = "使用 Synology C2 物件儲存的 S3 相容金鑰、Bucket、Endpoint 與公開網域。支援圖片及一般檔案。";
+"provider.help.jdCloud" = "填寫京東雲的 Access Key、Secret Key、Bucket、Endpoint 與公開連結前綴。支援圖片及一般檔案。";
+"provider.help.baiduBOS" = "填寫百度雲 BOS 的 S3 相容金鑰、Bucket、Endpoint 與公開網域。支援圖片及一般檔案。";
+"provider.help.tencentCOS" = "填寫 Bucket、SecretId、SecretKey、區域 Endpoint 與 CDN 或自訂網域。支援圖片及一般檔案。";
+"provider.help.qiniu" = "填寫 Bucket、Access Key、Secret Key、上傳網域與公開網域。支援圖片及一般檔案。";
+"provider.help.upyun" = "填寫服務名稱、操作員、操作員密碼與公開網域。支援圖片及一般檔案。";
+"provider.help.amazonS3" = "填寫 Bucket、Access Key、Secret Key、Region、Endpoint 與公開連結前綴。支援圖片及一般檔案。";
+"provider.help.googleCloudStorage" = "使用 Google Cloud Storage 的 S3 互通金鑰、Bucket、Endpoint 與公開連結前綴。支援圖片及一般檔案。";
+"provider.help.cloudflareR2" = "填寫 Bucket、Access Key、Secret Key、Account ID 對應的 Endpoint 與公開網域。支援圖片及一般檔案。";
+"provider.help.backblazeB2" = "填寫 Bucket、Key ID、Application Key、區域 Endpoint 與公開連結前綴。支援圖片及一般檔案。";
+"provider.help.genericS3Compatible" = "適用於 MinIO、Wasabi、DigitalOcean Spaces、IDrive E2 等 S3 相容儲存。填寫 Bucket、金鑰、Endpoint、Region 與公開連結前綴。";
+"provider.help.webDAV" = "填寫 WebDAV Endpoint、使用者名稱、密碼、選填遠端目錄與公開連結前綴。支援圖片及一般檔案。";
+"provider.help.flickr" = "填寫 API Key、Shared Secret 與 Auth Token。僅支援圖片，回傳 Flickr 相片頁面連結。";
+"provider.help.imgur" = "填寫 Imgur Client ID。僅支援圖片，回傳 Imgur 圖片連結。";
+
+"fileSupport.all" = "圖片與一般檔案";
+"fileSupport.imagesOnly" = "僅圖片";
+
+"validation.success" = "連線成功！";
+"validation.failed" = "連線失敗，請檢查設定。";
+"validation.error" = "驗證失敗：%@";
+
+"status.uploadBusy" = "正在上傳，請稍候";
+"status.configureFirst" = "請先設定圖床";
+"status.incompleteConfig" = "目前圖床設定不完整";
+"status.uploadingTo" = "正在上傳至 %@";
+"status.uploadSuccess" = "上傳完成：%@";
+"status.uploadFailed" = "上傳失敗：%@";
+"status.clipboardEmpty" = "剪貼簿中沒有可上傳的圖片";
+"status.providerImagesOnly" = "%@ 目前僅支援圖片，請切換至支援一般檔案的平台後再試。";
+"status.largeFileCancelled" = "已取消大型檔案上傳";
+"status.uploadingFile" = "正在上傳 %@";
+"status.launchAtLoginFailed" = "更新登入時啟動失敗：%@";
+"status.linkCopied" = "已複製連結：%@";
+
+"largeFile.title" = "檔案超過 200 MB";
+"largeFile.message" = "「%@」大小為 %@，上傳可能需要較長時間並使用較多頻寬。是否繼續？";
+"largeFile.continue" = "繼續上傳";
+
+"notification.uploadComplete" = "「%@」已上傳完成，連結已複製到剪貼簿。";
+
+"launchAtLogin.requiresApproval" = "請先在系統設定的登入項目中允許 Pic2Link。";
+"launchAtLogin.notFound" = "此 App 套件無法註冊系統登入項目，將使用相容模式。";
+"launchAtLogin.updateFailed" = "無法更新登入時啟動。";
+"launchAtLogin.missingIdentifier" = "無法識別目前的 App。";
+"launchAtLogin.missingPath" = "無法識別目前的 App 路徑。";
+"launchAtLogin.launchctlFailed" = "launchctl 執行失敗（%d）";
+
+"error.unknownServer" = "未知的伺服器錯誤";
+"error.webDAVDirectory" = "無法建立 WebDAV 目錄 %@";
+"error.uploadFailed" = "上傳失敗：HTTP %d — %@";
+"error.invalidResponse" = "無效的伺服器回應";
+"error.invalidConfig" = "設定無效，請檢查圖床設定。";
+"error.unsupportedFileType" = "%@ 目前僅支援%@，請切換至支援所選檔案類型的平台後再試。";
+"error.directoryUnsupported" = "暫不支援上傳資料夾，請選擇單一檔案。";
+"status.settingsSaveFailed" = "無法安全儲存設定：%@";
+"error.keychainUnexpectedData" = "鑰匙圈傳回了無效的憑證資料。";
+"error.keychainStatus" = "鑰匙圈錯誤（%d）";

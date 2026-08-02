@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Xcode user state
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+
+# Build products
+DerivedData/
+build/
+.build/
+*.dSYM
+*.dSYM.zip
+*.profraw
+
+# Local release artifacts
+dist/
+
+# Local environment and credentials
+.env
+.env.*
+*.p8
+*.p12
+*.cer
+*.pem
+*.mobileprovision
