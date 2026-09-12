@@ -6,6 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+        C90500000000000000000001 /* WMMarkCore in Frameworks */ = {isa = PBXBuildFile; productRef = C90500000000000000000003; };
+        C90500000000000000000002 /* WMMarkRenderer in Frameworks */ = {isa = PBXBuildFile; productRef = C90500000000000000000004; };
+/* End PBXBuildFile section */
+
+/* Begin XCLocalSwiftPackageReference section */
+        C90500000000000000000005 /* WMMark */ = {isa = XCLocalSwiftPackageReference; relativePath = "../毛标标"; };
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+        C90500000000000000000003 = {isa = XCSwiftPackageProductDependency; productName = WMMarkCore; };
+        C90500000000000000000004 = {isa = XCSwiftPackageProductDependency; productName = WMMarkRenderer; };
+/* End XCSwiftPackageProductDependency section */
+
 /* Begin PBXFileReference section */
 		E7541E2C2F91D8B20010D74D /* Pic2Link.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pic2Link.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000000000000000000002 /* Pic2LinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pic2LinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+                C90500000000000000000001,
+                C90500000000000000000002,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +157,8 @@
 			);
 			name = Pic2Link;
 			packageProductDependencies = (
+                C90500000000000000000003,
+                C90500000000000000000004,
 			);
 			productName = Pic2Link;
 			productReference = E7541E2C2F91D8B20010D74D /* Pic2Link.app */;
@@ -190,6 +208,7 @@
 			);
 			mainGroup = E7541E232F91D8B20010D74D;
 			minimizedProjectReferenceProxies = 1;
+            packageReferences = (C90500000000000000000005);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E7541E2D2F91D8B20010D74D /* Products */;
 			projectDirPath = "";
@@ -256,11 +275,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2LinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -275,11 +294,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2LinkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -293,11 +312,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2LinkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -311,11 +330,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2LinkUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -451,19 +470,21 @@
 				CODE_SIGN_ENTITLEMENTS = Pic2Link/Pic2Link.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Pic2Link reads the photos you select to upload them, or to create a Live Photo GIF.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Pic2Link reads selected photos from the source app when you request a direct upload.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2Link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -484,19 +505,21 @@
 				CODE_SIGN_ENTITLEMENTS = Pic2Link/Pic2Link.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = W7XZ85M98K;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Pic2Link reads the photos you select to upload them, or to create a Live Photo GIF.";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Pic2Link reads selected photos from the source app when you request a direct upload.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Amanoya.Pic2Link;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;

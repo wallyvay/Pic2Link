@@ -115,7 +115,9 @@ final class LocalizationManager: ObservableObject {
 
     nonisolated private static var processLanguageOverride: AppLanguage? {
 #if DEBUG
-        guard ProcessInfo.processInfo.arguments.contains("-openSettingsForUITesting"),
+        guard (ProcessInfo.processInfo.arguments.contains("-openSettingsForUITesting")
+               || ProcessInfo.processInfo.arguments.contains("-storeScreenshots")
+               || ProcessInfo.processInfo.arguments.contains("-captionForUITesting")),
               let rawValue = ProcessInfo.processInfo.environment["PIC2LINK_UI_TEST_LANGUAGE"] else {
             return nil
         }

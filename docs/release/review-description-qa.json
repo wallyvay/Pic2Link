@@ -1,0 +1,60 @@
+{
+  "app_id": "6809069103",
+  "platform": "MAC_OS",
+  "version": "1.0.1",
+  "date": "2026-09-11",
+  "scope": {
+    "locales": [
+      "en-US",
+      "zh-Hans",
+      "zh-Hant",
+      "ja",
+      "ko",
+      "fr-FR",
+      "de-DE",
+      "es-ES",
+      "pt-BR",
+      "ru",
+      "hi",
+      "ar-SA",
+      "th"
+    ],
+    "fields": [
+      "description"
+    ]
+  },
+  "input_hashes": {
+    "en-US/description.txt": "d1c95cd462bafa31c9568745bf0b52906904db4bf5ed5f5698bb958a20b601a2",
+    "zh-Hans/description.txt": "5bd7744f577ceec1f64f466db37b4af9198893ebf12a3f077914fb540f5664b2",
+    "zh-Hant/description.txt": "693be144923ede6263ce18a1355a558d875c732ec3604cf6c1a2047bd568113c",
+    "ja/description.txt": "77fe794b0ba14147336df2512f182480958b1772da6efa2bd2d6b79f6795bc58",
+    "ko/description.txt": "9be97ddfc39cf5fb500d6380e8b0083603526d9f05aac8f56254f14114067630",
+    "fr-FR/description.txt": "83a6f46081ba325b6ef5eeff7f1fca29e75dd7a034c3981b608e1fb2cf01f9dc",
+    "de-DE/description.txt": "ee84ca57ebbe022b7c6d72fe055c0ac56dc01e507b67ffdd9acdb45645939d5d",
+    "es-ES/description.txt": "e41fcf65dff3860615f82e70448777b711a5bbad7b1103a6db7a933affa94084",
+    "pt-BR/description.txt": "f89603040defceb7097110d96f8983f93760dd21d3a556ddd9f199be95150508",
+    "ru/description.txt": "44820017ad5f5d5ea67b2b58f45c200c347e36438958228623c68b9d53910011",
+    "hi/description.txt": "5d0de48db36a710f9de90a7f431cd99471270fabe2291ac243166565e9e62976",
+    "ar-SA/description.txt": "e20ea2e5de87990a4cbe309fa3a6e9ea6625696040916064b875b7db27a8a14c",
+    "th/description.txt": "357a9047befb17bb16801487d41e4eabacdc0da52d51fd5ee77838124673789f"
+  },
+  "method": "Scoped second-pass review in the current session; Chinese primary and English aligned facts; not market research or a full ASO audit",
+  "findings": [
+    {
+      "severity": "info",
+      "finding": "Removed the Finder-selection shortcut claim and first-use Finder-folder-access sentence in all 13 locales. Retained clipboard, dragging, Photos shortcut, local processing and provider-cost facts."
+    },
+    {
+      "severity": "info",
+      "finding": "Unchanged names, subtitles, keywords, URLs, prices and screenshots are outside this edit."
+    },
+    {
+      "severity": "warning",
+      "finding": "UI testing could not open the initial Settings window. Real sandbox end-to-end review-account validation is pending RAM permissions."
+    }
+  ],
+  "static_status": "pass",
+  "scoped_semantic_status": "pass",
+  "release_ready": false,
+  "remote_upload": "not performed"
+}

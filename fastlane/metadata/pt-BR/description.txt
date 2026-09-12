@@ -1,0 +1,7 @@
+Envie imagens e arquivos pela barra de menus do Mac. Copie uma URL ou um link de imagem Markdown e veja seus envios recentes.
+
+Conecte seu próprio armazenamento: serviços compatíveis com S3, WebDAV e hospedagens de imagens. Configure sua conta e credenciais nos Ajustes. Planos e custos de armazenamento são fornecidos separadamente pelo provedor.
+
+Use a área de transferência, arraste arquivos ou pressione Comando-Shift-U para fotos selecionadas no app Fotos. Adicione texto com layout automático, redimensione em memória ou converta Live Photos em GIF. Deixe o texto vazio para pular a composição.
+
+O processamento acontece no Mac sem alterar os originais. As credenciais ficam nas Chaves do macOS e os arquivos vão diretamente para o provedor escolhido.

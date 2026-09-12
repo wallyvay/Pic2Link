@@ -1,0 +1,1 @@
+image,envoi,lien,markdown,presse-papiers,photo,taille,WebDAV,S3,GIF,menu

@@ -1,0 +1,251 @@
+require "json"
+require "fileutils"
+require "spaceship"
+require_relative "release_support"
+require_relative "resubmission_support"
+
+default_platform(:mac)
+
+PIC2LINK_BUNDLE_ID = "Amanoya.Pic2Link".freeze
+PIC2LINK_TEAM_ID = "W7XZ85M98K".freeze
+PIC2LINK_STORE_NAME = "Pic2Link: Image Uploader".freeze
+PIC2LINK_ROOT = File.expand_path("..", __dir__)
+PIC2LINK_REPORTS = File.join(PIC2LINK_ROOT, "dist", "mas-20260905")
+
+def pic2link_auth!
+  if ENV["APP_STORE_CONNECT_API_KEY_PATH"]
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.from_json_file(ENV.fetch("APP_STORE_CONNECT_API_KEY_PATH"))
+  else
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: ENV.fetch("ASC_API_KEY_ID"), issuer_id: ENV.fetch("ASC_API_ISSUER_ID"),
+      filepath: ENV.fetch("ASC_API_PRIVATE_KEY_PATH")
+    )
+  end
+end
+
+def pic2link_app
+  apps = Spaceship::ConnectAPI::App.all(filter: { bundleId: PIC2LINK_BUNDLE_ID }, includes: nil)
+  UI.user_error!("Ambiguous Pic2Link app identity") if apps.length > 1
+  app = apps.first
+  UI.user_error!("Wrong Bundle ID") if app && app.bundle_id != PIC2LINK_BUNDLE_ID
+  app
+end
+
+platform :mac do
+  lane :resubmission do |options|
+    begin
+      pic2link_auth!
+      Pic2LinkResubmission.new.run(options.fetch(:stage))
+    rescue StandardError => error
+      location = error.backtrace&.find { |line| line.include?("resubmission_support.rb:") }&.split(":in")&.first
+      UI.user_error!("Resubmission stopped (#{error.class}, #{location}); inspect current state before retrying. Sensitive response details suppressed.")
+    end
+  end
+  desc "Update only the verified OSS reviewer configuration; never select or submit a build"
+  lane :update_reviewer_configuration do
+    begin
+      client = Spaceship::ConnectAPI::Client.login(ENV.fetch("FASTLANE_USER"), use_portal: false, use_tunes: true, team_name: "Li Wei")
+      Pic2LinkRelease.new(client).update_reviewer_configuration
+    rescue StandardError
+      UI.user_error!("Reviewer configuration update stopped; inspect read-back before retrying. Sensitive error details suppressed.")
+    end
+  end
+  desc "Read-only rejection inspection through the existing authorized session"
+  lane :inspect_review_with_session do
+    client = Spaceship::ConnectAPI::Client.login(ENV.fetch("FASTLANE_USER"), use_portal: false, use_tunes: true, team_name: "Li Wei")
+    release = Pic2LinkRelease.new(client)
+    version = release.version
+    builds = release.get("v1/appStoreVersions/#{Pic2LinkRelease::VERSION_ID}/build")["data"]
+    review = release.get("v1/appStoreVersions/#{Pic2LinkRelease::VERSION_ID}/appStoreReviewDetail")["data"]
+    snapshot = {app_id: Pic2LinkRelease::APP_ID, version_id: version["id"],
+      version: version["attributes"]["versionString"], state: version["attributes"]["appStoreState"],
+      release_type: version["attributes"]["releaseType"], selected_build: builds&.dig("attributes", "version"),
+      review_detail_exists: !review.nil?, review_notes_present: !review&.dig("attributes", "notes").to_s.empty?}
+    snapshot[:uploaded_builds] = release.all("v1/builds", {filter: {app: Pic2LinkRelease::APP_ID}, limit: 200}).map do |build|
+      {id: build["id"], number: build.dig("attributes", "version"), state: build.dig("attributes", "processingState")}
+    end
+    UI.message(JSON.pretty_generate(snapshot))
+    directory = File.join(PIC2LINK_ROOT, "dist/review-fix-20260911")
+    FileUtils.mkdir_p(directory)
+    File.write(File.join(directory, "asc-review-inspection.json"), JSON.pretty_generate(snapshot))
+  end
+  lane :verify_privacy do
+    client = Spaceship::ConnectAPI::Client.login(ENV.fetch("FASTLANE_USER"), use_portal: false, use_tunes: true, team_name: "Li Wei")
+    Pic2LinkRelease.new(client).verify_privacy
+  end
+  lane :select_build do
+    pic2link_auth!
+    Pic2LinkRelease.new.select_build
+  end
+  lane :prepare_review do
+    pic2link_auth!
+    Pic2LinkRelease.new.prepare_review
+  end
+
+  lane :submit_review do
+    pic2link_auth!
+    Pic2LinkRelease.new.submit_review
+  end
+
+  lane :verify_submission do
+    pic2link_auth!
+    Pic2LinkRelease.new.verify_submission
+  end
+  lane :upload_binary do
+    pic2link_auth!
+    Pic2LinkRelease.new.upload_binary
+  end
+  lane :prepare_commerce do
+    pic2link_auth!
+    Pic2LinkRelease.new.prepare_commerce
+  end
+  lane :inspect_commerce do
+    pic2link_auth!
+    Pic2LinkRelease.new.inspect_commerce
+  end
+
+  lane :prepare_ratings do
+    pic2link_auth!
+    Pic2LinkRelease.new.prepare_ratings
+  end
+
+  lane :upload_screenshots do
+    pic2link_auth!
+    Pic2LinkRelease.new.upload_screenshots
+  end
+
+  lane :prepare_privacy do
+    client = Spaceship::ConnectAPI::Client.login(ENV.fetch("FASTLANE_USER"), use_portal: false, use_tunes: true, team_name: "Li Wei")
+    Pic2LinkRelease.new(client).prepare_privacy
+  end
+  lane :inspect_details do
+    pic2link_auth!
+    Pic2LinkRelease.new.inspect_details
+  end
+
+  lane :upload_metadata do
+    pic2link_auth!
+    Pic2LinkRelease.new.upload_metadata
+  end
+  desc "Obtain an installer distribution certificate without changing existing certificates"
+  lane :prepare_installer_signing do
+    UI.user_error!("Signing target mismatch") unless ENV["CONFIRM_PIC2LINK_SIGNING"] == "Amanoya.Pic2Link|MAC_OS|W7XZ85M98K"
+    pic2link_auth!
+    identifier = Spaceship::ConnectAPI::BundleId.find(PIC2LINK_BUNDLE_ID)
+    UI.user_error!("Identifier/team mismatch") unless identifier && identifier.seed_id == PIC2LINK_TEAM_ID
+    key = app_store_connect_api_key(key_id: ENV.fetch("ASC_API_KEY_ID"), issuer_id: ENV.fetch("ASC_API_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_API_PRIVATE_KEY_PATH"))
+    get_certificates(api_key: key, type: "mac_installer_distribution", platform: "macos", force: false,
+      output_path: ENV.fetch("PIC2LINK_SIGNING_ASSETS"), skip_set_partition_list: true)
+  end
+
+  desc "Archive the exact sandboxed Pic2Link build; no upload or submission"
+  lane :build_release do
+    UI.user_error!("Archive target mismatch") unless ENV["CONFIRM_PIC2LINK_ARCHIVE"] == "Amanoya.Pic2Link|MAC_OS|1.0.1|1|W7XZ85M98K"
+    project = File.read(File.join(PIC2LINK_ROOT, "Pic2Link.xcodeproj/project.pbxproj"))
+    UI.user_error!("Version changed") unless project.scan(/MARKETING_VERSION = ([^;]+);/).flatten.uniq == ["1.0.1"] && project.scan(/CURRENT_PROJECT_VERSION = ([^;]+);/).flatten.uniq == ["1"]
+    build_app(project: File.join(PIC2LINK_ROOT, "Pic2Link.xcodeproj"), scheme: "Pic2Link", configuration: "Release",
+      xcconfig: File.join(PIC2LINK_ROOT, "StoreBuild.xcconfig"),
+      derived_data_path: "/private/tmp/codex-apple-tests/Pic2Link/mas-20260905/ArchiveDerivedData",
+      archive_path: File.join(PIC2LINK_REPORTS, "Pic2Link.xcarchive"),
+      output_directory: PIC2LINK_REPORTS,
+      buildlog_path: File.join(PIC2LINK_REPORTS, "archive-logs"),
+      xcargs: "CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY='Apple Distribution' PROVISIONING_PROFILE_SPECIFIER='Pic2Link Mac App Store'",
+      skip_package_pkg: true, skip_package_ipa: true, clean: false)
+  end
+
+  desc "Export the inspected archive as a signed Mac App Store installer"
+  lane :export_release do
+    UI.user_error!("Export target mismatch") unless ENV["CONFIRM_PIC2LINK_ARCHIVE"] == "Amanoya.Pic2Link|MAC_OS|1.0.1|1|W7XZ85M98K"
+    UI.user_error!("Archive verification is missing") unless File.exist?(File.join(PIC2LINK_REPORTS, "archive-verification.json"))
+    sh("xcodebuild", "-exportArchive", "-archivePath", File.join(PIC2LINK_REPORTS, "Pic2Link.xcarchive"),
+      "-exportPath", File.join(PIC2LINK_REPORTS, "export"),
+      "-exportOptionsPlist", File.join(PIC2LINK_REPORTS, "ExportOptions.plist"))
+  end
+
+  desc "Prepare the exact Pic2Link Mac App Store distribution profile"
+  lane :prepare_signing do
+    UI.user_error!("Signing target mismatch") unless ENV["CONFIRM_PIC2LINK_SIGNING"] == "Amanoya.Pic2Link|MAC_OS|W7XZ85M98K"
+    pic2link_auth!
+    identifier = Spaceship::ConnectAPI::BundleId.find(PIC2LINK_BUNDLE_ID)
+    UI.user_error!("Identifier/team mismatch") unless identifier && identifier.seed_id == PIC2LINK_TEAM_ID
+    key = app_store_connect_api_key(key_id: ENV.fetch("ASC_API_KEY_ID"), issuer_id: ENV.fetch("ASC_API_ISSUER_ID"),
+      key_filepath: ENV.fetch("ASC_API_PRIVATE_KEY_PATH"))
+    get_provisioning_profile(app_identifier: PIC2LINK_BUNDLE_ID, platform: "macos", api_key: key,
+      development: false, readonly: false, output_path: File.join(PIC2LINK_REPORTS, "signing"),
+      provisioning_name: "Pic2Link Mac App Store", skip_install: false)
+  end
+
+  desc "Read-only check of the existing Apple ID fastlane session"
+  lane :inspect_session do
+    client = Spaceship::Tunes.login(ENV.fetch("FASTLANE_USER"))
+    teams = client.teams.map { |t| { id: t["teamId"], name: t["name"] } }
+    UI.message(JSON.pretty_generate(teams))
+    File.write(File.join(PIC2LINK_REPORTS, "session-teams.json"), JSON.pretty_generate(teams))
+  end
+
+  desc "Create the missing macOS record through an authorized Apple ID session"
+  lane :create_asc_app_with_session do
+    UI.user_error!("Creation target mismatch") unless ENV["CONFIRM_PIC2LINK_CREATE"] == "NEW|Amanoya.Pic2Link|MAC_OS|1.0.1|1|AFTER_APPROVAL"
+    pic2link_auth!
+    UI.user_error!("App already exists; inspect it") if pic2link_app
+    identifier = Spaceship::ConnectAPI::BundleId.find(PIC2LINK_BUNDLE_ID)
+    UI.user_error!("Identifier/team mismatch") unless identifier && identifier.seed_id == PIC2LINK_TEAM_ID
+    client = Spaceship::ConnectAPI::Client.login(ENV.fetch("FASTLANE_USER"), use_portal: false, use_tunes: true, team_name: "Li Wei")
+    existing = Spaceship::ConnectAPI::App.all(client: client, filter: { bundleId: PIC2LINK_BUNDLE_ID }, includes: nil)
+    UI.user_error!("App exists in session; inspect first") unless existing.empty?
+    Spaceship::ConnectAPI::App.create(client: client, name: PIC2LINK_STORE_NAME, version_string: "1.0.1", sku: PIC2LINK_BUNDLE_ID,
+      primary_locale: "en-US", bundle_id: PIC2LINK_BUNDLE_ID, platforms: ["MAC_OS"])
+    inspect_asc
+  end
+
+  desc "Register Pic2Link and create its first macOS ASC record"
+  lane :create_asc_app do
+    UI.user_error!("Creation target mismatch") unless ENV["CONFIRM_PIC2LINK_CREATE"] == "NEW|Amanoya.Pic2Link|MAC_OS|1.0.1|1|AFTER_APPROVAL"
+    pic2link_auth!
+    if pic2link_app
+      UI.user_error!("App already exists; inspect it instead of creating again")
+    end
+    ids = Spaceship::ConnectAPI::BundleId.all
+    UI.user_error!("API credential team mismatch") unless ids.any? { |b| b.seed_id == PIC2LINK_TEAM_ID }
+    identifier = ids.find { |b| b.identifier == PIC2LINK_BUNDLE_ID }
+    identifier ||= Spaceship::ConnectAPI::BundleId.create(name: "Pic2Link", platform: "MAC_OS", identifier: PIC2LINK_BUNDLE_ID, seed_id: PIC2LINK_TEAM_ID)
+    UI.user_error!("Registered identifier mismatch") unless identifier.identifier == PIC2LINK_BUNDLE_ID && identifier.seed_id == PIC2LINK_TEAM_ID
+    File.write(File.join(PIC2LINK_REPORTS, "registered-identifier.json"), JSON.pretty_generate({ id: identifier.id, identifier: identifier.identifier, platform: identifier.platform, seed_id: identifier.seed_id }))
+    Spaceship::ConnectAPI::App.create(name: "Pic2Link", version_string: "1.0.1", sku: PIC2LINK_BUNDLE_ID,
+      primary_locale: "en-US", bundle_id: PIC2LINK_BUNDLE_ID, platforms: ["MAC_OS"])
+    inspect_asc
+  end
+
+  desc "Read-only registered identifier and duplicate-name inspection"
+  lane :inspect_registration do
+    pic2link_auth!
+    ids = Spaceship::ConnectAPI::BundleId.all(filter: { identifier: PIC2LINK_BUNDLE_ID })
+    names = Spaceship::ConnectAPI::App.all(filter: { name: "Pic2Link" }, includes: nil)
+    snapshot = {
+      bundle_ids: ids.map { |b| { id: b.id, identifier: b.identifier, name: b.name, platform: b.platform } },
+      same_name_apps: names.map { |a| { id: a.id, name: a.name, bundle_id: a.bundle_id } }
+    }
+    File.write(File.join(PIC2LINK_REPORTS, "asc-registration.json"), JSON.pretty_generate(snapshot))
+    UI.message(JSON.pretty_generate(snapshot))
+  end
+
+  desc "Read-only ASC identity and version inspection"
+  lane :inspect_asc do
+    pic2link_auth!
+    app = pic2link_app
+    snapshot = { checked_at: Time.now.utc.iso8601, bundle_id: PIC2LINK_BUNDLE_ID, exists: !app.nil? }
+    if app
+      snapshot[:app] = { id: app.id, name: app.name, bundle_id: app.bundle_id, sku: app.sku, primary_locale: app.primary_locale }
+      snapshot[:versions] = app.get_app_store_versions.map do |v|
+        { id: v.id, platform: v.platform, version: v.version_string, state: v.app_store_state, release_type: v.release_type }
+      end
+      snapshot[:builds] = Spaceship::ConnectAPI::Build.all(app_id: app.id, includes: "preReleaseVersion", limit: 50).map do |b|
+        { id: b.id, build: b.version, version: b.pre_release_version&.version, platform: b.pre_release_version&.platform, state: b.processing_state }
+      end
+    end
+    FileUtils.mkdir_p(PIC2LINK_REPORTS)
+    File.write(File.join(PIC2LINK_REPORTS, "asc-inspection.json"), JSON.pretty_generate(snapshot))
+    UI.message(JSON.pretty_generate(snapshot))
+  end
+end

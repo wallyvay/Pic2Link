@@ -1,0 +1,7 @@
+Sube imágenes y archivos desde la barra de menús del Mac. Copia una URL o un enlace de imagen Markdown y consulta tus subidas recientes.
+
+Conecta tu propio almacenamiento: servicios compatibles con S3, WebDAV y alojamientos de imágenes. Configura tu cuenta y credenciales en Ajustes. Los planes y costes de almacenamiento dependen del proveedor.
+
+Usa el portapapeles, arrastra archivos o pulsa Comando-Mayúsculas-U para las fotos seleccionadas en Fotos. Añade texto con diseño automático, cambia el tamaño en memoria o convierte Live Photos en GIF. Deja el texto vacío para omitir la composición.
+
+El procesamiento se realiza en el Mac sin modificar los originales. Las credenciales se guardan en el llavero de macOS y los archivos se envían directamente al proveedor elegido.

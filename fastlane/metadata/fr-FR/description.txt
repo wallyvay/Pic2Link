@@ -1,0 +1,7 @@
+Envoyez images et fichiers depuis la barre des menus du Mac. Copiez une URL ou un lien image Markdown et retrouvez vos envois récents.
+
+Connectez votre propre stockage : services compatibles S3, WebDAV et hébergeurs d’images. Configurez votre compte et vos identifiants dans Réglages. Les offres et frais de stockage dépendent du fournisseur.
+
+Utilisez le presse-papiers, le glisser-déposer ou Commande-Maj-U pour les photos sélectionnées dans Photos. Ajoutez un texte avec une mise en page automatique, redimensionnez les images en mémoire ou convertissez les Live Photos en GIF. Laissez le texte vide pour ignorer la composition.
+
+Le traitement se fait sur votre Mac sans modifier les originaux. Les identifiants restent dans le trousseau macOS et les fichiers sont envoyés directement au fournisseur choisi.

@@ -1,0 +1,2 @@
+"NSPhotoLibraryUsageDescription" = "Pic2Link lit les photos sélectionnées pour les envoyer ou créer un GIF à partir d’une Live Photo.";
+"NSAppleEventsUsageDescription" = "Pic2Link lit les photos sélectionnées dans l’app source lorsque vous demandez un envoi direct.";

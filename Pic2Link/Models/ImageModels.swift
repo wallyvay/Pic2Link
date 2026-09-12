@@ -10,13 +10,15 @@ struct UploadedImage: Identifiable, Codable, Equatable {
     let url: String
     let uploadDate: Date
     let thumbnailData: Data?
+    let caption: String?
 
-    init(id: UUID = UUID(), fileName: String, url: String, uploadDate: Date = Date(), thumbnailData: Data? = nil) {
+    init(id: UUID = UUID(), fileName: String, url: String, uploadDate: Date = Date(), thumbnailData: Data? = nil, caption: String? = nil) {
         self.id = id
         self.fileName = fileName
         self.url = url
         self.uploadDate = uploadDate
         self.thumbnailData = thumbnailData
+        self.caption = caption.flatMap { $0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : $0 }
     }
 
     var fileExtension: String {
@@ -317,6 +319,7 @@ struct KeyboardShortcut: Codable, Equatable {
     var shift: Bool
 
     static let `default` = KeyboardShortcut(key: .u, command: true, option: false, control: false, shift: false)
+    static let selectedPhotos = KeyboardShortcut(key: .u, command: true, option: false, control: false, shift: true)
 
     var carbonModifiers: UInt32 {
         var flags: UInt32 = 0
@@ -336,6 +339,77 @@ struct KeyboardShortcut: Codable, Equatable {
         pieces.append(key.rawValue)
         return pieces.joined()
     }
+}
+
+enum UploadResizeMode: String, Codable, CaseIterable, Identifiable, Sendable {
+    case width
+    case height
+    case percentage
+    case free
+    case maximum
+
+    var id: Self { self }
+
+    var displayName: String {
+        L10n.tr("compression.mode.\(rawValue)")
+    }
+}
+
+struct UploadCompressionSettings: Codable, Equatable, Sendable {
+    var isEnabled: Bool
+    var mode: UploadResizeMode
+    var width: Int
+    var height: Int
+    var percentage: Double
+    /// 仅对剪贴板中可确认拥有配对视频的实况照片生效。
+    /// 普通静态图片始终沿用原有上传路径，不会被转换成 GIF。
+    var convertClipboardLivePhotosToGIF: Bool
+
+    init(
+        isEnabled: Bool,
+        mode: UploadResizeMode,
+        width: Int,
+        height: Int,
+        percentage: Double,
+        convertClipboardLivePhotosToGIF: Bool = false
+    ) {
+        self.isEnabled = isEnabled
+        self.mode = mode
+        self.width = width
+        self.height = height
+        self.percentage = percentage
+        self.convertClipboardLivePhotosToGIF = convertClipboardLivePhotosToGIF
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case isEnabled
+        case mode
+        case width
+        case height
+        case percentage
+        case convertClipboardLivePhotosToGIF
+    }
+
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        isEnabled = try container.decode(Bool.self, forKey: .isEnabled)
+        mode = try container.decode(UploadResizeMode.self, forKey: .mode)
+        width = try container.decode(Int.self, forKey: .width)
+        height = try container.decode(Int.self, forKey: .height)
+        percentage = try container.decode(Double.self, forKey: .percentage)
+        convertClipboardLivePhotosToGIF = try container.decodeIfPresent(
+            Bool.self,
+            forKey: .convertClipboardLivePhotosToGIF
+        ) ?? false
+    }
+
+    static let `default` = UploadCompressionSettings(
+        isEnabled: false,
+        mode: .maximum,
+        width: 1_920,
+        height: 1_080,
+        percentage: 50
+    )
 }
 
 struct ImageHostProfile: Identifiable, Codable, Equatable {
@@ -456,12 +530,16 @@ struct AppSettings: Codable, Equatable {
     var activeProfileID: UUID?
     var uploadShortcut: KeyboardShortcut
     var launchAtLogin: Bool
+    var uploadCompression: UploadCompressionSettings
+    var captionBeforeUpload = false
+    var copyLinksAsMarkdown = false
 
     static let `default` = AppSettings(
         profiles: [ImageHostProfile.blank(provider: .alibabaOSS)],
         activeProfileID: nil,
         uploadShortcut: .default,
-        launchAtLogin: false
+        launchAtLogin: false,
+        uploadCompression: .default
     )
 
     enum CodingKeys: String, CodingKey {
@@ -469,18 +547,27 @@ struct AppSettings: Codable, Equatable {
         case activeProfileID
         case uploadShortcut
         case launchAtLogin
+        case uploadCompression
+        case captionBeforeUpload
+        case copyLinksAsMarkdown
     }
 
     init(
         profiles: [ImageHostProfile],
         activeProfileID: UUID?,
         uploadShortcut: KeyboardShortcut,
-        launchAtLogin: Bool
+        launchAtLogin: Bool,
+        uploadCompression: UploadCompressionSettings = .default,
+        captionBeforeUpload: Bool = false,
+        copyLinksAsMarkdown: Bool = false
     ) {
         self.profiles = profiles
         self.activeProfileID = activeProfileID
         self.uploadShortcut = uploadShortcut
         self.launchAtLogin = launchAtLogin
+        self.uploadCompression = uploadCompression
+        self.captionBeforeUpload = captionBeforeUpload
+        self.copyLinksAsMarkdown = copyLinksAsMarkdown
     }
 
     init(from decoder: any Decoder) throws {
@@ -489,6 +576,9 @@ struct AppSettings: Codable, Equatable {
         activeProfileID = try container.decodeIfPresent(UUID.self, forKey: .activeProfileID)
         uploadShortcut = try container.decodeIfPresent(KeyboardShortcut.self, forKey: .uploadShortcut) ?? .default
         launchAtLogin = try container.decodeIfPresent(Bool.self, forKey: .launchAtLogin) ?? false
+        uploadCompression = try container.decodeIfPresent(UploadCompressionSettings.self, forKey: .uploadCompression) ?? .default
+        captionBeforeUpload = try container.decodeIfPresent(Bool.self, forKey: .captionBeforeUpload) ?? false
+        copyLinksAsMarkdown = try container.decodeIfPresent(Bool.self, forKey: .copyLinksAsMarkdown) ?? false
     }
 
     var activeProfile: ImageHostProfile? {

@@ -1,0 +1,2 @@
+"NSPhotoLibraryUsageDescription" = "Pic2Link reads the photos you select to upload them, or to create a Live Photo GIF.";
+"NSAppleEventsUsageDescription" = "Pic2Link reads selected photos from the source app when you request a direct upload.";

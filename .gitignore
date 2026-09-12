@@ -25,3 +25,7 @@ dist/
 *.cer
 *.pem
 *.mobileprovision
+*.provisionprofile
+fastlane/report.xml
+fastlane/README.md
+fastlane/screenshots/

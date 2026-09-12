@@ -1,0 +1,7 @@
+Upload images and files from the macOS menu bar. Copy a plain URL or a Markdown image link, and keep your recent uploads close at hand.
+
+Choose your own storage provider, including S3-compatible services, WebDAV and popular image hosts. Configure your provider account and credentials in Settings; storage service plans are supplied separately by the provider.
+
+Upload from the clipboard, drag files onto the menu bar, or press Command-Shift-U for selected photos in Photos. Add optional text with automatic layout before upload, resize images in memory, and turn Live Photos into animated GIFs. Leave the caption blank to skip text composition.
+
+Image processing happens on your Mac. Original files stay unchanged. Credentials are stored in macOS Keychain, and uploads go directly to your configured provider.

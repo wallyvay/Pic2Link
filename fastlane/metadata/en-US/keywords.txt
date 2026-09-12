@@ -1,0 +1,1 @@
+image,upload,link,markdown,clipboard,photo,resize,WebDAV,S3,GIF,menubar

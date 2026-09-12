@@ -1,5 +1,72 @@
 import AppKit
 import Combine
+import UniformTypeIdentifiers
+
+enum PasteboardFileResolver {
+    static func fileURLs(in pasteboard: NSPasteboard) -> [URL] {
+        let options: [NSPasteboard.ReadingOptionKey: Any] = [
+            .urlReadingFileURLsOnly: true
+        ]
+        var candidates: [URL] = []
+
+        if let objects = pasteboard.readObjects(forClasses: [NSURL.self], options: options) {
+            candidates.append(contentsOf: objects.compactMap { ($0 as? NSURL) as URL? })
+        }
+
+        for item in pasteboard.pasteboardItems ?? [] {
+            guard let value = item.string(forType: .fileURL) else { continue }
+
+            if let fileURL = URL(string: value), fileURL.isFileURL {
+                candidates.append(fileURL)
+            } else if value.hasPrefix("/") {
+                candidates.append(URL(fileURLWithPath: value))
+            }
+        }
+
+        var seen: Set<URL> = []
+        return candidates.compactMap { candidate in
+            guard candidate.isFileURL else { return nil }
+            let standardizedURL = candidate.standardizedFileURL
+            guard seen.insert(standardizedURL).inserted else { return nil }
+            return standardizedURL
+        }
+    }
+
+    static func firstFileURL(in pasteboard: NSPasteboard) -> URL? {
+        fileURLs(in: pasteboard).first
+    }
+
+    static func firstImageFileURL(in pasteboard: NSPasteboard) -> URL? {
+        for fileURL in fileURLs(in: pasteboard) where isImageFile(fileURL) {
+            return fileURL
+        }
+        return nil
+    }
+
+    /// 菜单栏拖放只接收文件，不把文件夹误交给上传队列。
+    static func regularFileURLs(in pasteboard: NSPasteboard) -> [URL] {
+        fileURLs(in: pasteboard).filter { fileURL in
+            let values = try? fileURL.resourceValues(forKeys: [.isDirectoryKey])
+            return values?.isDirectory != true
+        }
+    }
+
+    static func filePromiseReceivers(in pasteboard: NSPasteboard) -> [NSFilePromiseReceiver] {
+        pasteboard.readObjects(
+            forClasses: [NSFilePromiseReceiver.self],
+            options: nil
+        )?
+        .compactMap { $0 as? NSFilePromiseReceiver } ?? []
+    }
+
+    nonisolated static func isImageFile(_ fileURL: URL) -> Bool {
+        let values = try? fileURL.resourceValues(forKeys: [.isDirectoryKey, .contentTypeKey])
+        guard values?.isDirectory != true else { return false }
+
+        let contentType = values?.contentType ?? UTType(filenameExtension: fileURL.pathExtension)
+        return contentType?.conforms(to: .image) ?? false
+    }
+}
 
 /// 剪切板图片监听器
 class PasteboardMonitor: ObservableObject {
@@ -47,6 +114,15 @@ class PasteboardMonitor: ObservableObject {
     func getImageFromPasteboard() {
         let pasteboard = NSPasteboard.general
 
+        // 优先保留复制图片文件的原始 URL，避免 GIF、WebP、HEIC 等被重编码为 PNG。
+        if let fileURL = PasteboardFileResolver.firstImageFileURL(in: pasteboard),
+           let image = NSImage(contentsOf: fileURL) {
+            print("📋 原始图片文件 URL 成功: \(fileURL.path)")
+            self.currentImage = image
+            self.imageChanged?(image)
+            return
+        }
+
         // 方法1：尝试直接获取图片
         if let image = NSImage(pasteboard: pasteboard) {
             print("📋 方法1：NSImage(pasteboard) 成功")
@@ -71,22 +147,6 @@ class PasteboardMonitor: ObservableObject {
             self.currentImage = image
             self.imageChanged?(image)
             return
-        }
-
-        // 方法4：尝试获取文件 URL
-        if let items = pasteboard.pasteboardItems {
-            for item in items {
-                if let fileURLString = item.string(forType: .fileURL) {
-                    if let url = URL(string: fileURLString),
-                       url.isFileURL,
-                       let image = NSImage(contentsOf: url) {
-                        print("📋 方法4：文件 URL 成功: \(url.path)")
-                        self.currentImage = image
-                        self.imageChanged?(image)
-                        return
-                    }
-                }
-            }
         }
 
         // 没有图片

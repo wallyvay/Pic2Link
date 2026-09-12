@@ -14,6 +14,8 @@ final class Pic2LinkUITests: XCTestCase {
             saveTitle: "Save",
             screenshotName: "settings-en-light"
         )
+        assertCompressionControls(app: app)
+        assertSelectionHelp(app: app)
     }
 
     func testEnglishSettingsInDarkAppearance() {
@@ -25,6 +27,8 @@ final class Pic2LinkUITests: XCTestCase {
             saveTitle: "Save",
             screenshotName: "settings-en-dark"
         )
+        assertCompressionControls(app: app)
+        assertSelectionHelp(app: app)
     }
 
     func testArabicUsesRightToLeftSettingsLayout() {
@@ -77,8 +81,8 @@ final class Pic2LinkUITests: XCTestCase {
         let profileElement = app.staticTexts["settings.profileList.title"]
         XCTAssertTrue(languageElement.waitForExistence(timeout: 3))
         XCTAssertTrue(profileElement.exists)
-        XCTAssertEqual(languageElement.label, languageTitle)
-        XCTAssertEqual(profileElement.label, profileTitle)
+        XCTAssertEqual(visibleText(languageElement), languageTitle)
+        XCTAssertEqual(visibleText(profileElement), profileTitle)
 
         let saveButton = app.buttons[saveTitle]
         XCTAssertTrue(saveButton.exists)
@@ -89,6 +93,48 @@ final class Pic2LinkUITests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
         return window
+    }
+
+    private func assertCompressionControls(app: XCUIApplication) {
+        let title = app.staticTexts["settings.compression.title"]
+        let toggle = app.descendants(matching: .any).matching(identifier: "settings.compression.toggle").firstMatch
+        let livePhotoGIFToggle = app.descendants(matching: .any).matching(identifier: "settings.compression.livePhotoGIF.toggle").firstMatch
+        let scrollView = app.scrollViews["settings.editor.scroll"]
+
+        XCTAssertTrue(scrollView.waitForExistence(timeout: 3))
+        for _ in 0..<8 where !toggle.isHittable {
+            scrollView.swipeUp()
+        }
+        XCTAssertTrue(title.waitForExistence(timeout: 3))
+        XCTAssertTrue(toggle.exists)
+        XCTAssertTrue(toggle.isHittable)
+        toggle.click()
+
+        for _ in 0..<8 where !livePhotoGIFToggle.isHittable {
+            scrollView.swipeUp()
+        }
+        XCTAssertTrue(livePhotoGIFToggle.waitForExistence(timeout: 3))
+        XCTAssertTrue(livePhotoGIFToggle.isEnabled)
+        XCTAssertTrue(livePhotoGIFToggle.isHittable)
+
+        XCTAssertTrue(livePhotoGIFToggle.isEnabled)
+    }
+
+    private func assertSelectionHelp(app: XCUIApplication) {
+        let help = app.staticTexts["settings.selection.help"]
+        let scroll = app.scrollViews["settings.editor.scroll"]
+        for _ in 0..<8 where !help.isHittable { scroll.swipeUp() }
+        XCTAssertTrue(help.exists)
+        #if APP_STORE
+        XCTAssertEqual(visibleText(help), "⇧⌘U uploads the current selection in Photos. Drag Finder files to the menu bar icon or use Choose File.")
+        #else
+        XCTAssertEqual(visibleText(help), "⇧⌘U uploads the selected Finder files or the current selection in Photos.")
+        #endif
+    }
+
+    private func visibleText(_ element: XCUIElement) -> String {
+        // AppKit static text can expose its string as AXValue rather than AXTitle.
+        element.label.isEmpty ? (element.value as? String ?? "") : element.label
     }
 
     private func launch(language: String, appearance: String) -> XCUIApplication {

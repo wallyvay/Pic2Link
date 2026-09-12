@@ -4,8 +4,16 @@ import AppKit
 /// 剪切板图片上传区域
 struct ClipboardImageSection: View {
     let image: NSImage?
+    let activeUploadImage: NSImage?
+    let activeUploadFileName: String?
+    let isPipelineActive: Bool
+    let captionStatus: String?
+    let isCompressing: Bool
+    let compressionProgress: ImageCompressionProgress
+    let didCompressActiveUpload: Bool
     let isUploading: Bool
     let uploadProgress: UploadProgress
+    let pendingUploadCount: Int
     let shortcutLabel: String
     let onUpload: () -> Void
 
@@ -15,53 +23,76 @@ struct ClipboardImageSection: View {
                 .font(.headline)
                 .foregroundColor(.primary)
 
-            if let image = image {
+            if isPipelineActive || image != nil {
                 Button(action: onUpload) {
                     ZStack {
-                        // 图片预览
-                        Image(nsImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxHeight: 120)
-                            .cornerRadius(8)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.gray.opacity(0.3), lineWidth: 1)
-                            )
+                        uploadPreview
 
-                        // 上传进度覆盖层
-                        if isUploading {
-                            VStack(spacing: 4) {
-                                ProgressView(value: uploadProgress.fractionCompleted, total: 1.0)
-                                    .progressViewStyle(.linear)
-                                    .frame(width: 200)
+                        if isPipelineActive {
+                            VStack(spacing: 6) {
+                                if let activeUploadFileName {
+                                    Text(activeUploadFileName)
+                                        .font(.caption)
+                                        .lineLimit(1)
+                                        .truncationMode(.middle)
+                                }
 
-                                Text("\(uploadProgress.percentage)%")
-                                    .font(.caption)
-                                    .monospacedDigit()
-                                    .foregroundColor(.white)
+                                if let captionStatus {
+                                    Text(captionStatus)
+                                        .font(.caption)
+                                        .multilineTextAlignment(.center)
+                                }
 
-                                if !uploadProgress.byteCountDescription.isEmpty {
-                                    Text(uploadProgress.byteCountDescription)
+                                if didCompressActiveUpload {
+                                    stageProgress(
+                                        title: L10n.tr("clipboard.compressionProgress"),
+                                        percentage: compressionProgress.percentage,
+                                        fraction: compressionProgress.fractionCompleted,
+                                        detail: nil,
+                                        isCurrent: isCompressing
+                                    )
+                                }
+
+                                if isUploading {
+                                    stageProgress(
+                                        title: L10n.tr("clipboard.uploadProgress"),
+                                        percentage: uploadProgress.percentage,
+                                        fraction: uploadProgress.fractionCompleted,
+                                        detail: uploadProgress.totalBytes > 0
+                                            ? uploadProgress.byteCountDescription
+                                            : nil,
+                                        isCurrent: true
+                                    )
+                                }
+
+                                if pendingUploadCount > 0 {
+                                    Text(L10n.tr("status.queuePending", pendingUploadCount))
                                         .font(.caption2)
                                         .monospacedDigit()
-                                        .foregroundColor(.white.opacity(0.78))
+                                        .foregroundColor(.white.opacity(0.85))
                                 }
                             }
-                            .padding()
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .padding(.horizontal, 18)
                             .background(Color.black.opacity(0.6))
                             .cornerRadius(8)
                             .accessibilityElement(children: .combine)
-                            .accessibilityLabel(L10n.tr("clipboard.progress"))
-                            .accessibilityValue("\(uploadProgress.percentage)%")
+                            .accessibilityLabel(
+                                captionStatus ?? (isCompressing
+                                    ? L10n.tr("clipboard.compressionProgress")
+                                    : L10n.tr("clipboard.uploadProgress"))
+                            )
+                            .accessibilityValue(
+                                captionStatus == nil
+                                    ? "\(isCompressing ? compressionProgress.percentage : uploadProgress.percentage)%" : ""
+                            )
                         }
                     }
                 }
                 .buttonStyle(.plain)
-                .disabled(isUploading)
 
                 // 提示文字
-                if !isUploading {
+                if !isPipelineActive {
                     Text(L10n.tr("clipboard.uploadPrompt", shortcutLabel))
                         .font(.caption)
                         .foregroundColor(.secondary)
@@ -83,5 +114,64 @@ struct ClipboardImageSection: View {
                 .cornerRadius(8)
             }
         }
+    }
+
+    @ViewBuilder
+    private var uploadPreview: some View {
+        if let previewImage = isPipelineActive ? activeUploadImage : image {
+            Image(nsImage: previewImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 120)
+        } else {
+            VStack(spacing: 8) {
+                Image(systemName: "doc.fill")
+                    .font(.system(size: 36))
+                    .foregroundColor(.secondary)
+
+                if let activeUploadFileName {
+                    Text(activeUploadFileName)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .lineLimit(1)
+                        .truncationMode(.middle)
+                }
+            }
+            .frame(maxWidth: .infinity, minHeight: 120, maxHeight: 120)
+        }
+    }
+
+    private func stageProgress(
+        title: String,
+        percentage: Int,
+        fraction: Double,
+        detail: String?,
+        isCurrent: Bool
+    ) -> some View {
+        VStack(spacing: 3) {
+            HStack {
+                Text(title)
+                    .font(.caption2)
+                    .foregroundColor(.white.opacity(isCurrent ? 1 : 0.78))
+                Spacer()
+                Text("\(percentage)%")
+                    .font(.caption2)
+                    .monospacedDigit()
+                    .foregroundColor(.white)
+            }
+
+            ProgressView(value: fraction, total: 1)
+                .progressViewStyle(.linear)
+                .tint(.white)
+
+            if let detail {
+                Text(detail)
+                    .font(.caption2)
+                    .monospacedDigit()
+                    .foregroundColor(.white.opacity(0.78))
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+        }
+        .frame(maxWidth: 220)
     }
 }

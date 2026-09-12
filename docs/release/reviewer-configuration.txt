@@ -1,0 +1,19 @@
+Pic2Link is a macOS menu-bar image uploader. No Pic2Link account is required. Please use the isolated Alibaba Cloud OSS configuration below to test uploads without creating a cloud account.
+
+In Pic2Link Settings, add an image host and select Alibaba Cloud OSS:
+Name: App Review
+AccessKey ID: {{ACCESS_KEY_ID}}
+AccessKey Secret: {{ACCESS_KEY_SECRET}}
+Bucket: pic2link-review-20260911-92a7
+Endpoint: oss-ap-southeast-1.aliyuncs.com
+Public URL: https://pic2link-review-20260911-92a7.oss-ap-southeast-1.aliyuncs.com
+Base path: review
+Region, if requested: ap-southeast-1 (Singapore)
+
+Save the configuration, select it as the active image host, and run the connection test. Copy a test image, then use the menu-bar upload command. The uploaded link can be opened in a browser. You can also test file selection and drag-and-drop uploads. Enable compression in Settings or the menu-bar menu to test image resizing before upload.
+
+To test Live Photo conversion, enable Live Photo to GIF and use the app's photo-library Live Photo picker with a Live Photo in Photos. Copying from Photos may supply only a static JPEG cover; static images are not converted to GIF. Photo-library permission is requested only when this feature is used.
+
+Please upload non-sensitive test images only. Uploaded review images have public read links and are automatically deleted after 30 days. These dedicated credentials are restricted to the review folder of this isolated test bucket, plus bucket listing for connection testing. They have no RAM administration permissions.
+
+Build 1.0.1 (2) addresses both review issues. For Guideline 2.4.5(i), all temporary Apple Events entitlement exceptions have been removed. Finder selection automation is disabled in the Mac App Store build; please use drag-and-drop, clipboard upload, or the system file picker instead. Photos uses its public scripting access group and PhotoKit. For Guideline 2.1(a), the isolated OSS demo configuration above has been tested for connection, upload, and public image retrieval.

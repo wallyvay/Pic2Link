@@ -1,0 +1,7 @@
+Lade Bilder und Dateien über die Mac-Menüleiste hoch. Kopiere eine URL oder einen Markdown-Bildlink und greife auf letzte Uploads zu.
+
+Verbinde deinen eigenen Speicher: S3-kompatible Dienste, WebDAV und Bildhoster. Konto und Zugangsdaten richtest du in den Einstellungen ein. Speicherpläne und Gebühren werden separat vom Anbieter festgelegt.
+
+Nutze die Zwischenablage, Drag-and-drop oder Befehl-Umschalt-U für ausgewählte Fotos in Fotos. Ergänze Text mit automatischem Layout, ändere Bildgrößen im Arbeitsspeicher oder wandle Live Photos in GIFs um. Leerer Text überspringt die Bildkomposition.
+
+Die Bildverarbeitung findet auf deinem Mac statt und verändert keine Originale. Zugangsdaten liegen im macOS-Schlüsselbund; Uploads gehen direkt zum gewählten Anbieter.

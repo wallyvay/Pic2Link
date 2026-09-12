@@ -28,6 +28,19 @@ final class LaunchAtLoginService {
     private init() {}
 
     func sync(isEnabled: Bool) throws {
+#if APP_STORE
+        let service = SMAppService.mainApp
+        if isEnabled {
+            if service.status == .enabled { return }
+            if service.status == .requiresApproval {
+                throw LaunchAtLoginError.unsupportedStatus(.requiresApproval)
+            }
+            try service.register()
+            guard service.status == .enabled else { throw LaunchAtLoginError.unsupportedStatus(service.status) }
+        } else if service.status == .enabled || service.status == .requiresApproval {
+            try service.unregister()
+        }
+#else
         if isEnabled {
             if try syncWithSMAppService(isEnabled: true) {
                 try removeLegacyLaunchAgentIfNeeded()
@@ -38,8 +51,10 @@ final class LaunchAtLoginService {
             _ = try? syncWithSMAppService(isEnabled: false)
             try removeLegacyLaunchAgentIfNeeded()
         }
+#endif
     }
 
+#if !APP_STORE
     private func syncWithSMAppService(isEnabled: Bool) throws -> Bool {
         let service = SMAppService.mainApp
 
@@ -156,4 +171,5 @@ final class LaunchAtLoginService {
     private func uid() -> String {
         String(getuid())
     }
+#endif
 }

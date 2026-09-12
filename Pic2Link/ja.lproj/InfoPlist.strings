@@ -1,0 +1,2 @@
+"NSPhotoLibraryUsageDescription" = "Pic2Link は選択した写真をアップロードし、Live Photo を GIF に変換するために読み取ります。";
+"NSAppleEventsUsageDescription" = "直接アップロードを実行すると、Pic2Link が元のアプリで選択した写真を読み取ります。";

@@ -1,0 +1,1 @@
+imagem,enviar,link,markdown,transferência,foto,WebDAV,S3,GIF,menu

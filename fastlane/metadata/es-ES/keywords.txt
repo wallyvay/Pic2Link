@@ -1,0 +1,1 @@
+imagen,subir,enlace,markdown,portapapeles,foto,WebDAV,S3,GIF,menú

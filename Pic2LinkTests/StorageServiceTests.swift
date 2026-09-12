@@ -67,6 +67,34 @@ final class StorageServiceTests: XCTestCase {
         XCTAssertTrue(context.credentials.removedAccounts.contains(removedProfile.id.uuidString))
     }
 
+    func testLegacySettingsWithoutCompressionDecodeWithSafeDefaults() throws {
+        let expected = makeSettings()
+        let encoded = try JSONEncoder().encode(expected)
+        var json = try XCTUnwrap(JSONSerialization.jsonObject(with: encoded) as? [String: Any])
+        json.removeValue(forKey: "uploadCompression")
+
+        let decoded = try JSONDecoder().decode(
+            AppSettings.self,
+            from: JSONSerialization.data(withJSONObject: json)
+        )
+
+        XCTAssertEqual(decoded.uploadCompression, .default)
+        XCTAssertFalse(decoded.uploadCompression.isEnabled)
+    }
+
+    func testExistingCompressionSettingsDefaultLivePhotoGIFConversionToOff() throws {
+        let legacyCompression = Data(
+            """
+            {"isEnabled":true,"mode":"maximum","width":1920,"height":1080,"percentage":50}
+            """.utf8
+        )
+
+        let decoded = try JSONDecoder().decode(UploadCompressionSettings.self, from: legacyCompression)
+
+        XCTAssertTrue(decoded.isEnabled)
+        XCTAssertFalse(decoded.convertClipboardLivePhotosToGIF)
+    }
+
     private func makeContext(failWrites: Bool = false) -> TestContext {
         let suiteName = "Pic2LinkTests.Storage.\(UUID().uuidString)"
         let defaults = UserDefaults(suiteName: suiteName)!
@@ -97,11 +125,17 @@ final class StorageServiceTests: XCTestCase {
             authTokenSecret: "auth-token-secret",
             clientID: "client-id"
         )
+        var compression = UploadCompressionSettings.default
+        compression.isEnabled = true
+        compression.mode = .width
+        compression.width = 1_600
+        compression.convertClipboardLivePhotosToGIF = true
         return AppSettings(
             profiles: [profile],
             activeProfileID: profile.id,
             uploadShortcut: .default,
-            launchAtLogin: false
+            launchAtLogin: false,
+            uploadCompression: compression
         )
     }
 }

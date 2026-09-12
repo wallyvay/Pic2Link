@@ -10,6 +10,8 @@ struct SettingsView: View {
     @State private var selectedProfileID: UUID?
     @State private var shortcut: KeyboardShortcut
     @State private var launchAtLogin: Bool
+    @State private var uploadCompression: UploadCompressionSettings
+    @State private var captionBeforeUpload: Bool
 
     @State private var isValidating = false
     @State private var validationMessage = ""
@@ -32,6 +34,8 @@ struct SettingsView: View {
         _selectedProfileID = State(initialValue: initialSelection)
         _shortcut = State(initialValue: settings.uploadShortcut)
         _launchAtLogin = State(initialValue: settings.launchAtLogin)
+        _uploadCompression = State(initialValue: settings.uploadCompression)
+        _captionBeforeUpload = State(initialValue: settings.captionBeforeUpload)
     }
 
     var body: some View {
@@ -92,6 +96,8 @@ struct SettingsView: View {
                 } label: {
                     Label(L10n.tr("settings.addProfile"), systemImage: "plus")
                 }
+                .labelStyle(.iconOnly)
+                .help(L10n.tr("settings.addProfile"))
 
                 Button(role: .destructive) {
                     deleteSelectedProfile()
@@ -119,6 +125,14 @@ struct SettingsView: View {
                 if let profile = selectedProfile {
                     profileEditor(for: profile)
                     shortcutSection
+                    VStack(alignment: .leading, spacing: 6) {
+                        Toggle(L10n.tr("caption.enabled"), isOn: $captionBeforeUpload)
+                            .accessibilityIdentifier("settings.caption.toggle")
+                        Text(L10n.tr("caption.description"))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    compressionSection
                     appBehaviorSection
                     validationSection
                 } else {
@@ -132,6 +146,7 @@ struct SettingsView: View {
             }
             .padding()
         }
+        .accessibilityIdentifier("settings.editor.scroll")
     }
 
     private var footerBar: some View {
@@ -161,11 +176,14 @@ struct SettingsView: View {
                     profiles: finalProfiles,
                     activeProfileID: finalActiveID,
                     uploadShortcut: shortcut,
-                    launchAtLogin: launchAtLogin
+                    launchAtLogin: launchAtLogin,
+                    uploadCompression: uploadCompression,
+                    captionBeforeUpload: captionBeforeUpload
                 ))
                 dismiss()
             }
             .buttonStyle(.borderedProminent)
+            .disabled(shortcut == .selectedPhotos)
         }
         .padding()
     }
@@ -307,6 +325,11 @@ struct SettingsView: View {
             Text(L10n.tr("settings.currentShortcut", shortcut.displayString))
                 .font(.caption)
                 .foregroundColor(.secondary)
+
+            Text(L10n.tr(shortcut == .selectedPhotos ? "selection.shortcutReserved" : SelectionApplication.localizedKey("selection.shortcutHelp")))
+                .accessibilityIdentifier("settings.selection.help")
+                .font(.caption)
+                .foregroundStyle(shortcut == .selectedPhotos ? Color.red : Color.secondary)
         }
         .padding()
         .background(Color.gray.opacity(0.08))
@@ -328,6 +351,125 @@ struct SettingsView: View {
         .padding()
         .background(Color.gray.opacity(0.08))
         .cornerRadius(10)
+    }
+
+    private var compressionSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack {
+                Label(L10n.tr("settings.compression"), systemImage: "arrow.down.right.and.arrow.up.left")
+                    .font(.headline)
+                    .accessibilityIdentifier("settings.compression.title")
+
+                Spacer()
+
+                Toggle(L10n.tr("settings.compression"), isOn: $uploadCompression.isEnabled)
+                    .labelsHidden()
+                    .toggleStyle(.switch)
+                    .accessibilityIdentifier("settings.compression.toggle")
+            }
+
+            Text(L10n.tr("settings.compression.help"))
+                .font(.caption)
+                .foregroundColor(.secondary)
+
+            VStack(alignment: .leading, spacing: 10) {
+                Picker(L10n.tr("compression.mode.label"), selection: $uploadCompression.mode) {
+                    ForEach(UploadResizeMode.allCases) { mode in
+                        Text(mode.displayName).tag(mode)
+                    }
+                }
+                .pickerStyle(.menu)
+                .accessibilityIdentifier("settings.compression.mode")
+
+                compressionValueEditor
+
+                Text(L10n.tr("compression.singleMode.help"))
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
+            .disabled(!uploadCompression.isEnabled)
+            .opacity(uploadCompression.isEnabled ? 1 : 0.58)
+
+            Divider()
+
+            Toggle(
+                L10n.tr("settings.livePhotoGIF"),
+                isOn: $uploadCompression.convertClipboardLivePhotosToGIF
+            )
+            .toggleStyle(.switch)
+            .accessibilityIdentifier("settings.compression.livePhotoGIF.toggle")
+
+            Text(L10n.tr("settings.livePhotoGIF.help"))
+                .font(.caption)
+                .foregroundColor(.secondary)
+        }
+        .padding()
+        .background(Color.gray.opacity(0.08))
+        .cornerRadius(10)
+    }
+
+    @ViewBuilder
+    private var compressionValueEditor: some View {
+        switch uploadCompression.mode {
+        case .width:
+            compressionDimensionField(
+                title: L10n.tr("compression.width"),
+                value: $uploadCompression.width
+            )
+
+        case .height:
+            compressionDimensionField(
+                title: L10n.tr("compression.height"),
+                value: $uploadCompression.height
+            )
+
+        case .percentage:
+            HStack {
+                Text(L10n.tr("compression.percentage"))
+                Spacer()
+                TextField(
+                    L10n.tr("compression.percentage"),
+                    value: $uploadCompression.percentage,
+                    format: .number.precision(.fractionLength(0...1))
+                )
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.trailing)
+                .frame(width: 90)
+                Text("%")
+                    .foregroundColor(.secondary)
+            }
+
+        case .free, .maximum:
+            HStack(spacing: 14) {
+                compressionDimensionField(
+                    title: L10n.tr("compression.width"),
+                    value: $uploadCompression.width
+                )
+                compressionDimensionField(
+                    title: L10n.tr("compression.height"),
+                    value: $uploadCompression.height
+                )
+            }
+
+            if uploadCompression.mode == .maximum {
+                Text(L10n.tr("compression.maximum.hint"))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+
+    private func compressionDimensionField(title: String, value: Binding<Int>) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            TextField(title, value: value, format: .number)
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(.trailing)
+                .frame(width: 90)
+            Text(L10n.tr("compression.unit.pixels"))
+                .foregroundColor(.secondary)
+        }
     }
 
     @ViewBuilder

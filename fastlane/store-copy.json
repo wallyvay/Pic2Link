@@ -1,0 +1,93 @@
+{
+  "en-US": [
+    "Images to links, simply",
+    "Upload images and files from the macOS menu bar. Copy a plain URL or a Markdown image link, and keep your recent uploads close at hand.",
+    "Choose your own storage provider, including S3-compatible services, WebDAV and popular image hosts. Configure your provider account and credentials in Settings; storage service plans are supplied separately by the provider.\n\nUpload from the clipboard, drag files onto the menu bar, or press Command-Shift-U for selected photos in Photos. Add optional text with automatic layout before upload, resize images in memory, and turn Live Photos into animated GIFs. Leave the caption blank to skip text composition.\n\nImage processing happens on your Mac. Original files stay unchanged. Credentials are stored in macOS Keychain, and uploads go directly to your configured provider.",
+    "image,upload,link,markdown,clipboard,photo,resize,WebDAV,S3,GIF,menubar",
+    "A quiet moment"
+  ],
+  "zh-Hans": [
+    "图片上传，链接随手复制",
+    "在 Mac 菜单栏上传图片与文件，复制普通链接或 Markdown 图片链接，随时查看最近上传记录。",
+    "连接您自己的存储服务，支持 S3 兼容服务、WebDAV 及多种常用图床。请在设置中填写服务商账号与密钥；存储套餐和费用由服务商另行提供。\n\n从剪贴板上传、将文件拖到菜单栏，或按 Command-Shift-U 上传“照片”中选中的照片。上传前可添加文案并自动排版，在内存中调整图片尺寸，或将实况照片转为动态 GIF。文案留空即可跳过文字合成。\n\n图片处理在 Mac 本机完成，不修改原文件。密钥保存在 macOS Keychain，内容直接上传到您配置的服务商。",
+    "图床,上传,图片,链接,剪贴板,Markdown,压缩,实况,GIF,WebDAV,S3",
+    "慢一点，看见风景"
+  ],
+  "zh-Hant": [
+    "上傳圖片，隨手複製連結",
+    "在 Mac 選單列上傳圖片與檔案，複製一般連結或 Markdown 圖片連結，隨時查看最近上傳記錄。",
+    "連接您自己的儲存服務，支援 S3 相容服務、WebDAV 及多種常用圖床。請在設定中填寫服務商帳號與金鑰；儲存方案和費用由服務商另行提供。\n\n從剪貼簿上傳、將檔案拖到選單列，或按 Command-Shift-U 上傳「照片」中選取的照片。上傳前可加入文字並自動排版，在記憶體中調整圖片尺寸，或將原況照片轉為動態 GIF。文字留白即可略過文字合成。\n\n圖片處理在 Mac 本機完成，不修改原始檔案。金鑰保存在 macOS Keychain，內容直接上傳到您設定的服務商。",
+    "圖床,上傳,圖片,連結,剪貼簿,Markdown,壓縮,原況,GIF,WebDAV,S3",
+    "慢一點，看見風景"
+  ],
+  "ja": [
+    "画像をアップロードしてリンクに",
+    "Macのメニューバーから画像やファイルをアップロード。URLやMarkdown画像リンクをコピーし、最近の履歴をすぐに確認できます。",
+    "S3互換サービス、WebDAVなど、お使いのストレージや画像ホストを設定して利用します。アカウントと認証情報の設定が必要です。ストレージのプランや料金は各サービスが提供します。\n\nクリップボードやドラッグ＆ドロップからアップロードできます。「写真」の選択項目にはCommand-Shift-Uを使用します。任意のテキストを自動配置し、メモリ内で画像を縮小したり、Live PhotosをGIFに変換したりできます。テキストを空欄にすると合成をスキップします。\n\n画像処理はMac上で行われ、元のファイルは変更しません。認証情報はmacOSキーチェーンに保存され、内容は設定したサービスへ直接送信されます。",
+    "画像,アップロード,リンク,写真,クリップボード,Markdown,GIF,WebDAV,S3",
+    "静かなひととき"
+  ],
+  "ko": [
+    "사진을 올리고 링크를 복사하세요",
+    "Mac 메뉴 막대에서 이미지와 파일을 업로드하세요. 일반 URL 또는 Markdown 이미지 링크를 복사하고 최근 업로드를 확인할 수 있습니다.",
+    "S3 호환 서비스, WebDAV 등 원하는 저장소와 이미지 호스트를 연결하세요. 설정에 서비스 계정과 인증 정보를 입력해야 합니다. 저장소 요금제와 비용은 각 서비스에서 별도로 제공합니다.\n\n클립보드나 드래그 앤 드롭으로 업로드합니다. 사진 앱에서 선택한 사진에는 Command-Shift-U를 사용하세요. 업로드 전에 문구를 자동 배치하고, 메모리에서 크기를 조절하거나 Live Photo를 GIF로 변환할 수 있습니다. 문구를 비우면 합성을 건너뜁니다.\n\n이미지는 Mac에서 처리되며 원본 파일은 변경되지 않습니다. 인증 정보는 macOS 키체인에 저장되고 콘텐츠는 설정한 서비스로 직접 전송됩니다.",
+    "이미지,업로드,링크,사진,클립보드,Markdown,GIF,WebDAV,S3",
+    "고요한 순간"
+  ],
+  "fr-FR": [
+    "Des images aux liens",
+    "Envoyez images et fichiers depuis la barre des menus du Mac. Copiez une URL ou un lien image Markdown et retrouvez vos envois récents.",
+    "Connectez votre propre stockage : services compatibles S3, WebDAV et hébergeurs d’images. Configurez votre compte et vos identifiants dans Réglages. Les offres et frais de stockage dépendent du fournisseur.\n\nUtilisez le presse-papiers, le glisser-déposer ou Commande-Maj-U pour les photos sélectionnées dans Photos. Ajoutez un texte avec une mise en page automatique, redimensionnez les images en mémoire ou convertissez les Live Photos en GIF. Laissez le texte vide pour ignorer la composition.\n\nLe traitement se fait sur votre Mac sans modifier les originaux. Les identifiants restent dans le trousseau macOS et les fichiers sont envoyés directement au fournisseur choisi.",
+    "image,envoi,lien,markdown,presse-papiers,photo,taille,WebDAV,S3,GIF,menu",
+    "Un instant paisible"
+  ],
+  "de-DE": [
+    "Bilder hochladen, Links teilen",
+    "Lade Bilder und Dateien über die Mac-Menüleiste hoch. Kopiere eine URL oder einen Markdown-Bildlink und greife auf letzte Uploads zu.",
+    "Verbinde deinen eigenen Speicher: S3-kompatible Dienste, WebDAV und Bildhoster. Konto und Zugangsdaten richtest du in den Einstellungen ein. Speicherpläne und Gebühren werden separat vom Anbieter festgelegt.\n\nNutze die Zwischenablage, Drag-and-drop oder Befehl-Umschalt-U für ausgewählte Fotos in Fotos. Ergänze Text mit automatischem Layout, ändere Bildgrößen im Arbeitsspeicher oder wandle Live Photos in GIFs um. Leerer Text überspringt die Bildkomposition.\n\nDie Bildverarbeitung findet auf deinem Mac statt und verändert keine Originale. Zugangsdaten liegen im macOS-Schlüsselbund; Uploads gehen direkt zum gewählten Anbieter.",
+    "Bild,Upload,Link,Markdown,Zwischenablage,Foto,WebDAV,S3,GIF,Menüleiste",
+    "Ein stiller Moment"
+  ],
+  "es-ES": [
+    "De imágenes a enlaces",
+    "Sube imágenes y archivos desde la barra de menús del Mac. Copia una URL o un enlace de imagen Markdown y consulta tus subidas recientes.",
+    "Conecta tu propio almacenamiento: servicios compatibles con S3, WebDAV y alojamientos de imágenes. Configura tu cuenta y credenciales en Ajustes. Los planes y costes de almacenamiento dependen del proveedor.\n\nUsa el portapapeles, arrastra archivos o pulsa Comando-Mayúsculas-U para las fotos seleccionadas en Fotos. Añade texto con diseño automático, cambia el tamaño en memoria o convierte Live Photos en GIF. Deja el texto vacío para omitir la composición.\n\nEl procesamiento se realiza en el Mac sin modificar los originales. Las credenciales se guardan en el llavero de macOS y los archivos se envían directamente al proveedor elegido.",
+    "imagen,subir,enlace,markdown,portapapeles,foto,WebDAV,S3,GIF,menú",
+    "Un momento de calma"
+  ],
+  "pt-BR": [
+    "Imagens viram links",
+    "Envie imagens e arquivos pela barra de menus do Mac. Copie uma URL ou um link de imagem Markdown e veja seus envios recentes.",
+    "Conecte seu próprio armazenamento: serviços compatíveis com S3, WebDAV e hospedagens de imagens. Configure sua conta e credenciais nos Ajustes. Planos e custos de armazenamento são fornecidos separadamente pelo provedor.\n\nUse a área de transferência, arraste arquivos ou pressione Comando-Shift-U para fotos selecionadas no app Fotos. Adicione texto com layout automático, redimensione em memória ou converta Live Photos em GIF. Deixe o texto vazio para pular a composição.\n\nO processamento acontece no Mac sem alterar os originais. As credenciais ficam nas Chaves do macOS e os arquivos vão diretamente para o provedor escolhido.",
+    "imagem,enviar,link,markdown,transferência,foto,WebDAV,S3,GIF,menu",
+    "Um momento tranquilo"
+  ],
+  "ru": [
+    "Из фото в ссылки",
+    "Загружайте изображения и файлы из строки меню Mac. Копируйте URL или ссылку на изображение в Markdown и просматривайте недавние загрузки.",
+    "Подключите своё хранилище: сервисы с поддержкой S3, WebDAV и хостинги изображений. Укажите учётную запись и ключи в настройках. Тарифы и стоимость хранения определяет провайдер.\n\nИспользуйте буфер обмена, перетаскивание или Command-Shift-U для выбранных фото в «Фото». Добавляйте текст с автоматической компоновкой, меняйте размер в памяти или превращайте Live Photos в GIF. Пустой текст пропускает композицию.\n\nИзображения обрабатываются на Mac, оригиналы не меняются. Ключи хранятся в Связке ключей macOS, файлы отправляются напрямую выбранному провайдеру.",
+    "фото,загрузка,ссылка,markdown,буфер,GIF,WebDAV,S3",
+    "Тихое мгновение"
+  ],
+  "hi": [
+    "तस्वीरों से सीधे लिंक",
+    "Mac के मेनू बार से तस्वीरें और फ़ाइलें अपलोड करें। सामान्य URL या Markdown इमेज लिंक कॉपी करें और हाल के अपलोड देखें।",
+    "अपना स्टोरेज जोड़ें: S3-संगत सेवाएँ, WebDAV और इमेज होस्ट। सेटिंग में सेवा का खाता और पहचान जानकारी भरें। स्टोरेज प्लान और शुल्क संबंधित सेवा अलग से देती है।\n\nक्लिपबोर्ड, ड्रैग और ड्रॉप या फ़ोटो ऐप में चुनी तस्वीरों के लिए Command-Shift-U का उपयोग करें। अपलोड से पहले अपने-आप लेआउट के साथ टेक्स्ट जोड़ें, मेमोरी में आकार बदलें या Live Photos को GIF में बदलें। टेक्स्ट खाली रखने पर संयोजन छोड़ दिया जाता है।\n\nप्रोसेसिंग Mac पर होती है और मूल फ़ाइलें नहीं बदलतीं। पहचान जानकारी macOS Keychain में रहती है और फ़ाइलें चुनी सेवा को सीधे भेजी जाती हैं।",
+    "photo,upload,link,markdown,clipboard,image,WebDAV,S3,GIF",
+    "सुकून का एक पल"
+  ],
+  "ar-SA": [
+    "من الصور إلى الروابط",
+    "ارفع الصور والملفات من شريط قوائم Mac. انسخ رابط URL أو رابط صورة Markdown وراجع عمليات الرفع الأخيرة.",
+    "اربط مساحة التخزين الخاصة بك، بما يشمل خدمات S3 المتوافقة وWebDAV واستضافة الصور. أدخل حساب الخدمة وبيانات الاعتماد في الإعدادات. يقدم مزود الخدمة خطط التخزين ورسومه بشكل منفصل.\n\nاستخدم الحافظة أو السحب والإفلات أو Command-Shift-U للصور المحددة في تطبيق الصور. أضف نصًا بتنسيق تلقائي، أو غيّر الحجم في الذاكرة، أو حوّل Live Photos إلى GIF. اترك النص فارغًا لتجاوز دمجه بالصورة.\n\nتُعالج الصور على Mac دون تغيير الملفات الأصلية. تُحفظ بيانات الاعتماد في سلسلة مفاتيح macOS، وتُرسل الملفات مباشرة إلى المزود المحدد.",
+    "صورة,رفع,رابط,markdown,حافظة,WebDAV,S3,GIF",
+    "لحظة هادئة"
+  ],
+  "th": [
+    "เปลี่ยนรูปภาพเป็นลิงก์",
+    "อัปโหลดรูปและไฟล์จากแถบเมนูของ Mac คัดลอก URL หรือลิงก์รูปแบบ Markdown และดูรายการอัปโหลดล่าสุดได้ทันที",
+    "เชื่อมต่อพื้นที่เก็บข้อมูลของคุณ เช่น บริการที่รองรับ S3, WebDAV และโฮสต์รูปภาพ ตั้งค่าบัญชีและข้อมูลยืนยันตัวตนของบริการในแอป แพ็กเกจและค่าบริการพื้นที่เก็บข้อมูลแยกตามผู้ให้บริการ\n\nอัปโหลดจากคลิปบอร์ด ลากไฟล์ หรือกด Command-Shift-U เพื่อใช้รูปที่เลือกในแอปรูปภาพ เพิ่มข้อความพร้อมจัดวางอัตโนมัติ ปรับขนาดในหน่วยความจำ หรือแปลง Live Photos เป็น GIF เว้นข้อความว่างเพื่อข้ามการรวมข้อความ\n\nรูปถูกประมวลผลบน Mac โดยไม่แก้ไขต้นฉบับ ข้อมูลยืนยันตัวตนเก็บในพวงกุญแจ macOS และไฟล์ส่งตรงไปยังผู้ให้บริการที่เลือก",
+    "photo,upload,link,markdown,clipboard,WebDAV,S3,GIF",
+    "ช่วงเวลาแห่งความสงบ"
+  ]
+}

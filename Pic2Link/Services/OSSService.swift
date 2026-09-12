@@ -1,7 +1,31 @@
 import Foundation
 import CryptoKit
 import Combine
+import ImageIO
 import UniformTypeIdentifiers
+
+struct ImageFormatMetadata: Equatable {
+    let filenameExtension: String
+    let mimeType: String
+}
+
+enum ImageFormatResolver {
+    static func metadata(for data: Data) -> ImageFormatMetadata {
+        let contentType = detectedContentType(for: data) ?? .png
+        return ImageFormatMetadata(
+            filenameExtension: contentType.preferredFilenameExtension ?? "png",
+            mimeType: contentType.preferredMIMEType ?? "image/png"
+        )
+    }
+
+    private static func detectedContentType(for data: Data) -> UTType? {
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil),
+              let typeIdentifier = CGImageSourceGetType(source) else {
+            return nil
+        }
+        return UTType(typeIdentifier as String)
+    }
+}
 
 struct UploadProgress: Equatable {
     let completedBytes: Int64
@@ -34,7 +58,7 @@ class ImageHostingService: ObservableObject {
     private var config: ImageHostProfile
     private let urlSession: URLSession
 
-    init(config: ImageHostProfile) {
+    init(config: ImageHostProfile, urlSession: URLSession? = nil) {
         self.config = config
 
         let configuration = URLSessionConfiguration.default
@@ -42,7 +66,7 @@ class ImageHostingService: ObservableObject {
         configuration.timeoutIntervalForRequest = 60
         configuration.timeoutIntervalForResource = 300
 
-        self.urlSession = URLSession(configuration: configuration)
+        self.urlSession = urlSession ?? URLSession(configuration: configuration)
     }
 
     func updateConfig(_ newConfig: ImageHostProfile) {
@@ -67,10 +91,22 @@ class ImageHostingService: ObservableObject {
     }
 
     func uploadImage(_ imageData: Data, fileName: String? = nil) async throws -> String {
-        try await uploadFile(
+        let resolvedFileName: String
+        let resolvedMimeType: String
+
+        if let fileName {
+            resolvedFileName = fileName
+            resolvedMimeType = inferredMimeType(fileName: fileName)
+        } else {
+            let metadata = ImageFormatResolver.metadata(for: imageData)
+            resolvedFileName = generateFileName(from: imageData, fileExtension: metadata.filenameExtension)
+            resolvedMimeType = metadata.mimeType
+        }
+
+        return try await uploadFile(
             imageData,
-            fileName: fileName ?? generateFileName(from: imageData),
-            mimeType: inferredMimeType(fileName: fileName ?? generateFileName(from: imageData))
+            fileName: resolvedFileName,
+            mimeType: resolvedMimeType
         )
     }
 
@@ -426,10 +462,10 @@ class ImageHostingService: ObservableObject {
         return (data, response)
     }
 
-    private func generateFileName(from data: Data) -> String {
+    private func generateFileName(from data: Data, fileExtension: String) -> String {
         let timestamp = Int(Date().timeIntervalSince1970)
         let hash = md5Hex(data).prefix(8)
-        return "\(timestamp)_\(hash).png"
+        return "\(timestamp)_\(hash).\(fileExtension)"
     }
 
     private func generateObjectKey(fileName: String) -> String {
@@ -444,7 +480,14 @@ class ImageHostingService: ObservableObject {
             components.append(formatter.string(from: Date()))
         }
 
-        components.append(fileName)
+        // Display/source names are not object identities (clipboard captions all
+        // use image-caption.png). Allocate once per upload, before signing, so
+        // every provider and the returned public URL use the same unique key.
+        let name = fileName as NSString
+        let ext = name.pathExtension
+        let stem = ext.isEmpty ? fileName : name.deletingPathExtension
+        let uniqueName = "\(stem)-\(UUID().uuidString.lowercased())"
+        components.append(ext.isEmpty ? uniqueName : "\(uniqueName).\(ext)")
         return components.joined(separator: "/")
     }
 

@@ -1,0 +1,2 @@
+"NSPhotoLibraryUsageDescription" = "Pic2Link 读取您选择的照片用于上传，或将实况照片转换为 GIF。";
+"NSAppleEventsUsageDescription" = "Pic2Link 在您请求直接上传时，读取来源应用中选中的照片。";
