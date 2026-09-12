@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — Upload files and copy links";
 "menu.uploadClipboard" = "Upload Clipboard Image (%@)";
 "menu.uploadFile" = "Upload File…";
+"menu.uploadLivePhoto" = "Choose Live Photo from Photos…";
 "menu.switchProfile" = "Switch Image Host";
 "menu.settings" = "Settings…";
 "menu.quit" = "Quit Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "Validation failed: %@";
 
 "status.uploadBusy" = "An upload is already in progress";
+"status.uploadQueued" = "Added to queue · %d ahead";
+"status.queuePending" = "%d waiting";
 "status.configureFirst" = "Configure an image host first";
 "status.incompleteConfig" = "The current image host configuration is incomplete";
 "status.uploadingTo" = "Uploading to %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ currently supports images only. Switch to a provider that supports general files and try again.";
 "status.largeFileCancelled" = "Large file upload cancelled";
 "status.uploadingFile" = "Uploading %@";
+"status.waitingForFile" = "Waiting for %@ to finish saving…";
+"status.loadingLivePhoto" = "Loading selected Live Photo…";
 "status.launchAtLoginFailed" = "Failed to update launch at login: %@";
 "status.linkCopied" = "Link copied: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Continue Upload";
 
 "notification.uploadComplete" = "“%@” finished uploading. The link has been copied to the clipboard.";
+"notification.linkCopied" = "Link copied to the clipboard: %@";
 
 "launchAtLogin.requiresApproval" = "Allow Pic2Link under Login Items in System Settings first.";
 "launchAtLogin.notFound" = "This app package cannot register a system login item. Compatibility mode will be used.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "Couldn’t save settings securely: %@";
 "error.keychainUnexpectedData" = "Keychain returned invalid credential data.";
 "error.keychainStatus" = "Keychain error (%d)";
+
+"clipboard.compressionProgress" = "Compression";
+"clipboard.uploadProgress" = "Upload";
+"settings.compression" = "Compress Before Upload";
+"settings.compression.help" = "Images are resized in memory before upload. No compressed copy is saved, and the original is never modified.";
+"settings.livePhotoGIF" = "Convert Live Photos to GIF";
+"settings.livePhotoGIF.help" = "A clipboard Live Photo with its paired image and video becomes an in-memory 480p GIF before upload. Static images stay unchanged.";
+"compression.mode.label" = "Resize mode";
+"compression.mode.width" = "By Width";
+"compression.mode.height" = "By Height";
+"compression.mode.percentage" = "Percent";
+"compression.mode.free" = "Free";
+"compression.mode.maximum" = "Maximum";
+"compression.width" = "Width";
+"compression.height" = "Height";
+"compression.percentage" = "Scale";
+"compression.maximum.hint" = "Downscales only, stopping at whichever limit is reached first.";
+"compression.singleMode.help" = "Only one resize mode is applied at a time. Non-image files are uploaded unchanged.";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "Compressing image";
+"status.compressingFile" = "Compressing %@";
+"status.compressionFailed" = "Compression failed: %@";
+"status.convertingLivePhoto" = "Converting Live Photo to GIF…";
+"status.livePhotoConversionFailed" = "Live Photo conversion failed: %@";
+"error.compressionDisabled" = "Compression is disabled.";
+"error.compressionUnsupportedImage" = "This image cannot be decoded for compression.";
+"error.compressionUnsupportedFormat" = "This image format cannot be re-encoded after resizing.";
+"error.compressionInvalidDimension" = "Width and height must be between 1 and 100000 pixels.";
+"error.compressionInvalidPercentage" = "The percentage must be greater than 0 and no more than 10000.";
+"error.compressionOutputTooLarge" = "The target image exceeds 100 million pixels. Choose a smaller size.";
+"error.compressionDecode" = "The image could not be decoded.";
+"error.compressionFailed" = "The compressed image could not be created or verified.";
+"error.livePhotoGIFSource" = "The paired video for this Live Photo is unavailable.";
+"error.livePhotoGIFConversion" = "The 480p GIF could not be created.";
+"error.fileStillChanging" = "The file is still being saved. Please try again in a moment.";
+"error.photoLibraryAccess" = "Allow Pic2Link to access Photos, then choose the Live Photo again.";
+"error.livePhotoUnavailable" = "The selected Live Photo is no longer available in Photos.";
+"error.notALivePhoto" = "The selected item is not a Live Photo.";
+"error.photoPickerCancelled" = "Photo selection was cancelled.";
+"error.photoPickerAssetIdentifier" = "Photos did not provide the selected Live Photo for conversion.";
+"picker.livePhoto.title" = "Choose a Live Photo";
+
+// Caption before upload
+"caption.enabled" = "Add Text Before Upload";
+"caption.description" = "Add optional text before each upload. Leave it blank to skip composition and keep your compression settings.";
+"caption.title" = "Add Text";
+"caption.preview" = "Image to upload";
+"caption.text" = "Text";
+"caption.submit" = "Compose and Upload";
+"caption.waiting" = "Waiting for text";
+"caption.rendering" = "Adding text…";
+"caption.cancelled" = "Image upload cancelled";
+"caption.failed" = "Text could not be added: %@";
+"caption.error.empty" = "Enter some text to continue.";
+"caption.error.image" = "This image cannot be opened for adding text.";
+"caption.error.animation" = "This animation or multi-page image cannot be captioned. Turn off Add Text Before Upload to upload the original.";
+"caption.error.size" = "This image is too large to compose. Use a smaller image or shorter animation.";
+"caption.error.fit" = "The complete text does not fit. Please shorten it and try again.";
+"caption.error.encode" = "The composed image could not be saved in memory.";
+
+"caption.optional" = "Text (optional)";
+
+"caption.uploadOriginal" = "Upload Without Text";
+
+"menu.markdownLinks" = "Markdown Links";
+
+"selection.menu" = "Upload Selected Photos (⇧⌘U)";
+"selection.unsupportedApp" = "Select photos in Finder or Photos, then press ⇧⌘U.";
+"selection.empty" = "Select a photo in Finder or Photos first.";
+"selection.noPhotos" = "The selection contains no supported photo files.";
+"selection.unavailable" = "The selected photo is unavailable. Select it again and retry.";
+"selection.automationDenied" = "Allow Pic2Link to access Finder or Photos in System Settings → Privacy & Security → Automation.";
+"selection.readFailed" = "Could not read the selection (error %d). Try again.";
+"selection.shortcutUnavailable" = "⇧⌘U is unavailable. Check whether another app uses this shortcut.";
+"selection.shortcutReserved" = "⇧⌘U is reserved for selected photos. Choose another clipboard shortcut.";
+"selection.shortcutHelp" = "⇧⌘U uploads the selected Finder files or the current selection in Photos.";
+
+"selection.folderPermission" = "Allow access to “%@” to upload the selected photo. Pic2Link remembers this read-only folder permission.";
+"selection.allowFolder" = "Allow Folder";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Select photos in Photos, then press ⇧⌘U. For Finder files, drag them to the menu bar icon or use Choose File.";
+"selection.empty.store" = "Select a photo in Photos first.";
+"selection.automationDenied.store" = "Allow Pic2Link to access Photos in System Settings → Privacy & Security → Automation.";
+"selection.shortcutHelp.store" = "⇧⌘U uploads the current selection in Photos. Drag Finder files to the menu bar icon or use Choose File.";

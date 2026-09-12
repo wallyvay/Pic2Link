@@ -89,6 +89,8 @@ struct UploadedImageCell: View {
     let image: UploadedImage
     let onTap: () -> Void
     let onDelete: () -> Void
+    /// 单元格宽度必须显式给定：可缩放图片的固有宽度是原图宽度，交给网格自行测量会把单元格撑出列宽并互相重叠。
+    var cellWidth: CGFloat = 104
 
     var body: some View {
         Button(action: onTap) {
@@ -99,12 +101,12 @@ struct UploadedImageCell: View {
                     Image(nsImage: nsImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 104, height: 88)
+                        .frame(width: cellWidth, height: 88)
                         .clipped()
                         .cornerRadius(6)
                 } else {
                     FileThumbnailPlaceholder(fileName: image.fileName)
-                        .frame(width: 104, height: 88)
+                        .frame(width: cellWidth, height: 88)
                 }
 
                 // 文件名

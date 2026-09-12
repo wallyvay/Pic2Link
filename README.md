@@ -6,17 +6,29 @@
 
 Pic2Link is a native macOS menu bar utility that uploads a clipboard image or a dragged file to your own storage and immediately copies the resulting public link.
 
-It stays out of the Dock, shows byte-accurate upload progress in the menu bar and popover, and confirms successful uploads with a notification and a subtle sound.
+It stays out of the Dock, shows byte-accurate progress in the menu bar and popover—including linked compression and upload gauges when resizing is enabled—and confirms successful uploads with a notification and a subtle sound.
 
 ## Features
 
 - Upload the current clipboard image with one click or a global keyboard shortcut.
-- Drag images and general files directly onto the menu bar icon.
+- Press **⌘⇧U** in Photos to upload the current selection, including a photo in single-photo view. Direct local builds also support selected Finder photo files; Mac App Store builds do not read Finder selections or request a temporary Apple Events exception. For Finder files in the store build, use drag-and-drop, clipboard upload, or the system file picker. Multiple photos follow the existing upload queue, text prompts, and compression settings. The clipboard shortcut (default **⌘U**) remains separate.
+- Direct selection upload uses macOS Automation; Photos also requires photo-library access. Grant these permissions on first use. No selection or an unsupported foreground app produces a message without reading the clipboard. Photos supplies its current edited image through PhotoKit, downloading from iCloud when needed; Live Photos follow the existing GIF switch. PhotoKit must be able to access the selected asset in the system photo library.
+- Drag one or multiple images and general files directly from Finder or Photos onto the menu bar icon. Photos file promises are accepted without asking you to save an intermediate copy first.
+- Preserve original bytes, display names, and formats for dragged or copied image files, including animated GIFs, WebP, HEIC, and SVG. Object-storage and WebDAV uploads add a fresh UUID before the remote filename extension on every upload, preventing same-name files or captioned screenshots from overwriting earlier links; local files and existing history are unchanged.
+- Enable **Add Text Before Upload** in the menu or Settings to open a focused text panel beneath the menu-bar icon. Multiple drafts can stack independently. **⌘Return** copies nonblank text, closes that draft, and confirms its upload; Return inserts a newline. Cancel, Escape, or closing the panel skips only that image. Leave the text blank to upload without composition while keeping the configured compression.
+- Text uses the embedded Fluffmark (WMMark) engine for automatic placement, then follows the existing compression and upload pipeline. Fluffmark does not need to be installed or running. Static images produce an in-memory PNG; GIFs retain their frames and timing, with one stable layout chosen from the first frame.
+- Optionally resize images in memory before upload by width, height, percentage, free dimensions, or maximum bounds; the original is never modified and no compressed copy is saved.
+- Optionally turn a clipboard Live Photo into an in-memory 480p animated GIF before upload. It activates only when the clipboard supplies its matching still image and paired video; ordinary static images are never converted.
+- Choose a Live Photo directly from the system Photos picker when a Photos copy contains only its static cover image. Pic2Link reads the selected asset's paired video into a temporary working folder, creates the GIF in memory, and removes the temporary source as soon as the upload finishes.
+- Before reading a dragged or selected file, wait for two unchanged file observations. This prevents newly captured screenshots from being signed and uploaded while their source application is still writing them.
+- Turn “Compress Before Upload” and “Convert Live Photos to GIF” on or off directly from the menu-bar menu; the same saved switches remain available in Settings.
+- Queue consecutive clipboard, drag-and-drop, and manual uploads serially. With text prompts enabled, confirmed drafts enter the upload queue in submission order; unsubmitted drafts do not block uploads.
 - Choose a file manually from the menu.
-- See progress based on bytes actually sent, including transferred and total size.
-- Copy the public link automatically after a successful upload.
+- See the active dragged or clipboard image, queue state, compression progress, and byte-accurate upload progress together in the upload area and as two linked menu-bar gauges.
+- Copy the public link automatically after a successful upload. Enable **Markdown Links** in the menu to copy `![](URL)` or `![caption](URL)` instead; newly uploaded captions are saved with history for later copying.
+- Click an uploaded item or its **Copy Link** action to copy in the currently selected format and play a success sound.
 - Receive foreground and background completion notifications with a success sound.
-- Keep a local history with image previews and file-type placeholders.
+- Keep a local history with image previews and file-type placeholders; **More Files** opens a separate window with the complete list.
 - Manage multiple storage profiles and switch the active host from the menu.
 - Optionally launch Pic2Link when you sign in to macOS.
 
@@ -53,7 +65,7 @@ On first launch, Pic2Link follows the primary macOS language when it is supporte
 - macOS 14.0 or later
 - Xcode 26.4 or later for development
 
-The project has no third-party package dependencies.
+The project links the first-party `WMMarkCore` and `WMMarkRenderer` Swift Package products from the sibling `../毛标标` source checkout. The built app runs independently of that checkout and of the Fluffmark app. Keep the two source repositories side by side when building. No third-party package dependency is added.
 
 ## Build
 
@@ -122,10 +134,10 @@ Pic2Link/
 │   ├── Services/
 │   ├── ViewModels/
 │   ├── Views/
-│   ├── *.lproj/                 # 13 Localizable.strings files
+│   ├── *.lproj/                 # 13 Localizable.strings and InfoPlist.strings files
 │   └── Pic2LinkApp.swift
-├── Pic2LinkTests/               # Language, Keychain, progress, and error tests
-├── Pic2LinkUITests/             # Appearance, RTL, and long-label UI regressions
+├── Pic2LinkTests/               # Language, Keychain, resize, compression, progress, and error tests
+├── Pic2LinkUITests/             # Appearance, compression settings, RTL, and long-label UI regressions
 ├── Design/                      # App icon source and design notes
 └── 项目需求与开发文档.md
 ```
@@ -133,6 +145,8 @@ Pic2Link/
 ## Distribution
 
 Release archives in `dist/` are local artifacts and are intentionally excluded from source control. If a binary is published through GitHub Releases, build it for both Apple Silicon and Intel, then sign and notarize that exact artifact.
+
+Mac App Store builds explicitly use `StoreBuild.xcconfig` and `Pic2Link/Store.entitlements`. They enable App Sandbox, use read-only folder grants for inaccessible Finder selections, and use SMAppService for launch at login. Local builds retain their existing distribution configuration. Project-owned release lanes, verified artifacts, and pending App Store steps are documented in [the release record](docs/release/app-store-connect.md) and [fastlane guide](docs/release/fastlane.md).
 
 ## License
 

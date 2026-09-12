@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — ارفع الملفات وانسخ الروابط";
 "menu.uploadClipboard" = "رفع صورة الحافظة (%@)";
 "menu.uploadFile" = "رفع ملف…";
+"menu.uploadLivePhoto" = "اختيار Live Photo من الصور…";
 "menu.switchProfile" = "تبديل مضيف الصور";
 "menu.settings" = "الإعدادات…";
 "menu.quit" = "إنهاء Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "فشل التحقق: %@";
 
 "status.uploadBusy" = "هناك رفع جارٍ بالفعل";
+"status.uploadQueued" = "تمت الإضافة إلى قائمة الانتظار · %d قبله";
+"status.queuePending" = "%d قيد الانتظار";
 "status.configureFirst" = "أعدّ مضيف صور أولًا";
 "status.incompleteConfig" = "إعداد مضيف الصور الحالي غير مكتمل";
 "status.uploadingTo" = "جارٍ الرفع إلى %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "يدعم %@ الصور فقط حاليًا. انتقل إلى مزوّد يدعم الملفات العامة.";
 "status.largeFileCancelled" = "تم إلغاء رفع الملف الكبير";
 "status.uploadingFile" = "جارٍ رفع %@";
+"status.waitingForFile" = "بانتظار اكتمال حفظ %@…";
+"status.loadingLivePhoto" = "جارٍ تحميل Live Photo المحددة…";
 "status.launchAtLoginFailed" = "فشل تحديث الفتح عند تسجيل الدخول: %@";
 "status.linkCopied" = "تم نسخ الرابط: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "متابعة الرفع";
 
 "notification.uploadComplete" = "اكتمل رفع «%@». تم نسخ الرابط إلى الحافظة.";
+"notification.linkCopied" = "تم نسخ الرابط إلى الحافظة: %@";
 
 "launchAtLogin.requiresApproval" = "اسمح لـ Pic2Link أولًا في عناصر تسجيل الدخول ضمن إعدادات النظام.";
 "launchAtLogin.notFound" = "لا يمكن لحزمة التطبيق هذه تسجيل عنصر دخول للنظام. سيُستخدم وضع التوافق.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "تعذر حفظ الإعدادات بأمان: %@";
 "error.keychainUnexpectedData" = "أعادت سلسلة المفاتيح بيانات اعتماد غير صالحة.";
 "error.keychainStatus" = "خطأ في سلسلة المفاتيح (%d)";
+
+"clipboard.compressionProgress" = "الضغط";
+"clipboard.uploadProgress" = "الرفع";
+"settings.compression" = "الضغط قبل الرفع";
+"settings.compression.help" = "يُغيّر حجم الصور في الذاكرة قبل الرفع. لا تُحفظ نسخة مضغوطة ولا تُعدّل الصورة الأصلية.";
+"settings.livePhotoGIF" = "تحويل الصور الحية إلى GIF";
+"settings.livePhotoGIF.help" = "تتحول الصورة الحية في الحافظة ذات الصورة والفيديو المقترنين إلى GIF بدقة 480p في الذاكرة قبل الرفع. تبقى الصور الثابتة دون تغيير.";
+"compression.mode.label" = "طريقة تغيير الحجم";
+"compression.mode.width" = "حسب العرض";
+"compression.mode.height" = "حسب الارتفاع";
+"compression.mode.percentage" = "النسبة المئوية";
+"compression.mode.free" = "حر";
+"compression.mode.maximum" = "الحجم الأقصى";
+"compression.width" = "العرض";
+"compression.height" = "الارتفاع";
+"compression.percentage" = "المقياس";
+"compression.maximum.hint" = "يُصغّر فقط ويتوقف عند أول حد للعرض أو الارتفاع.";
+"compression.singleMode.help" = "تُطبّق طريقة واحدة فقط في كل مرة. تُرفع الملفات غير المصورة دون تغيير.";
+"compression.unit.pixels" = "بكسل";
+"status.compressingImage" = "جارٍ ضغط الصورة";
+"status.compressingFile" = "جارٍ ضغط %@";
+"status.compressionFailed" = "فشل الضغط: %@";
+"status.convertingLivePhoto" = "جارٍ تحويل الصورة الحية إلى GIF…";
+"status.livePhotoConversionFailed" = "فشل تحويل الصورة الحية: %@";
+"error.compressionDisabled" = "الضغط متوقف.";
+"error.compressionUnsupportedImage" = "تعذر فك ترميز هذه الصورة لضغطها.";
+"error.compressionUnsupportedFormat" = "لا يمكن إعادة ترميز هذا التنسيق بعد تغيير الحجم.";
+"error.compressionInvalidDimension" = "يجب أن يتراوح العرض والارتفاع بين 1 و100000 بكسل.";
+"error.compressionInvalidPercentage" = "يجب أن تكون النسبة أكبر من 0 ولا تتجاوز 10000.";
+"error.compressionOutputTooLarge" = "تتجاوز الصورة المستهدفة 100 مليون بكسل. اختر حجماً أصغر.";
+"error.compressionDecode" = "تعذر فك ترميز الصورة.";
+"error.compressionFailed" = "تعذر إنشاء الصورة المضغوطة أو التحقق منها.";
+"error.livePhotoGIFSource" = "فيديو الاقتران لهذه الصورة الحية غير متاح.";
+"error.livePhotoGIFConversion" = "تعذر إنشاء GIF بدقة 480p.";
+"error.fileStillChanging" = "لا يزال الملف قيد الحفظ. حاول مرة أخرى بعد قليل.";
+"error.photoLibraryAccess" = "اسمح لـ Pic2Link بالوصول إلى الصور، ثم اختر Live Photo مرة أخرى.";
+"error.livePhotoUnavailable" = "لم تعد Live Photo المحددة متاحة في الصور.";
+"error.notALivePhoto" = "العنصر المحدد ليس Live Photo.";
+"error.photoPickerCancelled" = "تم إلغاء اختيار الصور.";
+"error.photoPickerAssetIdentifier" = "لم توفر الصور Live Photo المحددة للتحويل.";
+"picker.livePhoto.title" = "اختيار Live Photo";
+
+// Caption before upload
+"caption.enabled" = "إضافة نص قبل الرفع";
+"caption.description" = "أضف نصًا اختياريًا قبل كل رفع. اتركه فارغًا لتخطي دمج النص مع الحفاظ على إعدادات الضغط.";
+"caption.title" = "إضافة نص";
+"caption.preview" = "الصورة المراد رفعها";
+"caption.text" = "النص";
+"caption.submit" = "دمج ورفع";
+"caption.waiting" = "بانتظار النص";
+"caption.rendering" = "جارٍ إضافة النص…";
+"caption.cancelled" = "تم إلغاء رفع هذه الصورة";
+"caption.failed" = "تعذرت إضافة النص: %@";
+"caption.error.empty" = "أدخل نصًا للمتابعة.";
+"caption.error.image" = "تعذر فتح هذه الصورة لإضافة النص.";
+"caption.error.animation" = "هذه الصورة المتحركة أو متعددة الصفحات غير مدعومة. أوقف إضافة النص لرفع الملف الأصلي.";
+"caption.error.size" = "الصورة كبيرة جدًا. استخدم صورة أصغر أو حركة أقصر.";
+"caption.error.fit" = "لا تتسع الصورة للنص كاملًا. اختصره وحاول مجددًا.";
+"caption.error.encode" = "تعذر إنشاء الصورة المدمجة في الذاكرة.";
+
+"caption.optional" = "النص (اختياري)";
+
+"caption.uploadOriginal" = "رفع بدون نص";
+
+"menu.markdownLinks" = "روابط بتنسيق Markdown";
+
+"selection.menu" = "رفع الصور المحددة (⇧⌘U)";
+"selection.unsupportedApp" = "حدد صورًا في Finder أو الصور ثم اضغط ⇧⌘U.";
+"selection.empty" = "حدد أولًا صورة في Finder أو الصور.";
+"selection.noPhotos" = "لا يحتوي التحديد على ملفات صور مدعومة.";
+"selection.unavailable" = "الصورة المحددة غير متاحة. حددها مرة أخرى.";
+"selection.automationDenied" = "اسمح لـ Pic2Link بالوصول إلى Finder أو الصور في إعدادات النظام ← الخصوصية والأمان ← الأتمتة.";
+"selection.readFailed" = "تعذرت قراءة التحديد (الخطأ %d). حاول مجددًا.";
+"selection.shortcutUnavailable" = "⇧⌘U غير متاح. تحقق مما إذا كان تطبيق آخر يستخدم هذا الاختصار.";
+"selection.shortcutReserved" = "⇧⌘U مخصص للصور المحددة. اختر اختصارًا آخر للحافظة.";
+"selection.shortcutHelp" = "يرفع ⇧⌘U الصور المحددة في Finder أو الصور مباشرة.";
+
+"selection.folderPermission" = "اسمح بالوصول إلى «%@» لقراءة الصورة المحددة. سيتذكر Pic2Link إذن القراءة فقط لهذا المجلد.";
+"selection.allowFolder" = "السماح بالمجلد";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "حدّد صورًا في تطبيق الصور، ثم اضغط ⇧⌘U. اسحب ملفات Finder إلى أيقونة شريط القائمة أو استخدم اختيار الملفات.";
+"selection.empty.store" = "حدّد صورة في تطبيق الصور أولًا.";
+"selection.automationDenied.store" = "اسمح لـ Pic2Link بالوصول إلى الصور في إعدادات النظام → الخصوصية والأمان → الأتمتة.";
+"selection.shortcutHelp.store" = "يرفع ⇧⌘U الصور المحددة في تطبيق الصور. اسحب ملفات Finder إلى أيقونة شريط القائمة أو استخدم اختيار الملفات.";

@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — Dateien hochladen und Links kopieren";
 "menu.uploadClipboard" = "Zwischenablagebild hochladen (%@)";
 "menu.uploadFile" = "Datei hochladen…";
+"menu.uploadLivePhoto" = "Live Photo aus Fotos auswählen…";
 "menu.switchProfile" = "Bildhoster wechseln";
 "menu.settings" = "Einstellungen…";
 "menu.quit" = "Pic2Link beenden";
@@ -137,6 +138,8 @@
 "validation.error" = "Prüfung fehlgeschlagen: %@";
 
 "status.uploadBusy" = "Ein Upload läuft bereits";
+"status.uploadQueued" = "Zur Warteschlange hinzugefügt · %d davor";
+"status.queuePending" = "%d warten";
 "status.configureFirst" = "Zuerst einen Bildhoster konfigurieren";
 "status.incompleteConfig" = "Die aktuelle Konfiguration ist unvollständig";
 "status.uploadingTo" = "Upload zu %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ unterstützt derzeit nur Bilder. Wechsle zu einem Anbieter für allgemeine Dateien.";
 "status.largeFileCancelled" = "Upload der großen Datei abgebrochen";
 "status.uploadingFile" = "%@ wird hochgeladen";
+"status.waitingForFile" = "Warte, bis %@ gespeichert ist…";
+"status.loadingLivePhoto" = "Ausgewähltes Live Photo wird geladen…";
 "status.launchAtLoginFailed" = "Autostart konnte nicht aktualisiert werden: %@";
 "status.linkCopied" = "Link kopiert: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Upload fortsetzen";
 
 "notification.uploadComplete" = "„%@“ wurde hochgeladen. Der Link wurde in die Zwischenablage kopiert.";
+"notification.linkCopied" = "Link in die Zwischenablage kopiert: %@";
 
 "launchAtLogin.requiresApproval" = "Erlaube Pic2Link zuerst in den Anmeldeobjekten der Systemeinstellungen.";
 "launchAtLogin.notFound" = "Dieses App-Paket kann kein System-Anmeldeobjekt registrieren. Der Kompatibilitätsmodus wird verwendet.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "Einstellungen konnten nicht sicher gespeichert werden: %@";
 "error.keychainUnexpectedData" = "Der Schlüsselbund hat ungültige Zugangsdaten zurückgegeben.";
 "error.keychainStatus" = "Schlüsselbundfehler (%d)";
+
+"clipboard.compressionProgress" = "Komprimierung";
+"clipboard.uploadProgress" = "Upload";
+"settings.compression" = "Vor Upload komprimieren";
+"settings.compression.help" = "Bilder werden vor dem Upload im Arbeitsspeicher skaliert. Es wird keine komprimierte Kopie gespeichert und das Original bleibt unverändert.";
+"settings.livePhotoGIF" = "Live Photos in GIF umwandeln";
+"settings.livePhotoGIF.help" = "Eine Live Photo in der Zwischenablage mit zugehörigem Bild und Video wird vor dem Upload im Arbeitsspeicher in ein 480p-GIF umgewandelt. Standbilder bleiben unverändert.";
+"compression.mode.label" = "Größenmethode";
+"compression.mode.width" = "Nach Breite";
+"compression.mode.height" = "Nach Höhe";
+"compression.mode.percentage" = "Prozent";
+"compression.mode.free" = "Frei";
+"compression.mode.maximum" = "Maximalgröße";
+"compression.width" = "Breite";
+"compression.height" = "Höhe";
+"compression.percentage" = "Skalierung";
+"compression.maximum.hint" = "Verkleinert nur bis zur zuerst erreichten Breiten- oder Höhengrenze.";
+"compression.singleMode.help" = "Es wird jeweils nur eine Größenmethode angewendet. Andere Dateien werden unverändert hochgeladen.";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "Bild wird komprimiert";
+"status.compressingFile" = "%@ wird komprimiert";
+"status.compressionFailed" = "Komprimierung fehlgeschlagen: %@";
+"status.convertingLivePhoto" = "Live Photo wird in GIF umgewandelt…";
+"status.livePhotoConversionFailed" = "Live-Photo-Umwandlung fehlgeschlagen: %@";
+"error.compressionDisabled" = "Die Komprimierung ist deaktiviert.";
+"error.compressionUnsupportedImage" = "Dieses Bild kann nicht zur Komprimierung decodiert werden.";
+"error.compressionUnsupportedFormat" = "Dieses Bildformat kann nach der Größenänderung nicht neu codiert werden.";
+"error.compressionInvalidDimension" = "Breite und Höhe müssen zwischen 1 und 100000 Pixeln liegen.";
+"error.compressionInvalidPercentage" = "Der Prozentwert muss größer als 0 und höchstens 10000 sein.";
+"error.compressionOutputTooLarge" = "Das Zielbild überschreitet 100 Millionen Pixel. Wähle eine kleinere Größe.";
+"error.compressionDecode" = "Das Bild konnte nicht decodiert werden.";
+"error.compressionFailed" = "Das komprimierte Bild konnte nicht erstellt oder geprüft werden.";
+"error.livePhotoGIFSource" = "Das zugehörige Video dieser Live Photo ist nicht verfügbar.";
+"error.livePhotoGIFConversion" = "Das 480p-GIF konnte nicht erstellt werden.";
+"error.fileStillChanging" = "Die Datei wird noch gespeichert. Bitte versuchen Sie es gleich noch einmal.";
+"error.photoLibraryAccess" = "Erlauben Sie Pic2Link den Zugriff auf Fotos und wählen Sie das Live Photo erneut aus.";
+"error.livePhotoUnavailable" = "Das ausgewählte Live Photo ist in Fotos nicht mehr verfügbar.";
+"error.notALivePhoto" = "Das ausgewählte Objekt ist kein Live Photo.";
+"error.photoPickerCancelled" = "Die Fotoauswahl wurde abgebrochen.";
+"error.photoPickerAssetIdentifier" = "Fotos hat das ausgewählte Live Photo nicht zur Konvertierung bereitgestellt.";
+"picker.livePhoto.title" = "Live Photo auswählen";
+
+// Caption before upload
+"caption.enabled" = "Vor Upload Text hinzufügen";
+"caption.description" = "Vor jedem Upload kannst du Text hinzufügen. Ohne Text wird die Bildmontage übersprungen; deine Komprimierungseinstellungen gelten weiterhin.";
+"caption.title" = "Text hinzufügen";
+"caption.preview" = "Bild zum Hochladen";
+"caption.text" = "Text";
+"caption.submit" = "Zusammenfügen und hochladen";
+"caption.waiting" = "Warten auf Text";
+"caption.rendering" = "Text wird hinzugefügt…";
+"caption.cancelled" = "Bild-Upload abgebrochen";
+"caption.failed" = "Text konnte nicht hinzugefügt werden: %@";
+"caption.error.empty" = "Gib Text ein, um fortzufahren.";
+"caption.error.image" = "Dieses Bild lässt sich nicht zum Beschriften öffnen.";
+"caption.error.animation" = "Diese Animation oder mehrseitige Datei wird nicht unterstützt. Deaktiviere das Hinzufügen von Text, um das Original hochzuladen.";
+"caption.error.size" = "Das Bild ist zu groß. Verwende ein kleineres Bild oder eine kürzere Animation.";
+"caption.error.fit" = "Der vollständige Text passt nicht. Bitte kürze ihn und versuche es erneut.";
+"caption.error.encode" = "Das zusammengesetzte Bild konnte nicht im Arbeitsspeicher erstellt werden.";
+
+"caption.optional" = "Text (optional)";
+
+"caption.uploadOriginal" = "Ohne Text hochladen";
+
+"menu.markdownLinks" = "Links im Markdown-Format";
+
+"selection.menu" = "Ausgewählte Fotos hochladen (⇧⌘U)";
+"selection.unsupportedApp" = "Wähle Fotos im Finder oder in Fotos aus und drücke ⇧⌘U.";
+"selection.empty" = "Wähle zuerst ein Foto im Finder oder in Fotos aus.";
+"selection.noPhotos" = "Die Auswahl enthält keine unterstützten Fotodateien.";
+"selection.unavailable" = "Das ausgewählte Foto ist nicht verfügbar. Wähle es erneut aus.";
+"selection.automationDenied" = "Erlaube Pic2Link unter Systemeinstellungen → Datenschutz & Sicherheit → Automation den Zugriff auf Finder oder Fotos.";
+"selection.readFailed" = "Die Auswahl konnte nicht gelesen werden (Fehler %d). Versuche es erneut.";
+"selection.shortcutUnavailable" = "⇧⌘U ist nicht verfügbar. Prüfe, ob eine andere App das Kürzel verwendet.";
+"selection.shortcutReserved" = "⇧⌘U ist für ausgewählte Fotos reserviert. Wähle ein anderes Kürzel für die Zwischenablage.";
+"selection.shortcutHelp" = "⇧⌘U lädt ausgewählte Fotos aus Finder oder Fotos direkt hoch.";
+
+"selection.folderPermission" = "Erlaube den Zugriff auf „%@“, um das ausgewählte Foto zu lesen. Pic2Link merkt sich den Lesezugriff auf diesen Ordner.";
+"selection.allowFolder" = "Ordner erlauben";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Wähle Fotos in Fotos aus und drücke ⇧⌘U. Ziehe Finder-Dateien auf das Menüleistensymbol oder nutze die Dateiauswahl.";
+"selection.empty.store" = "Wähle zuerst ein Foto in Fotos aus.";
+"selection.automationDenied.store" = "Erlaube Pic2Link unter Systemeinstellungen → Datenschutz & Sicherheit → Automation den Zugriff auf Fotos.";
+"selection.shortcutHelp.store" = "⇧⌘U lädt die Auswahl in Fotos hoch. Ziehe Finder-Dateien auf das Menüleistensymbol oder nutze die Dateiauswahl.";

@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — Importez des fichiers et copiez leurs liens";
 "menu.uploadClipboard" = "Importer l’image du presse-papiers (%@)";
 "menu.uploadFile" = "Importer un fichier…";
+"menu.uploadLivePhoto" = "Choisir une Live Photo dans Photos…";
 "menu.switchProfile" = "Changer d’hébergeur";
 "menu.settings" = "Réglages…";
 "menu.quit" = "Quitter Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "Échec de la validation : %@";
 
 "status.uploadBusy" = "Une importation est déjà en cours";
+"status.uploadQueued" = "Ajouté à la file · %d devant";
+"status.queuePending" = "%d en attente";
 "status.configureFirst" = "Configurez d’abord un hébergeur";
 "status.incompleteConfig" = "La configuration actuelle est incomplète";
 "status.uploadingTo" = "Importation vers %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ n’accepte actuellement que les images. Choisissez un fournisseur acceptant les fichiers généraux.";
 "status.largeFileCancelled" = "Importation du fichier volumineux annulée";
 "status.uploadingFile" = "Importation de %@";
+"status.waitingForFile" = "En attente de la fin de l’enregistrement de %@…";
+"status.loadingLivePhoto" = "Chargement de la Live Photo sélectionnée…";
 "status.launchAtLoginFailed" = "Échec de la mise à jour de l’ouverture automatique : %@";
 "status.linkCopied" = "Lien copié : %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Continuer l’importation";
 
 "notification.uploadComplete" = "« %@ » a été importé. Le lien a été copié dans le presse-papiers.";
+"notification.linkCopied" = "Lien copié dans le presse-papiers : %@";
 
 "launchAtLogin.requiresApproval" = "Autorisez d’abord Pic2Link dans les éléments d’ouverture des Réglages Système.";
 "launchAtLogin.notFound" = "Ce paquet ne peut pas enregistrer d’élément d’ouverture système. Le mode de compatibilité sera utilisé.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "Impossible d’enregistrer les réglages de façon sécurisée : %@";
 "error.keychainUnexpectedData" = "Le trousseau a renvoyé des identifiants non valides.";
 "error.keychainStatus" = "Erreur du trousseau (%d)";
+
+"clipboard.compressionProgress" = "Compression";
+"clipboard.uploadProgress" = "Envoi";
+"settings.compression" = "Compresser avant l’envoi";
+"settings.compression.help" = "Les images sont redimensionnées en mémoire avant l’envoi. Aucune copie compressée n’est enregistrée et l’original n’est jamais modifié.";
+"settings.livePhotoGIF" = "Convertir les Live Photos en GIF";
+"settings.livePhotoGIF.help" = "Une Live Photo du presse-papiers avec son image et sa vidéo associées devient un GIF 480p en mémoire avant l’envoi. Les images fixes restent inchangées.";
+"compression.mode.label" = "Mode de redimensionnement";
+"compression.mode.width" = "Par largeur";
+"compression.mode.height" = "Par hauteur";
+"compression.mode.percentage" = "Pourcentage";
+"compression.mode.free" = "Libre";
+"compression.mode.maximum" = "Taille maximale";
+"compression.width" = "Largeur";
+"compression.height" = "Hauteur";
+"compression.percentage" = "Échelle";
+"compression.maximum.hint" = "Réduit seulement, jusqu’à la première limite de largeur ou de hauteur atteinte.";
+"compression.singleMode.help" = "Un seul mode est appliqué à la fois. Les fichiers non image sont envoyés sans modification.";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "Compression de l’image";
+"status.compressingFile" = "Compression de %@";
+"status.compressionFailed" = "Échec de la compression : %@";
+"status.convertingLivePhoto" = "Conversion de la Live Photo en GIF…";
+"status.livePhotoConversionFailed" = "Échec de la conversion de la Live Photo : %@";
+"error.compressionDisabled" = "La compression est désactivée.";
+"error.compressionUnsupportedImage" = "Cette image ne peut pas être décodée pour la compression.";
+"error.compressionUnsupportedFormat" = "Ce format d’image ne peut pas être réencodé après redimensionnement.";
+"error.compressionInvalidDimension" = "La largeur et la hauteur doivent être comprises entre 1 et 100000 pixels.";
+"error.compressionInvalidPercentage" = "Le pourcentage doit être supérieur à 0 et inférieur ou égal à 10000.";
+"error.compressionOutputTooLarge" = "L’image cible dépasse 100 millions de pixels. Choisissez une taille plus petite.";
+"error.compressionDecode" = "Impossible de décoder l’image.";
+"error.compressionFailed" = "Impossible de créer ou de vérifier l’image compressée.";
+"error.livePhotoGIFSource" = "La vidéo associée à cette Live Photo est indisponible.";
+"error.livePhotoGIFConversion" = "Le GIF 480p n’a pas pu être créé.";
+"error.fileStillChanging" = "Le fichier est encore en cours d’enregistrement. Réessayez dans un instant.";
+"error.photoLibraryAccess" = "Autorisez Pic2Link à accéder à Photos, puis sélectionnez de nouveau la Live Photo.";
+"error.livePhotoUnavailable" = "La Live Photo sélectionnée n’est plus disponible dans Photos.";
+"error.notALivePhoto" = "L’élément sélectionné n’est pas une Live Photo.";
+"error.photoPickerCancelled" = "La sélection de photos a été annulée.";
+"error.photoPickerAssetIdentifier" = "Photos n’a pas fourni la Live Photo sélectionnée pour la conversion.";
+"picker.livePhoto.title" = "Choisir une Live Photo";
+
+// Caption before upload
+"caption.enabled" = "Ajouter du texte avant l’envoi";
+"caption.description" = "Ajoutez un texte facultatif avant chaque envoi. Sans texte, la composition est ignorée et vos réglages de compression sont conservés.";
+"caption.title" = "Ajouter du texte";
+"caption.preview" = "Image à envoyer";
+"caption.text" = "Texte";
+"caption.submit" = "Composer et envoyer";
+"caption.waiting" = "En attente de texte";
+"caption.rendering" = "Ajout du texte…";
+"caption.cancelled" = "Envoi de cette image annulé";
+"caption.failed" = "Impossible d’ajouter le texte : %@";
+"caption.error.empty" = "Saisissez du texte pour continuer.";
+"caption.error.image" = "Impossible d’ouvrir cette image pour y ajouter du texte.";
+"caption.error.animation" = "Cette animation ou image multipage n’est pas prise en charge. Désactivez l’ajout de texte pour envoyer le fichier original.";
+"caption.error.size" = "L’image est trop grande. Utilisez une image plus petite ou une animation plus courte.";
+"caption.error.fit" = "Le texte entier ne tient pas. Raccourcissez-le et réessayez.";
+"caption.error.encode" = "Impossible de créer l’image composée en mémoire.";
+
+"caption.optional" = "Texte (facultatif)";
+
+"caption.uploadOriginal" = "Envoyer sans texte";
+
+"menu.markdownLinks" = "Liens au format Markdown";
+
+"selection.menu" = "Envoyer les photos sélectionnées (⇧⌘U)";
+"selection.unsupportedApp" = "Sélectionnez des photos dans Finder ou Photos, puis appuyez sur ⇧⌘U.";
+"selection.empty" = "Sélectionnez d’abord une photo dans Finder ou Photos.";
+"selection.noPhotos" = "La sélection ne contient aucun fichier photo compatible.";
+"selection.unavailable" = "La photo sélectionnée est indisponible. Sélectionnez-la à nouveau.";
+"selection.automationDenied" = "Autorisez Pic2Link à accéder à Finder ou Photos dans Réglages Système → Confidentialité et sécurité → Automatisation.";
+"selection.readFailed" = "Impossible de lire la sélection (erreur %d). Réessayez.";
+"selection.shortcutUnavailable" = "⇧⌘U est indisponible. Vérifiez si une autre app utilise ce raccourci.";
+"selection.shortcutReserved" = "⇧⌘U est réservé aux photos sélectionnées. Choisissez un autre raccourci pour le presse-papiers.";
+"selection.shortcutHelp" = "⇧⌘U envoie directement les photos sélectionnées dans Finder ou Photos.";
+
+"selection.folderPermission" = "Autorisez l’accès à « %@ » pour lire la photo sélectionnée. Pic2Link mémorise cet accès en lecture seule.";
+"selection.allowFolder" = "Autoriser le dossier";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Sélectionnez des images dans Photos, puis appuyez sur ⇧⌘U. Pour les fichiers du Finder, glissez-les sur l’icône de la barre des menus ou utilisez le sélecteur de fichiers.";
+"selection.empty.store" = "Sélectionnez d’abord une image dans Photos.";
+"selection.automationDenied.store" = "Autorisez Pic2Link à accéder à Photos dans Réglages Système → Confidentialité et sécurité → Automatisation.";
+"selection.shortcutHelp.store" = "⇧⌘U envoie la sélection dans Photos. Glissez les fichiers du Finder sur l’icône de la barre des menus ou utilisez le sélecteur de fichiers.";

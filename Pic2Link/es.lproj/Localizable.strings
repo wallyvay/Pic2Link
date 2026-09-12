@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — Sube archivos y copia enlaces";
 "menu.uploadClipboard" = "Subir imagen del portapapeles (%@)";
 "menu.uploadFile" = "Subir archivo…";
+"menu.uploadLivePhoto" = "Elegir Live Photo de Fotos…";
 "menu.switchProfile" = "Cambiar alojamiento";
 "menu.settings" = "Ajustes…";
 "menu.quit" = "Salir de Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "Error de validación: %@";
 
 "status.uploadBusy" = "Ya hay una subida en curso";
+"status.uploadQueued" = "Añadido a la cola · %d por delante";
+"status.queuePending" = "%d en espera";
 "status.configureFirst" = "Configura primero un alojamiento";
 "status.incompleteConfig" = "La configuración actual está incompleta";
 "status.uploadingTo" = "Subiendo a %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ solo admite imágenes. Cambia a un proveedor que admita archivos generales.";
 "status.largeFileCancelled" = "Subida del archivo grande cancelada";
 "status.uploadingFile" = "Subiendo %@";
+"status.waitingForFile" = "Esperando a que %@ termine de guardarse…";
+"status.loadingLivePhoto" = "Cargando la Live Photo seleccionada…";
 "status.launchAtLoginFailed" = "No se pudo actualizar el inicio automático: %@";
 "status.linkCopied" = "Enlace copiado: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Continuar subida";
 
 "notification.uploadComplete" = "“%@” se ha subido. El enlace se ha copiado al portapapeles.";
+"notification.linkCopied" = "Enlace copiado al portapapeles: %@";
 
 "launchAtLogin.requiresApproval" = "Autoriza primero Pic2Link en los ítems de inicio de Ajustes del Sistema.";
 "launchAtLogin.notFound" = "Este paquete no puede registrar un ítem de inicio del sistema. Se usará el modo compatible.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "No se pudieron guardar los ajustes de forma segura: %@";
 "error.keychainUnexpectedData" = "El llavero devolvió credenciales no válidas.";
 "error.keychainStatus" = "Error del llavero (%d)";
+
+"clipboard.compressionProgress" = "Compresión";
+"clipboard.uploadProgress" = "Subida";
+"settings.compression" = "Comprimir antes de subir";
+"settings.compression.help" = "Las imágenes se redimensionan en memoria antes de subirlas. No se guarda una copia comprimida ni se modifica el original.";
+"settings.livePhotoGIF" = "Convertir Live Photos en GIF";
+"settings.livePhotoGIF.help" = "Una Live Photo del portapapeles con su imagen y vídeo asociados se convierte en un GIF de 480p en memoria antes de subirla. Las imágenes estáticas no cambian.";
+"compression.mode.label" = "Modo de tamaño";
+"compression.mode.width" = "Por ancho";
+"compression.mode.height" = "Por alto";
+"compression.mode.percentage" = "Porcentaje";
+"compression.mode.free" = "Libre";
+"compression.mode.maximum" = "Tamaño máximo";
+"compression.width" = "Ancho";
+"compression.height" = "Alto";
+"compression.percentage" = "Escala";
+"compression.maximum.hint" = "Solo reduce hasta alcanzar primero el límite de ancho o de alto.";
+"compression.singleMode.help" = "Solo se aplica un modo cada vez. Los archivos que no sean imágenes se suben sin cambios.";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "Comprimiendo imagen";
+"status.compressingFile" = "Comprimiendo %@";
+"status.compressionFailed" = "Error de compresión: %@";
+"status.convertingLivePhoto" = "Convirtiendo Live Photo a GIF…";
+"status.livePhotoConversionFailed" = "Error al convertir Live Photo: %@";
+"error.compressionDisabled" = "La compresión está desactivada.";
+"error.compressionUnsupportedImage" = "No se puede decodificar esta imagen para comprimirla.";
+"error.compressionUnsupportedFormat" = "Este formato no se puede volver a codificar tras cambiar el tamaño.";
+"error.compressionInvalidDimension" = "El ancho y el alto deben estar entre 1 y 100000 píxeles.";
+"error.compressionInvalidPercentage" = "El porcentaje debe ser mayor que 0 y no superar 10000.";
+"error.compressionOutputTooLarge" = "La imagen de destino supera los 100 millones de píxeles. Elige un tamaño menor.";
+"error.compressionDecode" = "No se pudo decodificar la imagen.";
+"error.compressionFailed" = "No se pudo crear o verificar la imagen comprimida.";
+"error.livePhotoGIFSource" = "El vídeo asociado de esta Live Photo no está disponible.";
+"error.livePhotoGIFConversion" = "No se pudo crear el GIF de 480p.";
+"error.fileStillChanging" = "El archivo aún se está guardando. Vuelve a intentarlo en un momento.";
+"error.photoLibraryAccess" = "Permite que Pic2Link acceda a Fotos y vuelve a elegir la Live Photo.";
+"error.livePhotoUnavailable" = "La Live Photo elegida ya no está disponible en Fotos.";
+"error.notALivePhoto" = "El elemento elegido no es una Live Photo.";
+"error.photoPickerCancelled" = "Se canceló la selección de fotos.";
+"error.photoPickerAssetIdentifier" = "Fotos no proporcionó la Live Photo elegida para convertirla.";
+"picker.livePhoto.title" = "Elegir una Live Photo";
+
+// Caption before upload
+"caption.enabled" = "Añadir texto antes de subir";
+"caption.description" = "Añade texto opcional antes de subir cada imagen. Si lo dejas vacío, se omite la composición y se mantienen los ajustes de compresión.";
+"caption.title" = "Añadir texto";
+"caption.preview" = "Imagen para subir";
+"caption.text" = "Texto";
+"caption.submit" = "Componer y subir";
+"caption.waiting" = "Esperando el texto";
+"caption.rendering" = "Añadiendo texto…";
+"caption.cancelled" = "Se canceló la subida de esta imagen";
+"caption.failed" = "No se pudo añadir el texto: %@";
+"caption.error.empty" = "Introduce texto para continuar.";
+"caption.error.image" = "No se puede abrir esta imagen para añadir texto.";
+"caption.error.animation" = "Esta animación o imagen de varias páginas no es compatible. Desactiva la opción de añadir texto para subir el original.";
+"caption.error.size" = "La imagen es demasiado grande. Usa una imagen más pequeña o una animación más corta.";
+"caption.error.fit" = "El texto completo no cabe. Acórtalo e inténtalo de nuevo.";
+"caption.error.encode" = "No se pudo crear la imagen compuesta en la memoria.";
+
+"caption.optional" = "Texto (opcional)";
+
+"caption.uploadOriginal" = "Subir sin texto";
+
+"menu.markdownLinks" = "Enlaces en formato Markdown";
+
+"selection.menu" = "Subir fotos seleccionadas (⇧⌘U)";
+"selection.unsupportedApp" = "Selecciona fotos en Finder o Fotos y pulsa ⇧⌘U.";
+"selection.empty" = "Primero selecciona una foto en Finder o Fotos.";
+"selection.noPhotos" = "La selección no contiene archivos de foto compatibles.";
+"selection.unavailable" = "La foto seleccionada no está disponible. Selecciónala de nuevo.";
+"selection.automationDenied" = "Permite que Pic2Link acceda a Finder o Fotos en Ajustes del Sistema → Privacidad y seguridad → Automatización.";
+"selection.readFailed" = "No se pudo leer la selección (error %d). Inténtalo de nuevo.";
+"selection.shortcutUnavailable" = "⇧⌘U no está disponible. Comprueba si otra app usa este atajo.";
+"selection.shortcutReserved" = "⇧⌘U está reservado para las fotos seleccionadas. Elige otro atajo para el portapapeles.";
+"selection.shortcutHelp" = "⇧⌘U sube directamente las fotos seleccionadas en Finder o Fotos.";
+
+"selection.folderPermission" = "Permite acceder a «%@» para leer la foto seleccionada. Pic2Link recuerda este permiso de solo lectura.";
+"selection.allowFolder" = "Permitir carpeta";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Selecciona imágenes en Fotos y pulsa ⇧⌘U. Arrastra los archivos del Finder al icono de la barra de menús o usa el selector de archivos.";
+"selection.empty.store" = "Selecciona primero una imagen en Fotos.";
+"selection.automationDenied.store" = "Permite que Pic2Link acceda a Fotos en Ajustes del Sistema → Privacidad y seguridad → Automatización.";
+"selection.shortcutHelp.store" = "⇧⌘U sube la selección de Fotos. Arrastra los archivos del Finder al icono de la barra de menús o usa el selector de archivos.";

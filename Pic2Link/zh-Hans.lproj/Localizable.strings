@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — 上传文件并复制链接";
 "menu.uploadClipboard" = "上传剪贴板图片（%@）";
 "menu.uploadFile" = "上传文件…";
+"menu.uploadLivePhoto" = "从“照片”选择实况照片…";
 "menu.switchProfile" = "切换图床";
 "menu.settings" = "设置…";
 "menu.quit" = "退出 Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "验证失败：%@";
 
 "status.uploadBusy" = "正在上传中，请稍候";
+"status.uploadQueued" = "已加入队列，前面还有 %d 个任务";
+"status.queuePending" = "%d 个任务等待中";
 "status.configureFirst" = "请先配置图床";
 "status.incompleteConfig" = "当前图床未配置完整";
 "status.uploadingTo" = "正在上传到 %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ 当前仅支持图片上传，请切换到支持文件上传的平台后重试。";
 "status.largeFileCancelled" = "已取消上传大文件";
 "status.uploadingFile" = "正在上传 %@";
+"status.waitingForFile" = "正在等待 %@ 完成保存…";
+"status.loadingLivePhoto" = "正在载入所选实况照片…";
 "status.launchAtLoginFailed" = "开机启动设置失败：%@";
 "status.linkCopied" = "已复制链接：%@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "继续上传";
 
 "notification.uploadComplete" = "“%@”上传完成！链接已复制到剪贴板。";
+"notification.linkCopied" = "链接已复制到剪贴板：%@";
 
 "launchAtLogin.requiresApproval" = "请先在系统设置中允许 Pic2Link 作为登录项启动。";
 "launchAtLogin.notFound" = "当前 App 包不支持系统登录项注册，将改用兼容模式。";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "无法安全保存设置：%@";
 "error.keychainUnexpectedData" = "钥匙串返回了无效的凭据数据。";
 "error.keychainStatus" = "钥匙串错误（%d）";
+
+"clipboard.compressionProgress" = "压缩进度";
+"clipboard.uploadProgress" = "上传进度";
+"settings.compression" = "压缩后上传";
+"settings.compression.help" = "开启后，图片会先在内存中按所选尺寸压缩，再上传；不会保存压缩副本，也不会修改原图。";
+"settings.livePhotoGIF" = "实况照片转 GIF";
+"settings.livePhotoGIF.help" = "剪贴板中可识别为实况照片的内容会先在内存中转为 480p GIF 再上传；静态图片不会转为 GIF。";
+"compression.mode.label" = "尺寸方式";
+"compression.mode.width" = "按宽";
+"compression.mode.height" = "按高";
+"compression.mode.percentage" = "百分比";
+"compression.mode.free" = "自由";
+"compression.mode.maximum" = "最大尺寸";
+"compression.width" = "宽";
+"compression.height" = "高";
+"compression.percentage" = "比例";
+"compression.maximum.hint" = "只缩小不放大，以先达到的宽高限制为准。";
+"compression.singleMode.help" = "一次只应用一种尺寸方式；非图片文件将按原样上传。";
+"compression.unit.pixels" = "像素";
+"status.compressingImage" = "正在压缩图片";
+"status.compressingFile" = "正在压缩 %@";
+"status.compressionFailed" = "压缩失败：%@";
+"status.convertingLivePhoto" = "正在将实况照片转为 GIF…";
+"status.livePhotoConversionFailed" = "实况照片转换失败：%@";
+"error.compressionDisabled" = "压缩功能未开启。";
+"error.compressionUnsupportedImage" = "无法解码此图片进行压缩。";
+"error.compressionUnsupportedFormat" = "此图片格式无法在调整尺寸后重新编码。";
+"error.compressionInvalidDimension" = "宽高必须介于 1 到 100000 像素。";
+"error.compressionInvalidPercentage" = "百分比必须大于 0 且不超过 10000。";
+"error.compressionOutputTooLarge" = "目标图片超过 1 亿像素，请减小尺寸。";
+"error.compressionDecode" = "无法解码图片。";
+"error.compressionFailed" = "无法生成或验证压缩后的图片。";
+"error.livePhotoGIFSource" = "无法取得此实况照片的配对视频。";
+"error.livePhotoGIFConversion" = "无法生成 480p GIF。";
+"error.fileStillChanging" = "文件仍在保存中，请稍后重试。";
+"error.photoLibraryAccess" = "请允许 Pic2Link 访问“照片”，然后重新选择实况照片。";
+"error.livePhotoUnavailable" = "所选实况照片已无法在“照片”中获取。";
+"error.notALivePhoto" = "所选项目不是实况照片。";
+"error.photoPickerCancelled" = "已取消选择照片。";
+"error.photoPickerAssetIdentifier" = "“照片”没有提供可转换的所选实况照片。";
+"picker.livePhoto.title" = "选择实况照片";
+
+// Caption before upload
+"caption.enabled" = "上传前添加文案";
+"caption.description" = "每张图片上传前可添加文案；留空跳过文字合成，仍按设置压缩。";
+"caption.title" = "添加文案";
+"caption.preview" = "待上传图片";
+"caption.text" = "文案";
+"caption.submit" = "合成并上传";
+"caption.waiting" = "等待输入文案";
+"caption.rendering" = "正在添加文案…";
+"caption.cancelled" = "已取消本张图片上传";
+"caption.failed" = "添加文案失败：%@";
+"caption.error.empty" = "请输入文案后再继续。";
+"caption.error.image" = "无法打开此图片添加文案。";
+"caption.error.animation" = "暂不支持为此动画或多页图片添加文案。可关闭“上传前添加文案”后上传原文件。";
+"caption.error.size" = "图片过大，无法合成。请使用较小图片或较短动画。";
+"caption.error.fit" = "无法完整排入文案，请缩短后重试。";
+"caption.error.encode" = "无法在内存中生成合成图片。";
+
+"caption.optional" = "文案（可留空）";
+
+"caption.uploadOriginal" = "直接上传";
+
+"menu.markdownLinks" = "Markdown格式链接";
+
+"selection.menu" = "上传选中的照片（⇧⌘U）";
+"selection.unsupportedApp" = "请在 Finder 或“照片”中选中照片，再按 ⇧⌘U。";
+"selection.empty" = "请先在 Finder 或“照片”中选中一张照片。";
+"selection.noPhotos" = "选中内容中没有支持的照片文件。";
+"selection.unavailable" = "所选照片暂不可用，请重新选中后再试。";
+"selection.automationDenied" = "请在系统设置 → 隐私与安全性 → 自动化中，允许 Pic2Link 访问 Finder 或“照片”。";
+"selection.readFailed" = "无法读取选中内容（错误 %d），请重试。";
+"selection.shortcutUnavailable" = "⇧⌘U 无法注册，请检查是否被其他应用占用。";
+"selection.shortcutReserved" = "⇧⌘U 用于上传选中照片，请为剪贴板上传选择其他快捷键。";
+"selection.shortcutHelp" = "⇧⌘U 直接上传 Finder 选中的文件或“照片”中选中、正在浏览的照片。";
+
+"selection.folderPermission" = "请允许访问“%@”，以读取所选照片。Pic2Link 会记住此文件夹的只读权限。";
+"selection.allowFolder" = "允许访问文件夹";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "请在“照片”中选中照片，再按 ⇧⌘U。Finder 文件请拖到菜单栏图标，或使用“选择文件”。";
+"selection.empty.store" = "请先在“照片”中选中一张照片。";
+"selection.automationDenied.store" = "请在系统设置 → 隐私与安全性 → 自动化中，允许 Pic2Link 访问“照片”。";
+"selection.shortcutHelp.store" = "⇧⌘U 上传“照片”中选中或正在浏览的照片。Finder 文件请拖到菜单栏图标，或使用“选择文件”。";

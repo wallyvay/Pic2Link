@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — загрузка файлов и копирование ссылок";
 "menu.uploadClipboard" = "Загрузить изображение из буфера (%@)";
 "menu.uploadFile" = "Загрузить файл…";
+"menu.uploadLivePhoto" = "Выбрать Live Photo из «Фото»…";
 "menu.switchProfile" = "Сменить хостинг";
 "menu.settings" = "Настройки…";
 "menu.quit" = "Выйти из Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "Ошибка проверки: %@";
 
 "status.uploadBusy" = "Загрузка уже выполняется";
+"status.uploadQueued" = "Добавлено в очередь · впереди: %d";
+"status.queuePending" = "Ожидают: %d";
 "status.configureFirst" = "Сначала настройте хостинг";
 "status.incompleteConfig" = "Текущая конфигурация хостинга неполна";
 "status.uploadingTo" = "Загрузка в %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ сейчас поддерживает только изображения. Выберите провайдера для обычных файлов.";
 "status.largeFileCancelled" = "Загрузка большого файла отменена";
 "status.uploadingFile" = "Загрузка %@";
+"status.waitingForFile" = "Ожидание завершения сохранения %@…";
+"status.loadingLivePhoto" = "Загрузка выбранного Live Photo…";
 "status.launchAtLoginFailed" = "Не удалось обновить автозапуск: %@";
 "status.linkCopied" = "Ссылка скопирована: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Продолжить загрузку";
 
 "notification.uploadComplete" = "Файл «%@» загружен. Ссылка скопирована в буфер обмена.";
+"notification.linkCopied" = "Ссылка скопирована в буфер обмена: %@";
 
 "launchAtLogin.requiresApproval" = "Сначала разрешите Pic2Link в объектах входа Системных настроек.";
 "launchAtLogin.notFound" = "Этот пакет не может зарегистрировать системный объект входа. Будет использован режим совместимости.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "Не удалось безопасно сохранить настройки: %@";
 "error.keychainUnexpectedData" = "Связка ключей вернула неверные данные учётных записей.";
 "error.keychainStatus" = "Ошибка связки ключей (%d)";
+
+"clipboard.compressionProgress" = "Сжатие";
+"clipboard.uploadProgress" = "Загрузка";
+"settings.compression" = "Сжимать перед загрузкой";
+"settings.compression.help" = "Перед загрузкой размер изображения меняется в памяти. Сжатая копия не сохраняется, оригинал не изменяется.";
+"settings.livePhotoGIF" = "Преобразовать Live Photo в GIF";
+"settings.livePhotoGIF.help" = "Live Photo из буфера обмена с парными изображением и видео перед загрузкой преобразуется в GIF 480p в памяти. Статичные изображения не меняются.";
+"compression.mode.label" = "Режим размера";
+"compression.mode.width" = "По ширине";
+"compression.mode.height" = "По высоте";
+"compression.mode.percentage" = "Процент";
+"compression.mode.free" = "Свободно";
+"compression.mode.maximum" = "Максимальный размер";
+"compression.width" = "Ширина";
+"compression.height" = "Высота";
+"compression.percentage" = "Масштаб";
+"compression.maximum.hint" = "Только уменьшает до первого достигнутого ограничения ширины или высоты.";
+"compression.singleMode.help" = "Одновременно применяется только один режим. Файлы, не являющиеся изображениями, загружаются без изменений.";
+"compression.unit.pixels" = "пкс";
+"status.compressingImage" = "Сжатие изображения";
+"status.compressingFile" = "Сжатие %@";
+"status.compressionFailed" = "Ошибка сжатия: %@";
+"status.convertingLivePhoto" = "Преобразование Live Photo в GIF…";
+"status.livePhotoConversionFailed" = "Не удалось преобразовать Live Photo: %@";
+"error.compressionDisabled" = "Сжатие отключено.";
+"error.compressionUnsupportedImage" = "Не удалось декодировать это изображение для сжатия.";
+"error.compressionUnsupportedFormat" = "Этот формат нельзя повторно закодировать после изменения размера.";
+"error.compressionInvalidDimension" = "Ширина и высота должны быть от 1 до 100000 пикселей.";
+"error.compressionInvalidPercentage" = "Процент должен быть больше 0 и не превышать 10000.";
+"error.compressionOutputTooLarge" = "Размер целевого изображения превышает 100 миллионов пикселей. Выберите меньший размер.";
+"error.compressionDecode" = "Не удалось декодировать изображение.";
+"error.compressionFailed" = "Не удалось создать или проверить сжатое изображение.";
+"error.livePhotoGIFSource" = "Парное видео для этой Live Photo недоступно.";
+"error.livePhotoGIFConversion" = "Не удалось создать GIF 480p.";
+"error.fileStillChanging" = "Файл ещё сохраняется. Повторите попытку через мгновение.";
+"error.photoLibraryAccess" = "Разрешите Pic2Link доступ к «Фото», затем снова выберите Live Photo.";
+"error.livePhotoUnavailable" = "Выбранное Live Photo больше недоступно в «Фото».";
+"error.notALivePhoto" = "Выбранный объект не является Live Photo.";
+"error.photoPickerCancelled" = "Выбор фото отменён.";
+"error.photoPickerAssetIdentifier" = "«Фото» не предоставило выбранное Live Photo для преобразования.";
+"picker.livePhoto.title" = "Выбрать Live Photo";
+
+// Caption before upload
+"caption.enabled" = "Добавлять текст перед загрузкой";
+"caption.description" = "Перед загрузкой можно добавить текст. Оставьте поле пустым, чтобы пропустить наложение текста и сохранить настройки сжатия.";
+"caption.title" = "Добавить текст";
+"caption.preview" = "Изображение для загрузки";
+"caption.text" = "Текст";
+"caption.submit" = "Собрать и загрузить";
+"caption.waiting" = "Ожидание текста";
+"caption.rendering" = "Добавление текста…";
+"caption.cancelled" = "Загрузка этого изображения отменена";
+"caption.failed" = "Не удалось добавить текст: %@";
+"caption.error.empty" = "Введите текст, чтобы продолжить.";
+"caption.error.image" = "Не удалось открыть изображение для добавления текста.";
+"caption.error.animation" = "Эта анимация или многостраничное изображение не поддерживается. Отключите добавление текста, чтобы загрузить оригинал.";
+"caption.error.size" = "Изображение слишком большое. Используйте меньшее изображение или более короткую анимацию.";
+"caption.error.fit" = "Текст не помещается целиком. Сократите его и повторите попытку.";
+"caption.error.encode" = "Не удалось создать итоговое изображение в памяти.";
+
+"caption.optional" = "Текст (необязательно)";
+
+"caption.uploadOriginal" = "Загрузить без текста";
+
+"menu.markdownLinks" = "Ссылки в формате Markdown";
+
+"selection.menu" = "Загрузить выбранные фото (⇧⌘U)";
+"selection.unsupportedApp" = "Выберите фото в Finder или «Фото» и нажмите ⇧⌘U.";
+"selection.empty" = "Сначала выберите фото в Finder или «Фото».";
+"selection.noPhotos" = "В выделении нет поддерживаемых файлов фотографий.";
+"selection.unavailable" = "Выбранное фото недоступно. Выберите его снова.";
+"selection.automationDenied" = "Разрешите Pic2Link доступ к Finder или «Фото» в Системных настройках → Конфиденциальность и безопасность → Автоматизация.";
+"selection.readFailed" = "Не удалось прочитать выделение (ошибка %d). Повторите попытку.";
+"selection.shortcutUnavailable" = "⇧⌘U недоступно. Проверьте, не использует ли это сочетание другое приложение.";
+"selection.shortcutReserved" = "⇧⌘U зарезервировано для выбранных фото. Выберите другое сочетание для буфера обмена.";
+"selection.shortcutHelp" = "⇧⌘U загружает фотографии, выбранные в Finder или «Фото».";
+
+"selection.folderPermission" = "Разрешите доступ к «%@», чтобы прочитать выбранное фото. Pic2Link запомнит доступ к папке только для чтения.";
+"selection.allowFolder" = "Разрешить папку";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Выберите снимки в «Фото» и нажмите ⇧⌘U. Файлы Finder перетащите на значок в строке меню или выберите через диалог открытия файлов.";
+"selection.empty.store" = "Сначала выберите снимок в «Фото».";
+"selection.automationDenied.store" = "Разрешите Pic2Link доступ к «Фото»: Системные настройки → Конфиденциальность и безопасность → Автоматизация.";
+"selection.shortcutHelp.store" = "⇧⌘U загружает выбранные снимки из «Фото». Файлы Finder перетащите на значок в строке меню или выберите через диалог открытия файлов.";

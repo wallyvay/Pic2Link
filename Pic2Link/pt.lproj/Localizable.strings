@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — Carregue ficheiros e copie ligações";
 "menu.uploadClipboard" = "Carregar imagem da área de transferência (%@)";
 "menu.uploadFile" = "Carregar ficheiro…";
+"menu.uploadLivePhoto" = "Escolher Live Photo em Fotografias…";
 "menu.switchProfile" = "Mudar alojamento";
 "menu.settings" = "Definições…";
 "menu.quit" = "Sair do Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "Falha na validação: %@";
 
 "status.uploadBusy" = "Já existe um carregamento em curso";
+"status.uploadQueued" = "Adicionado à fila · %d à frente";
+"status.queuePending" = "%d em espera";
 "status.configureFirst" = "Configure primeiro um alojamento";
 "status.incompleteConfig" = "A configuração atual está incompleta";
 "status.uploadingTo" = "A carregar para %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ suporta apenas imagens. Mude para um fornecedor que suporte ficheiros gerais.";
 "status.largeFileCancelled" = "Carregamento do ficheiro grande cancelado";
 "status.uploadingFile" = "A carregar %@";
+"status.waitingForFile" = "À espera de %@ terminar de guardar…";
+"status.loadingLivePhoto" = "A carregar a Live Photo selecionada…";
 "status.launchAtLoginFailed" = "Falha ao atualizar o arranque automático: %@";
 "status.linkCopied" = "Ligação copiada: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "Continuar carregamento";
 
 "notification.uploadComplete" = "“%@” foi carregado. A ligação foi copiada para a área de transferência.";
+"notification.linkCopied" = "Ligação copiada para a área de transferência: %@";
 
 "launchAtLogin.requiresApproval" = "Primeiro, permita o Pic2Link nos itens de início das Definições do Sistema.";
 "launchAtLogin.notFound" = "Este pacote não pode registar um item de início do sistema. Será usado o modo de compatibilidade.";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "Não foi possível guardar as definições em segurança: %@";
 "error.keychainUnexpectedData" = "O Porta-chaves devolveu credenciais inválidas.";
 "error.keychainStatus" = "Erro do Porta-chaves (%d)";
+
+"clipboard.compressionProgress" = "Compressão";
+"clipboard.uploadProgress" = "Envio";
+"settings.compression" = "Comprimir antes de enviar";
+"settings.compression.help" = "As imagens são redimensionadas na memória antes do envio. Nenhuma cópia comprimida é guardada e o original não é alterado.";
+"settings.livePhotoGIF" = "Converter Live Photos em GIF";
+"settings.livePhotoGIF.help" = "Uma Live Photo da área de transferência com imagem e vídeo emparelhados vira um GIF de 480p na memória antes do envio. Imagens estáticas não são alteradas.";
+"compression.mode.label" = "Modo de tamanho";
+"compression.mode.width" = "Por largura";
+"compression.mode.height" = "Por altura";
+"compression.mode.percentage" = "Percentagem";
+"compression.mode.free" = "Livre";
+"compression.mode.maximum" = "Tamanho máximo";
+"compression.width" = "Largura";
+"compression.height" = "Altura";
+"compression.percentage" = "Escala";
+"compression.maximum.hint" = "Apenas reduz, parando no primeiro limite de largura ou altura atingido.";
+"compression.singleMode.help" = "Apenas um modo é aplicado de cada vez. Os ficheiros que não são imagens são enviados sem alterações.";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "A comprimir imagem";
+"status.compressingFile" = "A comprimir %@";
+"status.compressionFailed" = "Falha na compressão: %@";
+"status.convertingLivePhoto" = "Convertendo Live Photo em GIF…";
+"status.livePhotoConversionFailed" = "Falha ao converter Live Photo: %@";
+"error.compressionDisabled" = "A compressão está desativada.";
+"error.compressionUnsupportedImage" = "Não foi possível descodificar esta imagem para compressão.";
+"error.compressionUnsupportedFormat" = "Este formato não pode ser recodificado após o redimensionamento.";
+"error.compressionInvalidDimension" = "A largura e a altura devem estar entre 1 e 100000 píxeis.";
+"error.compressionInvalidPercentage" = "A percentagem deve ser superior a 0 e no máximo 10000.";
+"error.compressionOutputTooLarge" = "A imagem de destino excede 100 milhões de píxeis. Escolha um tamanho menor.";
+"error.compressionDecode" = "Não foi possível descodificar a imagem.";
+"error.compressionFailed" = "Não foi possível criar ou verificar a imagem comprimida.";
+"error.livePhotoGIFSource" = "O vídeo emparelhado desta Live Photo não está disponível.";
+"error.livePhotoGIFConversion" = "Não foi possível criar o GIF de 480p.";
+"error.fileStillChanging" = "O ficheiro ainda está a ser guardado. Tente novamente dentro de instantes.";
+"error.photoLibraryAccess" = "Permita que o Pic2Link aceda a Fotografias e escolha novamente a Live Photo.";
+"error.livePhotoUnavailable" = "A Live Photo selecionada já não está disponível em Fotografias.";
+"error.notALivePhoto" = "O item selecionado não é uma Live Photo.";
+"error.photoPickerCancelled" = "A seleção de fotografias foi cancelada.";
+"error.photoPickerAssetIdentifier" = "Fotografias não forneceu a Live Photo selecionada para conversão.";
+"picker.livePhoto.title" = "Escolher uma Live Photo";
+
+// Caption before upload
+"caption.enabled" = "Adicionar texto antes de enviar";
+"caption.description" = "Adicione texto opcional antes de cada envio. Deixe em branco para ignorar a composição e manter as configurações de compressão.";
+"caption.title" = "Adicionar texto";
+"caption.preview" = "Imagem para enviar";
+"caption.text" = "Texto";
+"caption.submit" = "Compor e enviar";
+"caption.waiting" = "Aguardando o texto";
+"caption.rendering" = "Adicionando texto…";
+"caption.cancelled" = "Envio desta imagem cancelado";
+"caption.failed" = "Não foi possível adicionar o texto: %@";
+"caption.error.empty" = "Digite um texto para continuar.";
+"caption.error.image" = "Não foi possível abrir esta imagem para adicionar texto.";
+"caption.error.animation" = "Esta animação ou imagem de várias páginas não é compatível. Desative a adição de texto para enviar o original.";
+"caption.error.size" = "A imagem é muito grande. Use uma imagem menor ou uma animação mais curta.";
+"caption.error.fit" = "O texto completo não cabe. Encurte-o e tente novamente.";
+"caption.error.encode" = "Não foi possível criar a imagem composta na memória.";
+
+"caption.optional" = "Texto (opcional)";
+
+"caption.uploadOriginal" = "Enviar sem texto";
+
+"menu.markdownLinks" = "Links em formato Markdown";
+
+"selection.menu" = "Enviar fotos selecionadas (⇧⌘U)";
+"selection.unsupportedApp" = "Selecione fotos no Finder ou Fotos e pressione ⇧⌘U.";
+"selection.empty" = "Primeiro selecione uma foto no Finder ou Fotos.";
+"selection.noPhotos" = "A seleção não contém arquivos de foto compatíveis.";
+"selection.unavailable" = "A foto selecionada está indisponível. Selecione-a novamente.";
+"selection.automationDenied" = "Permita que o Pic2Link acesse Finder ou Fotos em Ajustes do Sistema → Privacidade e Segurança → Automação.";
+"selection.readFailed" = "Não foi possível ler a seleção (erro %d). Tente novamente.";
+"selection.shortcutUnavailable" = "⇧⌘U está indisponível. Verifique se outro app usa este atalho.";
+"selection.shortcutReserved" = "⇧⌘U é reservado para fotos selecionadas. Escolha outro atalho para a área de transferência.";
+"selection.shortcutHelp" = "⇧⌘U envia diretamente as fotos selecionadas no Finder ou Fotos.";
+
+"selection.folderPermission" = "Permita o acesso a “%@” para ler a foto selecionada. O Pic2Link guarda esta permissão somente de leitura.";
+"selection.allowFolder" = "Permitir pasta";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "Selecione imagens em Fotos e pressione ⇧⌘U. Arraste arquivos do Finder para o ícone da barra de menus ou use o seletor de arquivos.";
+"selection.empty.store" = "Selecione primeiro uma imagem em Fotos.";
+"selection.automationDenied.store" = "Permita que o Pic2Link acesse Fotos em Ajustes do Sistema → Privacidade e Segurança → Automação.";
+"selection.shortcutHelp.store" = "⇧⌘U envia a seleção de Fotos. Arraste arquivos do Finder para o ícone da barra de menus ou use o seletor de arquivos.";

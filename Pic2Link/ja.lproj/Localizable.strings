@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — ファイルをアップロードしてリンクをコピー";
 "menu.uploadClipboard" = "クリップボード画像をアップロード（%@）";
 "menu.uploadFile" = "ファイルをアップロード…";
+"menu.uploadLivePhoto" = "写真から Live Photo を選択…";
 "menu.switchProfile" = "画像ホストを切り替え";
 "menu.settings" = "設定…";
 "menu.quit" = "Pic2Link を終了";
@@ -137,6 +138,8 @@
 "validation.error" = "確認に失敗しました：%@";
 
 "status.uploadBusy" = "アップロード中です。しばらくお待ちください";
+"status.uploadQueued" = "キューに追加しました · 前に %d 件";
+"status.queuePending" = "%d 件待機中";
 "status.configureFirst" = "先に画像ホストを設定してください";
 "status.incompleteConfig" = "現在の画像ホスト設定が不完全です";
 "status.uploadingTo" = "%@ にアップロード中";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ は現在画像のみ対応しています。一般ファイル対応のプロバイダに切り替えてください。";
 "status.largeFileCancelled" = "大きなファイルのアップロードをキャンセルしました";
 "status.uploadingFile" = "%@ をアップロード中";
+"status.waitingForFile" = "%@ の保存完了を待機中…";
+"status.loadingLivePhoto" = "選択した Live Photo を読み込み中…";
 "status.launchAtLoginFailed" = "ログイン時起動の更新に失敗しました：%@";
 "status.linkCopied" = "リンクをコピーしました：%@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "アップロードを続ける";
 
 "notification.uploadComplete" = "「%@」のアップロードが完了しました。リンクをクリップボードにコピーしました。";
+"notification.linkCopied" = "リンクをクリップボードにコピーしました：%@";
 
 "launchAtLogin.requiresApproval" = "先にシステム設定のログイン項目で Pic2Link を許可してください。";
 "launchAtLogin.notFound" = "このアプリパッケージはシステムのログイン項目に登録できないため、互換モードを使用します。";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "設定を安全に保存できません：%@";
 "error.keychainUnexpectedData" = "キーチェーンから無効な認証情報が返されました。";
 "error.keychainStatus" = "キーチェーンエラー（%d）";
+
+"clipboard.compressionProgress" = "圧縮";
+"clipboard.uploadProgress" = "アップロード";
+"settings.compression" = "圧縮してアップロード";
+"settings.compression.help" = "画像はアップロード前にメモリ上でリサイズされます。圧縮後のコピーは保存されず、元画像も変更されません。";
+"settings.livePhotoGIF" = "Live Photos を GIF に変換";
+"settings.livePhotoGIF.help" = "ペアの画像と動画を含むクリップボードの Live Photo は、アップロード前にメモリ内で 480p GIF になります。静止画は変換されません。";
+"compression.mode.label" = "サイズ変更方法";
+"compression.mode.width" = "幅に合わせる";
+"compression.mode.height" = "高さに合わせる";
+"compression.mode.percentage" = "パーセント";
+"compression.mode.free" = "自由";
+"compression.mode.maximum" = "最大サイズ";
+"compression.width" = "幅";
+"compression.height" = "高さ";
+"compression.percentage" = "倍率";
+"compression.maximum.hint" = "拡大せず、先に達した幅または高さの上限で縮小を止めます。";
+"compression.singleMode.help" = "一度に適用できるサイズ変更方法は1つだけです。画像以外のファイルはそのままアップロードされます。";
+"compression.unit.pixels" = "px";
+"status.compressingImage" = "画像を圧縮中";
+"status.compressingFile" = "%@ を圧縮中";
+"status.compressionFailed" = "圧縮に失敗しました：%@";
+"status.convertingLivePhoto" = "Live Photo を GIF に変換中…";
+"status.livePhotoConversionFailed" = "Live Photo の変換に失敗しました：%@";
+"error.compressionDisabled" = "圧縮が無効です。";
+"error.compressionUnsupportedImage" = "この画像は圧縮用にデコードできません。";
+"error.compressionUnsupportedFormat" = "この画像形式はサイズ変更後に再エンコードできません。";
+"error.compressionInvalidDimension" = "幅と高さは1〜100000ピクセルで指定してください。";
+"error.compressionInvalidPercentage" = "パーセントは0より大きく10000以下にしてください。";
+"error.compressionOutputTooLarge" = "出力画像が1億ピクセルを超えます。小さいサイズを選んでください。";
+"error.compressionDecode" = "画像をデコードできませんでした。";
+"error.compressionFailed" = "圧縮画像を作成または検証できませんでした。";
+"error.livePhotoGIFSource" = "この Live Photo のペア動画を取得できません。";
+"error.livePhotoGIFConversion" = "480p GIF を作成できませんでした。";
+"error.fileStillChanging" = "ファイルはまだ保存中です。しばらくしてから再試行してください。";
+"error.photoLibraryAccess" = "Pic2Link に「写真」へのアクセスを許可してから、Live Photo をもう一度選択してください。";
+"error.livePhotoUnavailable" = "選択した Live Photo は「写真」で利用できません。";
+"error.notALivePhoto" = "選択した項目は Live Photo ではありません。";
+"error.photoPickerCancelled" = "写真の選択をキャンセルしました。";
+"error.photoPickerAssetIdentifier" = "「写真」から変換用の Live Photo を取得できませんでした。";
+"picker.livePhoto.title" = "Live Photo を選択";
+
+// Caption before upload
+"caption.enabled" = "アップロード前に文字を追加";
+"caption.description" = "アップロード前に文字を追加できます。空欄の場合は文字の合成を省略し、圧縮設定はそのまま適用します。";
+"caption.title" = "文字を追加";
+"caption.preview" = "アップロードする画像";
+"caption.text" = "テキスト";
+"caption.submit" = "合成してアップロード";
+"caption.waiting" = "文字の入力待ち";
+"caption.rendering" = "文字を追加中…";
+"caption.cancelled" = "この画像のアップロードをキャンセルしました";
+"caption.failed" = "文字を追加できませんでした：%@";
+"caption.error.empty" = "文字を入力して続けてください。";
+"caption.error.image" = "この画像を開いて文字を追加できません。";
+"caption.error.animation" = "このアニメーションまたは複数ページ画像には対応していません。文字の追加をオフにすると元のファイルをアップロードできます。";
+"caption.error.size" = "画像が大きすぎます。小さい画像または短いアニメーションを使用してください。";
+"caption.error.fit" = "全文を配置できません。文字を短くして再試行してください。";
+"caption.error.encode" = "合成画像をメモリ内で生成できませんでした。";
+
+"caption.optional" = "テキスト（省略可）";
+
+"caption.uploadOriginal" = "文字なしでアップロード";
+
+"menu.markdownLinks" = "Markdown形式のリンク";
+
+"selection.menu" = "選択した写真をアップロード（⇧⌘U）";
+"selection.unsupportedApp" = "Finder または「写真」で写真を選択して ⇧⌘U を押してください。";
+"selection.empty" = "まず Finder または「写真」で写真を選択してください。";
+"selection.noPhotos" = "選択項目に対応する写真ファイルがありません。";
+"selection.unavailable" = "選択した写真を読み込めません。選択し直してください。";
+"selection.automationDenied" = "システム設定 → プライバシーとセキュリティ → オートメーションで、Pic2Link に Finder または「写真」へのアクセスを許可してください。";
+"selection.readFailed" = "選択項目を読み込めません（エラー %d）。もう一度お試しください。";
+"selection.shortcutUnavailable" = "⇧⌘U を登録できません。他のアプリが使用していないか確認してください。";
+"selection.shortcutReserved" = "⇧⌘U は選択した写真用です。クリップボードには別のショートカットを選んでください。";
+"selection.shortcutHelp" = "⇧⌘U で Finder または「写真」で選択した写真を直接アップロードします。";
+
+"selection.folderPermission" = "選択した写真を読むには「%@」へのアクセスを許可してください。フォルダの読み取り専用の許可を保存します。";
+"selection.allowFolder" = "フォルダを許可";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "「写真」で写真を選択して ⇧⌘U を押してください。Finder のファイルはメニューバーのアイコンにドラッグするか、ファイル選択を使ってください。";
+"selection.empty.store" = "まず「写真」で写真を選択してください。";
+"selection.automationDenied.store" = "システム設定 → プライバシーとセキュリティ → オートメーションで、Pic2Link に「写真」へのアクセスを許可してください。";
+"selection.shortcutHelp.store" = "⇧⌘U で「写真」の選択項目をアップロードします。Finder のファイルはメニューバーのアイコンにドラッグするか、ファイル選択を使ってください。";

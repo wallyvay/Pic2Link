@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — फ़ाइलें अपलोड करें और लिंक कॉपी करें";
 "menu.uploadClipboard" = "क्लिपबोर्ड चित्र अपलोड करें (%@)";
 "menu.uploadFile" = "फ़ाइल अपलोड करें…";
+"menu.uploadLivePhoto" = "फ़ोटो से Live Photo चुनें…";
 "menu.switchProfile" = "इमेज होस्ट बदलें";
 "menu.settings" = "सेटिंग्स…";
 "menu.quit" = "Pic2Link बंद करें";
@@ -137,6 +138,8 @@
 "validation.error" = "जाँच विफल: %@";
 
 "status.uploadBusy" = "एक अपलोड पहले से चल रहा है";
+"status.uploadQueued" = "कतार में जोड़ा गया · आगे %d कार्य";
+"status.queuePending" = "%d प्रतीक्षा में";
 "status.configureFirst" = "पहले इमेज होस्ट कॉन्फ़िगर करें";
 "status.incompleteConfig" = "वर्तमान कॉन्फ़िगरेशन अधूरा है";
 "status.uploadingTo" = "%@ पर अपलोड हो रहा है";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ अभी केवल चित्र समर्थित करता है। सामान्य फ़ाइलों वाला प्रदाता चुनें।";
 "status.largeFileCancelled" = "बड़ी फ़ाइल का अपलोड रद्द हुआ";
 "status.uploadingFile" = "%@ अपलोड हो रहा है";
+"status.waitingForFile" = "%@ के सहेजे जाने की प्रतीक्षा है…";
+"status.loadingLivePhoto" = "चुनी गई Live Photo लोड हो रही है…";
 "status.launchAtLoginFailed" = "लॉगिन पर खोलने की सेटिंग अपडेट नहीं हुई: %@";
 "status.linkCopied" = "लिंक कॉपी हुआ: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "अपलोड जारी रखें";
 
 "notification.uploadComplete" = "“%@” अपलोड हो गई। लिंक क्लिपबोर्ड पर कॉपी कर दिया गया है।";
+"notification.linkCopied" = "लिंक क्लिपबोर्ड पर कॉपी किया गया: %@";
 
 "launchAtLogin.requiresApproval" = "पहले सिस्टम सेटिंग्स के लॉगिन आइटम में Pic2Link को अनुमति दें।";
 "launchAtLogin.notFound" = "यह ऐप पैकेज सिस्टम लॉगिन आइटम पंजीकृत नहीं कर सकता। संगतता मोड इस्तेमाल होगा।";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "सेटिंग्स सुरक्षित रूप से सेव नहीं हो सकीं: %@";
 "error.keychainUnexpectedData" = "कीचेन ने अमान्य क्रेडेंशियल डेटा लौटाया।";
 "error.keychainStatus" = "कीचेन त्रुटि (%d)";
+
+"clipboard.compressionProgress" = "संपीड़न";
+"clipboard.uploadProgress" = "अपलोड";
+"settings.compression" = "अपलोड से पहले संपीड़ित करें";
+"settings.compression.help" = "अपलोड से पहले चित्र का आकार मेमोरी में बदला जाता है। संपीड़ित प्रति सहेजी नहीं जाती और मूल चित्र नहीं बदला जाता।";
+"settings.livePhotoGIF" = "Live Photo को GIF में बदलें";
+"settings.livePhotoGIF.help" = "जोड़ी गई तस्वीर और वीडियो वाली क्लिपबोर्ड Live Photo अपलोड से पहले मेमोरी में 480p GIF बनती है। स्थिर चित्र नहीं बदलते।";
+"compression.mode.label" = "आकार बदलने का तरीका";
+"compression.mode.width" = "चौड़ाई से";
+"compression.mode.height" = "ऊँचाई से";
+"compression.mode.percentage" = "प्रतिशत";
+"compression.mode.free" = "स्वतंत्र";
+"compression.mode.maximum" = "अधिकतम आकार";
+"compression.width" = "चौड़ाई";
+"compression.height" = "ऊँचाई";
+"compression.percentage" = "स्केल";
+"compression.maximum.hint" = "केवल छोटा करता है और पहले पहुँची चौड़ाई या ऊँचाई सीमा पर रुकता है।";
+"compression.singleMode.help" = "एक समय में केवल एक तरीका लागू होता है। गैर-चित्र फ़ाइलें बिना बदलाव के अपलोड होती हैं।";
+"compression.unit.pixels" = "पिक्सेल";
+"status.compressingImage" = "चित्र संपीड़ित हो रहा है";
+"status.compressingFile" = "%@ संपीड़ित हो रहा है";
+"status.compressionFailed" = "संपीड़न विफल: %@";
+"status.convertingLivePhoto" = "Live Photo को GIF में बदला जा रहा है…";
+"status.livePhotoConversionFailed" = "Live Photo रूपांतरण विफल: %@";
+"error.compressionDisabled" = "संपीड़न बंद है।";
+"error.compressionUnsupportedImage" = "इस चित्र को संपीड़न के लिए डिकोड नहीं किया जा सकता।";
+"error.compressionUnsupportedFormat" = "आकार बदलने के बाद इस चित्र प्रारूप को दोबारा एन्कोड नहीं किया जा सकता।";
+"error.compressionInvalidDimension" = "चौड़ाई और ऊँचाई 1 से 100000 पिक्सेल के बीच होनी चाहिए।";
+"error.compressionInvalidPercentage" = "प्रतिशत 0 से अधिक और 10000 से कम या बराबर होना चाहिए।";
+"error.compressionOutputTooLarge" = "लक्षित चित्र 10 करोड़ पिक्सेल से बड़ा है। छोटा आकार चुनें।";
+"error.compressionDecode" = "चित्र को डिकोड नहीं किया जा सका।";
+"error.compressionFailed" = "संपीड़ित चित्र बनाया या सत्यापित नहीं किया जा सका।";
+"error.livePhotoGIFSource" = "इस Live Photo का जोड़ा गया वीडियो उपलब्ध नहीं है।";
+"error.livePhotoGIFConversion" = "480p GIF नहीं बनाया जा सका।";
+"error.fileStillChanging" = "फ़ाइल अभी सहेजी जा रही है। कृपया थोड़ी देर में फिर कोशिश करें।";
+"error.photoLibraryAccess" = "Pic2Link को फ़ोटो का ऐक्सेस दें, फिर Live Photo दोबारा चुनें।";
+"error.livePhotoUnavailable" = "चुनी गई Live Photo अब फ़ोटो में उपलब्ध नहीं है।";
+"error.notALivePhoto" = "चुना गया आइटम Live Photo नहीं है।";
+"error.photoPickerCancelled" = "फ़ोटो चयन रद्द कर दिया गया।";
+"error.photoPickerAssetIdentifier" = "फ़ोटो ने रूपांतरण के लिए चुनी गई Live Photo उपलब्ध नहीं कराई।";
+"picker.livePhoto.title" = "Live Photo चुनें";
+
+// Caption before upload
+"caption.enabled" = "अपलोड से पहले टेक्स्ट जोड़ें";
+"caption.description" = "हर अपलोड से पहले वैकल्पिक टेक्स्ट जोड़ें। खाली छोड़ने पर टेक्स्ट नहीं जोड़ा जाएगा और आपकी संपीड़न सेटिंग लागू रहेगी।";
+"caption.title" = "टेक्स्ट जोड़ें";
+"caption.preview" = "अपलोड किया जाने वाला चित्र";
+"caption.text" = "टेक्स्ट";
+"caption.submit" = "जोड़कर अपलोड करें";
+"caption.waiting" = "टेक्स्ट की प्रतीक्षा है";
+"caption.rendering" = "टेक्स्ट जोड़ा जा रहा है…";
+"caption.cancelled" = "इस चित्र का अपलोड रद्द किया गया";
+"caption.failed" = "टेक्स्ट नहीं जोड़ा जा सका: %@";
+"caption.error.empty" = "जारी रखने के लिए टेक्स्ट लिखें।";
+"caption.error.image" = "टेक्स्ट जोड़ने के लिए यह चित्र नहीं खोला जा सकता।";
+"caption.error.animation" = "यह ऐनिमेशन या बहुपृष्ठ चित्र समर्थित नहीं है। मूल फ़ाइल अपलोड करने के लिए टेक्स्ट जोड़ना बंद करें।";
+"caption.error.size" = "चित्र बहुत बड़ा है। छोटा चित्र या कम अवधि का ऐनिमेशन उपयोग करें।";
+"caption.error.fit" = "पूरा टेक्स्ट नहीं समा रहा है। उसे छोटा करके फिर कोशिश करें।";
+"caption.error.encode" = "संयुक्त चित्र मेमोरी में नहीं बनाया जा सका।";
+
+"caption.optional" = "टेक्स्ट (वैकल्पिक)";
+
+"caption.uploadOriginal" = "बिना टेक्स्ट अपलोड करें";
+
+"menu.markdownLinks" = "Markdown प्रारूप में लिंक";
+
+"selection.menu" = "चुनी हुई फ़ोटो अपलोड करें (⇧⌘U)";
+"selection.unsupportedApp" = "Finder या फ़ोटो में फ़ोटो चुनें और ⇧⌘U दबाएँ।";
+"selection.empty" = "पहले Finder या फ़ोटो में एक फ़ोटो चुनें।";
+"selection.noPhotos" = "चयन में कोई समर्थित फ़ोटो फ़ाइल नहीं है।";
+"selection.unavailable" = "चुनी हुई फ़ोटो उपलब्ध नहीं है। उसे दोबारा चुनें।";
+"selection.automationDenied" = "सिस्टम सेटिंग → गोपनीयता और सुरक्षा → ऑटोमेशन में Pic2Link को Finder या फ़ोटो तक पहुँच दें।";
+"selection.readFailed" = "चयन पढ़ा नहीं जा सका (त्रुटि %d)। फिर कोशिश करें।";
+"selection.shortcutUnavailable" = "⇧⌘U उपलब्ध नहीं है। जाँचें कि कोई अन्य ऐप यह शॉर्टकट तो नहीं इस्तेमाल कर रहा।";
+"selection.shortcutReserved" = "⇧⌘U चुनी हुई फ़ोटो के लिए आरक्षित है। क्लिपबोर्ड के लिए दूसरा शॉर्टकट चुनें।";
+"selection.shortcutHelp" = "⇧⌘U से Finder या फ़ोटो में चुनी गई फ़ोटो सीधे अपलोड होती हैं।";
+
+"selection.folderPermission" = "चुनी गई फ़ोटो पढ़ने के लिए “%@” का ऐक्सेस दें। Pic2Link इस फ़ोल्डर की केवल पढ़ने की अनुमति याद रखेगा।";
+"selection.allowFolder" = "फ़ोल्डर की अनुमति दें";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "फ़ोटो ऐप में तस्वीरें चुनें, फिर ⇧⌘U दबाएँ। Finder की फ़ाइलों को मेनू बार आइकन पर खींचें या फ़ाइल चयन का उपयोग करें।";
+"selection.empty.store" = "पहले फ़ोटो ऐप में कोई तस्वीर चुनें।";
+"selection.automationDenied.store" = "सिस्टम सेटिंग्स → गोपनीयता और सुरक्षा → ऑटोमेशन में Pic2Link को फ़ोटो ऐप का ऐक्सेस दें।";
+"selection.shortcutHelp.store" = "⇧⌘U फ़ोटो ऐप में चुनी गई तस्वीरें अपलोड करता है। Finder की फ़ाइलों को मेनू बार आइकन पर खींचें या फ़ाइल चयन का उपयोग करें।";

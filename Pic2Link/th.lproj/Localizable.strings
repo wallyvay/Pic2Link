@@ -20,6 +20,7 @@
 "statusItem.tooltip" = "Pic2Link — อัปโหลดไฟล์และคัดลอกลิงก์";
 "menu.uploadClipboard" = "อัปโหลดภาพจากคลิปบอร์ด (%@)";
 "menu.uploadFile" = "อัปโหลดไฟล์…";
+"menu.uploadLivePhoto" = "เลือก Live Photo จากแอปรูปภาพ…";
 "menu.switchProfile" = "เปลี่ยนโฮสต์รูปภาพ";
 "menu.settings" = "การตั้งค่า…";
 "menu.quit" = "ออกจาก Pic2Link";
@@ -137,6 +138,8 @@
 "validation.error" = "ตรวจสอบล้มเหลว: %@";
 
 "status.uploadBusy" = "กำลังอัปโหลดอยู่แล้ว";
+"status.uploadQueued" = "เพิ่มลงคิวแล้ว · มี %d รายการอยู่ข้างหน้า";
+"status.queuePending" = "รออยู่ %d รายการ";
 "status.configureFirst" = "กำหนดค่าโฮสต์รูปภาพก่อน";
 "status.incompleteConfig" = "การกำหนดค่าปัจจุบันไม่สมบูรณ์";
 "status.uploadingTo" = "กำลังอัปโหลดไปยัง %@";
@@ -146,6 +149,8 @@
 "status.providerImagesOnly" = "%@ รองรับเฉพาะรูปภาพในขณะนี้ โปรดเปลี่ยนเป็นผู้ให้บริการที่รองรับไฟล์ทั่วไป";
 "status.largeFileCancelled" = "ยกเลิกการอัปโหลดไฟล์ขนาดใหญ่แล้ว";
 "status.uploadingFile" = "กำลังอัปโหลด %@";
+"status.waitingForFile" = "กำลังรอให้ %@ บันทึกเสร็จ…";
+"status.loadingLivePhoto" = "กำลังโหลด Live Photo ที่เลือก…";
 "status.launchAtLoginFailed" = "อัปเดตการเปิดเมื่อล็อกอินไม่สำเร็จ: %@";
 "status.linkCopied" = "คัดลอกลิงก์แล้ว: %@";
 
@@ -154,6 +159,7 @@
 "largeFile.continue" = "อัปโหลดต่อ";
 
 "notification.uploadComplete" = "อัปโหลด “%@” เสร็จแล้ว คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว";
+"notification.linkCopied" = "คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว: %@";
 
 "launchAtLogin.requiresApproval" = "โปรดอนุญาต Pic2Link ในรายการเข้าสู่ระบบของการตั้งค่าระบบก่อน";
 "launchAtLogin.notFound" = "แพ็กเกจแอปนี้ลงทะเบียนรายการเข้าสู่ระบบไม่ได้ จะใช้โหมดความเข้ากันได้";
@@ -172,3 +178,87 @@
 "status.settingsSaveFailed" = "ไม่สามารถบันทึกการตั้งค่าอย่างปลอดภัยได้: %@";
 "error.keychainUnexpectedData" = "พวงกุญแจส่งคืนข้อมูลข้อมูลประจำตัวที่ไม่ถูกต้อง";
 "error.keychainStatus" = "ข้อผิดพลาดของพวงกุญแจ (%d)";
+
+"clipboard.compressionProgress" = "การบีบอัด";
+"clipboard.uploadProgress" = "การอัปโหลด";
+"settings.compression" = "บีบอัดก่อนอัปโหลด";
+"settings.compression.help" = "รูปภาพจะถูกปรับขนาดในหน่วยความจำก่อนอัปโหลด โดยไม่บันทึกสำเนาที่บีบอัดและไม่แก้ไขต้นฉบับ";
+"settings.livePhotoGIF" = "แปลง Live Photo เป็น GIF";
+"settings.livePhotoGIF.help" = "Live Photo ในคลิปบอร์ดที่มีภาพและวิดีโอคู่กันจะถูกแปลงเป็น GIF 480p ในหน่วยความจำก่อนอัปโหลด ภาพนิ่งจะไม่ถูกแปลง";
+"compression.mode.label" = "วิธีปรับขนาด";
+"compression.mode.width" = "ตามความกว้าง";
+"compression.mode.height" = "ตามความสูง";
+"compression.mode.percentage" = "เปอร์เซ็นต์";
+"compression.mode.free" = "อิสระ";
+"compression.mode.maximum" = "ขนาดสูงสุด";
+"compression.width" = "กว้าง";
+"compression.height" = "สูง";
+"compression.percentage" = "สัดส่วน";
+"compression.maximum.hint" = "ลดขนาดเท่านั้น และหยุดเมื่อถึงขีดจำกัดความกว้างหรือความสูงก่อน";
+"compression.singleMode.help" = "ใช้วิธีปรับขนาดได้ครั้งละหนึ่งแบบ ไฟล์ที่ไม่ใช่รูปภาพจะอัปโหลดโดยไม่เปลี่ยนแปลง";
+"compression.unit.pixels" = "พิกเซล";
+"status.compressingImage" = "กำลังบีบอัดรูปภาพ";
+"status.compressingFile" = "กำลังบีบอัด %@";
+"status.compressionFailed" = "บีบอัดไม่สำเร็จ: %@";
+"status.convertingLivePhoto" = "กำลังแปลง Live Photo เป็น GIF…";
+"status.livePhotoConversionFailed" = "แปลง Live Photo ไม่สำเร็จ: %@";
+"error.compressionDisabled" = "ปิดการบีบอัดอยู่";
+"error.compressionUnsupportedImage" = "ไม่สามารถถอดรหัสรูปภาพนี้เพื่อบีบอัดได้";
+"error.compressionUnsupportedFormat" = "ไม่สามารถเข้ารหัสรูปแบบนี้ใหม่หลังปรับขนาดได้";
+"error.compressionInvalidDimension" = "ความกว้างและความสูงต้องอยู่ระหว่าง 1 ถึง 100000 พิกเซล";
+"error.compressionInvalidPercentage" = "เปอร์เซ็นต์ต้องมากกว่า 0 และไม่เกิน 10000";
+"error.compressionOutputTooLarge" = "รูปภาพเป้าหมายเกิน 100 ล้านพิกเซล โปรดเลือกขนาดที่เล็กลง";
+"error.compressionDecode" = "ไม่สามารถถอดรหัสรูปภาพได้";
+"error.compressionFailed" = "ไม่สามารถสร้างหรือตรวจสอบรูปภาพที่บีบอัดได้";
+"error.livePhotoGIFSource" = "ไม่พบวิดีโอที่จับคู่กับ Live Photo นี้";
+"error.livePhotoGIFConversion" = "ไม่สามารถสร้าง GIF 480p ได้";
+"error.fileStillChanging" = "ไฟล์ยังอยู่ระหว่างการบันทึก โปรดลองอีกครั้งในอีกสักครู่";
+"error.photoLibraryAccess" = "อนุญาตให้ Pic2Link เข้าถึงรูปภาพ แล้วเลือก Live Photo อีกครั้ง";
+"error.livePhotoUnavailable" = "Live Photo ที่เลือกไม่พร้อมใช้งานในรูปภาพแล้ว";
+"error.notALivePhoto" = "รายการที่เลือกไม่ใช่ Live Photo";
+"error.photoPickerCancelled" = "ยกเลิกการเลือกรูปภาพแล้ว";
+"error.photoPickerAssetIdentifier" = "แอปรูปภาพไม่ได้ส่ง Live Photo ที่เลือกมาเพื่อแปลง";
+"picker.livePhoto.title" = "เลือก Live Photo";
+
+// Caption before upload
+"caption.enabled" = "เพิ่มข้อความก่อนอัปโหลด";
+"caption.description" = "เพิ่มข้อความก่อนอัปโหลดแต่ละภาพได้ หากเว้นว่าง ระบบจะข้ามการใส่ข้อความและยังบีบอัดตามการตั้งค่า";
+"caption.title" = "เพิ่มข้อความ";
+"caption.preview" = "ภาพที่จะอัปโหลด";
+"caption.text" = "ข้อความ";
+"caption.submit" = "รวมภาพและอัปโหลด";
+"caption.waiting" = "กำลังรอข้อความ";
+"caption.rendering" = "กำลังเพิ่มข้อความ…";
+"caption.cancelled" = "ยกเลิกการอัปโหลดภาพนี้แล้ว";
+"caption.failed" = "เพิ่มข้อความไม่สำเร็จ: %@";
+"caption.error.empty" = "ป้อนข้อความเพื่อดำเนินการต่อ";
+"caption.error.image" = "ไม่สามารถเปิดภาพนี้เพื่อเพิ่มข้อความได้";
+"caption.error.animation" = "ไม่รองรับภาพเคลื่อนไหวหรือภาพหลายหน้านี้ ปิดการเพิ่มข้อความเพื่ออัปโหลดไฟล์ต้นฉบับ";
+"caption.error.size" = "ภาพมีขนาดใหญ่เกินไป โปรดใช้ภาพที่เล็กลงหรือภาพเคลื่อนไหวที่สั้นลง";
+"caption.error.fit" = "ไม่สามารถจัดวางข้อความทั้งหมดได้ โปรดย่อข้อความแล้วลองอีกครั้ง";
+"caption.error.encode" = "ไม่สามารถสร้างภาพที่รวมข้อความในหน่วยความจำได้";
+
+"caption.optional" = "ข้อความ (ไม่บังคับ)";
+
+"caption.uploadOriginal" = "อัปโหลดโดยไม่เพิ่มข้อความ";
+
+"menu.markdownLinks" = "ลิงก์รูปแบบ Markdown";
+
+"selection.menu" = "อัปโหลดรูปที่เลือก (⇧⌘U)";
+"selection.unsupportedApp" = "เลือกรูปใน Finder หรือรูปภาพ แล้วกด ⇧⌘U";
+"selection.empty" = "เลือกรูปใน Finder หรือรูปภาพก่อน";
+"selection.noPhotos" = "รายการที่เลือกไม่มีไฟล์รูปที่รองรับ";
+"selection.unavailable" = "รูปที่เลือกไม่พร้อมใช้งาน โปรดเลือกใหม่";
+"selection.automationDenied" = "อนุญาตให้ Pic2Link เข้าถึง Finder หรือรูปภาพในการตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย → การทำงานอัตโนมัติ";
+"selection.readFailed" = "อ่านรายการที่เลือกไม่ได้ (ข้อผิดพลาด %d) โปรดลองอีกครั้ง";
+"selection.shortcutUnavailable" = "ใช้ ⇧⌘U ไม่ได้ โปรดตรวจสอบว่ามีแอปอื่นใช้ปุ่มลัดนี้หรือไม่";
+"selection.shortcutReserved" = "⇧⌘U สงวนไว้สำหรับรูปที่เลือก โปรดเลือกปุ่มลัดอื่นสำหรับคลิปบอร์ด";
+"selection.shortcutHelp" = "⇧⌘U อัปโหลดรูปที่เลือกใน Finder หรือรูปภาพโดยตรง";
+
+"selection.folderPermission" = "อนุญาตให้เข้าถึง “%@” เพื่ออ่านรูปที่เลือก Pic2Link จะจำสิทธิ์อ่านอย่างเดียวของโฟลเดอร์นี้";
+"selection.allowFolder" = "อนุญาตโฟลเดอร์";
+/* Mac App Store: Photos selection only; Finder uses user-selected file access. */
+"selection.unsupportedApp.store" = "เลือกรูปในแอปรูปภาพ แล้วกด ⇧⌘U สำหรับไฟล์ใน Finder ให้ลากไปยังไอคอนแถบเมนูหรือใช้ตัวเลือกไฟล์";
+"selection.empty.store" = "โปรดเลือกรูปในแอปรูปภาพก่อน";
+"selection.automationDenied.store" = "อนุญาตให้ Pic2Link เข้าถึงรูปภาพในการตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย → การทำงานอัตโนมัติ";
+"selection.shortcutHelp.store" = "⇧⌘U อัปโหลดรูปที่เลือกในแอปรูปภาพ สำหรับไฟล์ใน Finder ให้ลากไปยังไอคอนแถบเมนูหรือใช้ตัวเลือกไฟล์";

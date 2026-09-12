@@ -40,7 +40,22 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
             }
         }
 
-        playUploadSuccessSound()
+        playSuccessSound()
+    }
+
+    /// 发送链接重新复制成功的通知，不额外播放声音（剪贴板写入已播放提示音）
+    func sendLinkCopiedNotification(link: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "Pic2Link"
+        content.body = L10n.tr("notification.linkCopied", link)
+
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: nil
+        )
+
+        UNUserNotificationCenter.current().add(request)
     }
 
     /// 发送错误通知
@@ -83,7 +98,7 @@ final class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         completionHandler([.banner, .list])
     }
 
-    private func playUploadSuccessSound() {
+    func playSuccessSound() {
         NSSound(named: NSSound.Name("Glass"))?.play()
     }
 }
